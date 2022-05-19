@@ -1,9 +1,8 @@
-import pandas as pd 
-from seaborn import swarmplot
 from matplotlib import pyplot as plt
 from matplotlib import patches
 import numpy as np
 import copy as cp
+from data import *
 
 def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' ) :
 
@@ -29,53 +28,6 @@ def avg( x ) :
 def err( x , k = 1.4826 ) :
     return np.std( x )
     #return k * np.median( np.abs( x - np.median( x ) ) )
-
-path = 'Lifetime_measurements/'
-
-#Ede1
-
-Ede1_um = pd.read_csv( path + "Ede1_lifetimes_Um.csv" )
-Ede1_sc = pd.read_csv( path + "Ede1_lifetimes_Sc.csv" )
-Ede1_sp = pd.read_csv( path + "Ede1_lifetimes_Sp-Ede1.csv" )
-Ede1_sp_Ucp8 = pd.read_csv( path + "Ede1_lifetimes_Sp-Ucp8.csv" )
-
-#Sla1
-
-Sla1_um = pd.read_csv( path + "Sla1_lifetimes_Um.csv" )
-Sla1_sc = pd.read_csv( path + "Sla1_lifetimes_Sc.csv" )
-Sla1_sp = pd.read_csv( path + "Sla1_lifetimes_Sp.csv" )
-
-#Pan1
-
-Pan1_um = pd.read_csv( path + "Pan1_lifetimes_Um.csv" )
-Pan1_sc = pd.read_csv( path + "Pan1_lifetimes_Sc.csv" )
-Pan1_sp = pd.read_csv( path + "Pan1_lifetimes_Sp.csv" )
-
-#Wasp
-
-Wasp_um = pd.read_csv( path + "Wasp_lifetimes_Um.csv" )
-Wasp_sc = pd.read_csv( path + "Wasp_lifetimes_Sc.csv" )
-Wasp_sp = pd.read_csv( path + "Wasp_lifetimes_Sp.csv" )
-
-#Myo1
-
-Myo1_um = pd.read_csv( path + "Myo1_lifetimes_Um.csv" )
-Myo3_sc = pd.read_csv( path + "Myo3_lifetimes_Sc.csv" )
-Myo5_sc = pd.read_csv( path + "Myo5_lifetimes_Sc.csv" )
-Myo1_sp = pd.read_csv( path + "Myo1_lifetimes_Sp.csv" )
-
-#Rvs167
-
-Rvs_um = pd.read_csv( path + "Rvs167_lifetimes_Um.csv" )
-Rvs_sc = pd.read_csv( path + "Rvs167_lifetimes_Sc.csv" )
-Rvs_sp = pd.read_csv( path + "Rvs167_lifetimes_Sp.csv" )
-
-#Arc18
-
-Arc18_um = pd.read_csv( path + "Arc18_Lifetimes_Um.csv" )
-Arc18_sc = pd.read_csv( path + "Arc18_Lifetimes_Sc.csv" )
-Arc18_sp = pd.read_csv( path + "Arc18_Lifetimes_Sp.csv" )
-
 
 #Fim1
 Fim1_um = cp.deepcopy( Sla1_um )
@@ -108,20 +60,6 @@ def layout( ax , title ) :
     ax.set_yticks( [ 1 , -2 , -5 , -8 , -11 , -14 , -17 , -20 ] )
     ax.set_ylabel( title , fontsize = 18 , style = 'italic' )
     ax.grid( axis = 'x' )
-
-# colors
-
-color_Ede1 = '#49C94D'
-color_Ede1_Ucp8 =  color_Ede1
-color_Sla1 = '#357A37'
-color_Pan1 = '#BDBD02'
-color_Wasp = '#41E2BA'
-color_Myo1 = '#753673'
-color_Myo3 = color_Myo1
-color_Myo5 = color_Myo1
-color_Rvs = '#4293AD'
-color_Arc18 = '#C24D16'
-color_Fim1 = '#F24D16'
 
 fig , ax = plt.subplots( 3 , 1 , figsize = ( 8 , 11 ) , sharex = 'all' )
 
