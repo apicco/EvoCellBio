@@ -30,51 +30,51 @@ def err( x , k = 1.4826 ) :
     return np.std( x )
     #return k * np.median( np.abs( x - np.median( x ) ) )
 
-path = '../'
+path = 'Lifetime_measurements/'
 
 #Ede1
 
-Ede1_um = pd.read_csv( path + "Ede1_Orthologs/" + "Ede1_lifetimes_Um.csv" )
-Ede1_sc = pd.read_csv( path + "Ede1_Orthologs/" + "Ede1_lifetimes_Sc.csv" )
-Ede1_sp = pd.read_csv( path + "Ede1_Orthologs/" + "Ede1_lifetimes_Sp-Ede1.csv" )
-Ede1_sp_Ucp8 = pd.read_csv( path + "Ede1_Orthologs/" + "Ede1_lifetimes_Sp-Ucp8.csv" )
+Ede1_um = pd.read_csv( path + "Ede1_lifetimes_Um.csv" )
+Ede1_sc = pd.read_csv( path + "Ede1_lifetimes_Sc.csv" )
+Ede1_sp = pd.read_csv( path + "Ede1_lifetimes_Sp-Ede1.csv" )
+Ede1_sp_Ucp8 = pd.read_csv( path + "Ede1_lifetimes_Sp-Ucp8.csv" )
 
 #Sla1
 
-Sla1_um = pd.read_csv( path + "Sla1_Orthologs_AP/" + "Sla1_lifetimes_Um.csv" )
-Sla1_sc = pd.read_csv( path + "Sla1_Orthologs_AP/" + "Sla1_lifetimes_Sc.csv" )
-Sla1_sp = pd.read_csv( path + "Sla1_Orthologs_AP/" + "Sla1_lifetimes_Sp.csv" )
+Sla1_um = pd.read_csv( path + "Sla1_lifetimes_Um.csv" )
+Sla1_sc = pd.read_csv( path + "Sla1_lifetimes_Sc.csv" )
+Sla1_sp = pd.read_csv( path + "Sla1_lifetimes_Sp.csv" )
 
 #Pan1
 
-Pan1_um = pd.read_csv( path + "Pan1_Orthologs/" + "Pan1_lifetimes_Um.csv" )
-Pan1_sc = pd.read_csv( path + "Pan1_Orthologs/" + "Pan1_lifetimes_Sc.csv" )
-Pan1_sp = pd.read_csv( path + "Pan1_Orthologs/" + "Pan1_lifetimes_Sp.csv" )
+Pan1_um = pd.read_csv( path + "Pan1_lifetimes_Um.csv" )
+Pan1_sc = pd.read_csv( path + "Pan1_lifetimes_Sc.csv" )
+Pan1_sp = pd.read_csv( path + "Pan1_lifetimes_Sp.csv" )
 
 #Wasp
 
-Wasp_um = pd.read_csv( path + "Wasp_Orthologs/" + "Wasp_lifetimes_Um.csv" )
-Wasp_sc = pd.read_csv( path + "Wasp_Orthologs/" + "Wasp_lifetimes_Sc.csv" )
-Wasp_sp = pd.read_csv( path + "Wasp_Orthologs/" + "Wasp_lifetimes_Sp.csv" )
+Wasp_um = pd.read_csv( path + "Wasp_lifetimes_Um.csv" )
+Wasp_sc = pd.read_csv( path + "Wasp_lifetimes_Sc.csv" )
+Wasp_sp = pd.read_csv( path + "Wasp_lifetimes_Sp.csv" )
 
 #Myo1
 
-Myo1_um = pd.read_csv( path + "Myosin_Orthologs/" + "Myo1_lifetimes_Um.csv" )
-Myo3_sc = pd.read_csv( path + "Myosin_Orthologs/" + "Myo3_lifetimes_Sc.csv" )
-Myo5_sc = pd.read_csv( path + "Myosin_Orthologs/" + "Myo5_lifetimes_Sc.csv" )
-Myo1_sp = pd.read_csv( path + "Myosin_Orthologs/" + "Myo1_lifetimes_Sp.csv" )
+Myo1_um = pd.read_csv( path + "Myo1_lifetimes_Um.csv" )
+Myo3_sc = pd.read_csv( path + "Myo3_lifetimes_Sc.csv" )
+Myo5_sc = pd.read_csv( path + "Myo5_lifetimes_Sc.csv" )
+Myo1_sp = pd.read_csv( path + "Myo1_lifetimes_Sp.csv" )
 
 #Rvs167
 
-Rvs_um = pd.read_csv( path + "Rvs_Orthologs_CT/" + "Rvs167_lifetimes_Um.csv" )
-Rvs_sc = pd.read_csv( path + "Rvs_Orthologs_CT/" + "Rvs167_lifetimes_Sc.csv" )
-Rvs_sp = pd.read_csv( path + "Rvs_Orthologs_CT/" + "Rvs167_lifetimes_Sp.csv" )
+Rvs_um = pd.read_csv( path + "Rvs167_lifetimes_Um.csv" )
+Rvs_sc = pd.read_csv( path + "Rvs167_lifetimes_Sc.csv" )
+Rvs_sp = pd.read_csv( path + "Rvs167_lifetimes_Sp.csv" )
 
 #Arc18
 
-Arc18_um = pd.read_csv( path + "Arc18_Orthologs/" + "Arc18_Lifetimes_Um.csv" )
-Arc18_sc = pd.read_csv( path + "Arc18_Orthologs/" + "Arc18_Lifetimes_Sc.csv" )
-Arc18_sp = pd.read_csv( path + "Arc18_Orthologs/" + "Arc18_Lifetimes_Sp.csv" )
+Arc18_um = pd.read_csv( path + "Arc18_Lifetimes_Um.csv" )
+Arc18_sc = pd.read_csv( path + "Arc18_Lifetimes_Sc.csv" )
+Arc18_sp = pd.read_csv( path + "Arc18_Lifetimes_Sp.csv" )
 
 
 #Fim1
@@ -175,6 +175,6 @@ um.set_yticklabels( [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Rvs167' , 'A
 
 plt.xlabel( 'Time (s)' , fontsize = 18 )
 plt.tight_layout()
-plt.savefig( "lifetimes.pdf" )
+plt.savefig( "Protein_lifetimes.pdf" )
 
 plt.figure()
