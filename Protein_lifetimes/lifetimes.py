@@ -102,10 +102,10 @@ Fim1_ctrl_sp.GFP_end = Fim1_ctrl_sp.RFP_end
 def layout( ax , title ) :
 
     ax.plot( ( 0 , 0 ) , ( -100 , 100 ) , 'k--' , lw = 0.5 )
-    ax.set_ylim( -28 , 3 )
+    ax.set_ylim( -22 , 3 )
     ax.set_xlim( -175 , 20 )
     ax.yaxis.tick_right()
-    ax.set_yticks( [ 1 , -2 , -5 , -8 , -11 , -14 , -17 , -20 , -23 , -26 ] )
+    ax.set_yticks( [ 1 , -2 , -5 , -8 , -11 , -14 , -17 , -20 ] )
     ax.set_ylabel( title , fontsize = 18 , style = 'italic' )
     ax.grid( axis = 'x' )
 
@@ -138,11 +138,9 @@ lt( sc , Wasp_sc , -9 , 2 , dt = 1.2 , shift = shift_sc , col = color_Wasp )
 lt( sc , Myo3_sc , -12 , 2 , dt = 1.2 , shift = shift_sc , col = color_Myo3 )
 lt( sc , Myo5_sc , -15 , 2 , dt = 1.2 , shift = shift_sc , col = color_Myo5 )
 lt( sc , Rvs_sc , -18 , 2 , dt = 1.19 , shift = shift_sc , col = color_Rvs )
-lt( sc , Arc18_sc , -21 , 2 , dt = 1.19 , shift = shift_sc , col = color_Arc18 )
-lt( sc , Fim1_ctrl_sc , -24 , 2 , dt = 1.2 , shift = shift_sc , col = color_Fim1 )
-lt( sc , Fim1_sc , -27 , 2 , dt = 1.2 , shift = shift_sc , col = color_Fim1 )
+lt( sc , Fim1_sc , -21 , 2 , dt = 1.2 , shift = shift_sc , col = color_Fim1 )
 layout( sc , 'S. cerevisiae' )
-sc.set_yticklabels( [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp', 'Myo3' , 'Myo5' , 'Rvs167' , 'Arc18' , 'Fim1 with\nArc18-GFP' , 'Fim1' ] )
+sc.set_yticklabels( [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp', 'Myo3' , 'Myo5' , 'Rvs167' , 'Fim1' ] )
 
 shift_sp = 0 
 
@@ -153,11 +151,9 @@ lt( sp , Sla1_sp , -9 , 2 , dt = 1.2 , shift = shift_sp , col = color_Sla1 )
 lt( sp , Wasp_sp , -12 , 2 , dt = 1.2 , shift = shift_sp , col = color_Wasp )
 lt( sp , Myo1_sp , -15 , 2 , dt = 1.2 , shift = shift_sp , col = color_Myo1 )
 lt( sp , Rvs_sp , -18 , 2 , dt = 1.19 , shift = shift_sp , col = color_Rvs )
-lt( sp , Arc18_sp , -21 , 2 , dt = 1.19 , shift = shift_sp , col = color_Arc18 )
-lt( sp , Fim1_ctrl_sp , -24 , 2 , dt = 1.2 , shift = shift_sp , col = color_Fim1 )
-lt( sp , Fim1_sp , -27 , 2 , dt = 1.2 , shift = shift_sp , col = color_Fim1 )
+lt( sp , Fim1_sp , -21 , 2 , dt = 1.2 , shift = shift_sp , col = color_Fim1 )
 layout( sp , 'S. pombe' )
-sp.set_yticklabels( [ 'Ucp8' , 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Rvs167' , 'Arc18' , 'Fim1 with\nArc18-GFP' , 'Fim1' ] )
+sp.set_yticklabels( [ 'Ucp8' , 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Rvs167' , 'Fim1' ] )
 
 shift_um = 0
 
@@ -167,11 +163,9 @@ lt( um , Sla1_um , -6 , 2 , dt = 1.2 , shift = shift_um , col = color_Sla1 )
 lt( um , Wasp_um , -9 , 2 , dt = 1.2 , shift = shift_um , col = color_Wasp )
 lt( um , Myo1_um , -12 , 2 , dt = 1.2 , shift = shift_um , col = color_Myo1 )
 lt( um , Rvs_um , -15 , 2 , dt = 1.19 , shift = shift_um , col = color_Rvs )
-lt( um , Arc18_um , -18 , 2 , dt = 1.19 , shift = shift_um , col = color_Arc18 )
-lt( um , Fim1_ctrl_um , -21 , 2 , dt = 1.2 , shift = shift_um , col = color_Fim1 )
-lt( um , Fim1_um , -24 , 2 , dt = 1.2 , shift = shift_um , col = color_Fim1 )
+lt( um , Fim1_um , -18 , 2 , dt = 1.2 , shift = shift_um , col = color_Fim1 )
 layout( um , 'U. maydis' )
-um.set_yticklabels( [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Rvs167' , 'Arc18' , 'Fim1 with\nArc18-GFP' , 'Fim1' , '' ] )
+um.set_yticklabels( [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Rvs167' , 'Fim1' , '' ] )
 
 plt.xlabel( 'Time (s)' , fontsize = 18 )
 plt.tight_layout()
