@@ -1,0 +1,4 @@
+Lifetime csv files are organised as 4 columns: First column is the start frame
+of the GFP signal, Second column is the end frame of the GFP signal, Third
+comlumn is the start of the RFP (Fim1) signal, Forth column is the end of the
+RFP (Fim1) signal.
