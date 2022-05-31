@@ -1,6 +1,10 @@
 import pandas as pd 
 path = 'Lifetime_measurements/'
 
+# Invagination start
+
+I_sc = pd.read_csv( path + "Invagination_start-VS-Fim1_Sc.csv" )
+
 #Ede1
 
 Ede1_um = pd.read_csv( path + "Ede1_lifetimes_Um.csv" )
