@@ -5,6 +5,7 @@ path = 'Lifetime_measurements/'
 
 I_sc = pd.read_csv( path + "Invagination_start-VS-Fim1_Sc.csv" )
 I_sp = pd.read_csv( path + "Invagination_start-VS-Fim1_Sp.csv" )
+I_um = pd.read_csv( path + "Invagination_start-VS-Fim1_Um.csv" )
 
 #Ede1
 
