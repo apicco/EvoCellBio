@@ -94,7 +94,9 @@ layout( sc , 'S. cerevisiae' )
 sc.set_yticklabels( [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp', 'Myo3' , 'Myo5' , 'Rvs167' , 'Fim1' ] )
 
 shift_sp = 0 
-
+# invagination start
+Is( sp , I_sp , dt = 0.7 )
+# lifetimes
 lt( sp , Ede1_sp_Ucp8 , -0 , 2 , dt = 1.2 , shift = shift_sp , col = color_Ede1_Ucp8 )
 lt( sp , Ede1_sp , -3 , 2 , dt = 1.2 , shift = shift_sp , col = color_Ede1 )
 lt( sp , Pan1_sp , -6 , 2 , dt = 1.2 , shift = shift_sp , col = color_Pan1 )
