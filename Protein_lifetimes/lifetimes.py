@@ -10,7 +10,7 @@ def Is( ax , d , dt , col = 'black' ) :
     i = ( d.Invagination_start - t0 ) * dt
     mi = [ avg( i ) , err( i ) ]
     
-    ax.plot( [ 0 ] * 2 , [ -1E10 , 1E10 ] , linewidth = 1 , color = col )
+    #ax.plot( [ 0 ] * 2 , [ -1E10 , 1E10 ] , linewidth = 1 , color = col )
     ax.plot( [ - mi[ 1 ] ] * 2 , [ -1E10 , 1E10 ] , linewidth = 1 , ls = 'dotted' , color = col )
     ax.plot( [ mi[ 1 ] ] * 2 , [ -1E10 , 1E10 ] , linewidth = 1 , ls = 'dotted' , color = col )
 
@@ -67,7 +67,7 @@ def layout( ax , title ) :
 
     ax.plot( ( 0 , 0 ) , ( -100 , 100 ) , 'k--' , lw = 0.5 )
     ax.set_ylim( -22 , 3 )
-    ax.set_xlim( -175 , 20 )
+    ax.set_xlim( -175 , 15 )
     ax.yaxis.tick_right()
     ax.set_yticks( [ 1 , -2 , -5 , -8 , -11 , -14 , -17 , -20 ] )
     ax.set_ylabel( title , fontsize = 18 , style = 'italic' )
