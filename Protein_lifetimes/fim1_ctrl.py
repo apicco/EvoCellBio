@@ -8,11 +8,11 @@ def fim1_lt( ax , d , y0 , tickness , dt , col = 'black' ) :
 
     t0 = d.RFP_start
     # lifetime
-    l = ( d.RFP_end - t0 ) * dt 
+    l = ( d.RFP_end - t0 + 1 ) * dt 
     
     # averages
     ms = [ avg( l ) , err( l ) ]
-
+    print( ms )
     ax.errorbar( ms[ 0 ] , y0 + tickness / 2 , xerr = ms[ 1 ] , ecolor = col , capsize = 4 )
 
     rect = patches.Rectangle( ( 0 , y0 ) , ms[ 0 ] , tickness , linewidth = 1 , edgecolor = col , facecolor = col + '50' )
