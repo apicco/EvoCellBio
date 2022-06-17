@@ -15,7 +15,7 @@ def lt( species , protein , d , dt ) :
     ms = [ avg( s ) , err( s ) ]
     me = [ avg( e ) , err( e ) ]
     
-    d = pd.DataFrame( [[ protein , np.round( ms[1] , 2) , np.round( ms[0] + me[0] , 2 ) , np.round( me[1] , 2 ) ]] , columns = [ 'Protein' , 'Start_SD (s)' , 'Lifetime (s)' , 'End_SD (s)' ] , index = [ species ] )
+    d = pd.DataFrame( [[ protein , np.round( ms[1] , 2) , np.round( me[0] - ms[0] , 2 ) , np.round( me[1] , 2 ) ]] , columns = [ 'Protein' , 'Start_SD (s)' , 'Lifetime (s)' , 'End_SD (s)' ] , index = [ species ] )
     return d 
     
 def avg( x ) :
