@@ -16,9 +16,13 @@ def Is( ax , d , dt , col = 'black' ) :
 
     return mi
     
-def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' ) :
-
-    t0 = d.RFP_start
+def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' , is_t0 = True ) :
+    
+    # set the t0 according to the apperance of the RFP protein (Fim1), if present
+    if is_t0 :
+        t0 = d.RFP_start
+    else :
+        t0 = d.GFP_start
     # start
     s = ( d.GFP_start - t0 ) * dt 
     # end
@@ -41,16 +45,16 @@ def err( x , k = 1.4826 ) :
     return np.std( x )
     #return k * np.median( np.abs( x - np.median( x ) ) )
 
-#Fim1
-Fim1_um = cp.deepcopy( Sla1_um )
-Fim1_um.GFP_start = Fim1_um.RFP_start
-Fim1_um.GFP_end = Fim1_um.RFP_end
-Fim1_sc = cp.deepcopy( Sla1_sc )
-Fim1_sc.GFP_start = Fim1_sc.RFP_start
-Fim1_sc.GFP_end = Fim1_sc.RFP_end
-Fim1_sp = cp.deepcopy( Sla1_sp )
-Fim1_sp.GFP_start = Fim1_sp.RFP_start
-Fim1_sp.GFP_end = Fim1_sp.RFP_end
+##Fim1
+#Fim1_um = cp.deepcopy( Sla1_um )
+#Fim1_um.GFP_start = Fim1_um.RFP_start
+#Fim1_um.GFP_end = Fim1_um.RFP_end
+#Fim1_sc = cp.deepcopy( Sla1_sc )
+#Fim1_sc.GFP_start = Fim1_sc.RFP_start
+#Fim1_sc.GFP_end = Fim1_sc.RFP_end
+#Fim1_sp = cp.deepcopy( Sla1_sp )
+#Fim1_sp.GFP_start = Fim1_sp.RFP_start
+#Fim1_sp.GFP_end = Fim1_sp.RFP_end
 
 #Fim1_ctrl for Arc18
 Fim1_ctrl_um = cp.deepcopy( Arc18_um )
@@ -90,7 +94,7 @@ lt( sc , Wasp_sc , -9 , 2 , dt = 1.2 , shift = shift_sc , col = color_Wasp )
 lt( sc , Myo3_sc , -12 , 2 , dt = 1.2 , shift = shift_sc , col = color_Myo3 )
 lt( sc , Myo5_sc , -15 , 2 , dt = 1.2 , shift = shift_sc , col = color_Myo5 )
 lt( sc , Rvs_sc , -18 , 2 , dt = 1.19 , shift = shift_sc , col = color_Rvs )
-lt( sc , Fim1_sc , -21 , 2 , dt = 1.2 , shift = shift_sc , col = color_Fim1 )
+lt( sc , Fim1_GFP_sc , -21 , 2 , dt = 1.19 , shift = shift_sc , col = color_Fim1 , is_t0 = False )
 
 layout( sc , 'S. cerevisiae' )
 sc.set_yticklabels( [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp', 'Myo3' , 'Myo5' , 'Rvs167' , 'Fim1' ] )
@@ -106,7 +110,7 @@ lt( sp , Sla1_sp , -9 , 2 , dt = 1.2 , shift = shift_sp , col = color_Sla1 )
 lt( sp , Wasp_sp , -12 , 2 , dt = 1.2 , shift = shift_sp , col = color_Wasp )
 lt( sp , Myo1_sp , -15 , 2 , dt = 1.2 , shift = shift_sp , col = color_Myo1 )
 lt( sp , Rvs_sp , -18 , 2 , dt = 1.19 , shift = shift_sp , col = color_Rvs )
-lt( sp , Fim1_sp , -21 , 2 , dt = 1.2 , shift = shift_sp , col = color_Fim1 )
+lt( sp , Fim1_GFP_sp , -21 , 2 , dt = 1.19 , shift = shift_sp , col = color_Fim1 , is_t0 = False )
 layout( sp , 'S. pombe' )
 sp.set_yticklabels( [ 'Ucp8' , 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Rvs167' , 'Fim1' ] )
 
@@ -120,7 +124,7 @@ lt( um , Sla1_um , -6 , 2 , dt = 1.2 , shift = shift_um , col = color_Sla1 )
 lt( um , Wasp_um , -9 , 2 , dt = 1.2 , shift = shift_um , col = color_Wasp )
 lt( um , Myo1_um , -12 , 2 , dt = 1.2 , shift = shift_um , col = color_Myo1 )
 lt( um , Rvs_um , -15 , 2 , dt = 1.19 , shift = shift_um , col = color_Rvs )
-lt( um , Fim1_um , -18 , 2 , dt = 1.2 , shift = shift_um , col = color_Fim1 )
+lt( um , Fim1_GFP_um , -18 , 2 , dt = 1.19 , shift = shift_um , col = color_Fim1 , is_t0 = False )
 layout( um , 'U. maydis' )
 um.set_yticklabels( [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Rvs167' , 'Fim1' , '' ] )
 
