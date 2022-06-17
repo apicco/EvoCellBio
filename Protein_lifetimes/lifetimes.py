@@ -26,7 +26,8 @@ def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' , is_t0 = True )
     # start
     s = ( d.GFP_start - t0 ) * dt 
     # end
-    e = ( d.GFP_end - t0 ) * dt
+    e = ( d.GFP_end - t0 + 1 ) * dt # +1 because a patch that appears and disappears in the 
+                                    # same frame has still a lifetime of 1 * dt 
     # averages
     ms = [ avg( s ) , err( s ) ]
     me = [ avg( e ) , err( e ) ]
