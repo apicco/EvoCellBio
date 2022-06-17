@@ -2,3 +2,7 @@ Lifetime csv files are organised as 4 columns: First column is the start frame
 of the GFP signal, Second column is the end frame of the GFP signal, Third
 comlumn is the start of the RFP (Fim1) signal, Forth column is the end of the
 RFP (Fim1) signal.
+
+Fim1-GFP and Fim1-RFP csv files are exceptions. These files contain only the GFP or RFP start and end frame and are used to compute the lifetime of Fim1 with the different tags in strains that do not carry other tagging proteins. 
+
+Invagination* csv files contatin the frame at which the invagination movement starts in respect to Fim1 appearance, as seen with Differential Evanecene Nanometry (Saffarian et al. 2008) and are used to register the beginning of the invagination movement. 
