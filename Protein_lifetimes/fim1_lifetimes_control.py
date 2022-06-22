@@ -31,7 +31,18 @@ def flt( species , protein , d , dt , ref = None , RFP = True ) :
     else :
         z = ztest( ml , ref )
 
-    d = pd.DataFrame( [[ protein , np.round( ml[0] , 2 ) , np.round( ml[1] , 2 ) , np.round( z , 2 ) ]] , columns = [ 'Protein' , 'Fim1 lifetime (s)' , 'SD (s)' , 'pval' ] , index = [ species ] )
+    if z >= 0.05 :
+        pval = ''
+    elif z != z :
+        pval = ''
+    elif 0.01 <= z < 0.05 :
+        pval = '*'
+    elif 0.001 <= z < 0.01 :
+        pval = '**'
+    else :
+        pval = '***'
+
+    d = pd.DataFrame( [[ protein , np.round( ml[0] , 2 ) , np.round( ml[1] , 2 ) , pval ]] , columns = [ 'Protein' , 'Fim1 lifetime (s)' , 'SD (s)' , 'pval' ] , index = [ species ] )
 
     return d 
 
@@ -119,9 +130,32 @@ data = pd.concat( [ data , Rvs_um_l ] )
 Arc18_um_l = flt( species , 'Arc18' , Arc18_um , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Arc18_um_l ] )
 
-print( data )
 data.to_csv( 'Fim1_lifetimes_control.csv' )
-#f = plt.figure()
-#data.plot.bar( x = 'Protein' , y = 'Fim1 lifetime (s)' , rot = 0 ) 
-#plt.savefig( 'Fim1_lifetime_control.pdf' )
 
+print( data )
+def mybarplot( ax , data , what ) :
+    
+    ax.title.set_text( what )
+    ax.grid( axis = 'y' )
+    #data.loc[ what ].plot.bar( x = 'Protein' , y = 'Fim1 lifetime (s)' )
+    ax.bar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'Fim1 lifetime (s)' ] )
+    ax.errorbar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'Fim1 lifetime (s)' ] , yerr =  data.loc[ what ][ 'SD (s)' ] , color = 'black' , capsize = 5 , ls = '' )
+    ax.set_ylabel( 's' )
+    ax.tick_params( labelrotation = 45 , axis = 'x' )
+    
+    for i in range( len( data.loc[ what ] ) ) :
+        ax.text( data.loc[ what ][ 'Protein' ][ i ] , 0.5 , s = data.loc[ what ][ 'pval' ][ i ] , ha = 'center' )
+
+
+fig , ax = plt.subplots( 3 , 1 , figsize = ( 8 , 11 ) ) #, sharex = 'all' )
+
+sc = ax[ 0 ]
+sp = ax[ 1 ]
+um = ax[ 2 ]
+
+mybarplot( sc , data , 'S. cerevisiae' )
+mybarplot( sp , data , 'S. pombe' )
+mybarplot( um , data , 'U. maydis' )
+fig.tight_layout()
+plt.savefig( 'Fim1_lifetimes_control.pdf' )
+plt.close()
