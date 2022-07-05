@@ -3,8 +3,9 @@ from matplotlib import patches
 import numpy as np
 import copy as cp
 from data import *
+from funs import *
 
-def lt( species , protein , d , dt ) :
+def lt( species , protein , d , dt , shift = 0 ) :
 
     t0 = d.RFP_start
     # start
@@ -12,8 +13,8 @@ def lt( species , protein , d , dt ) :
     # end
     e = ( d.GFP_end - t0 ) * dt
     # averages
-    ms = [ avg( s ) , err( s ) ]
-    me = [ avg( e ) , err( e ) ]
+    ms = [ avg( s ) + shift , err( s ) ]
+    me = [ avg( e ) + shift , err( e ) ]
     
     d = pd.DataFrame( [[ protein , np.round( ms[1] , 2) , np.round( me[0] - ms[0] , 2 ) , np.round( me[1] , 2 ) ]] , columns = [ 'Protein' , 'Start_SD (s)' , 'Lifetime (s)' , 'End_SD (s)' ] , index = [ species ] )
     return d 
@@ -38,6 +39,10 @@ Fim1_sp.GFP_start = Fim1_sp.RFP_start
 Fim1_sp.GFP_end = Fim1_sp.RFP_end
 
 sc = 'S. cerevisiae'
+
+# invagination start
+is_sc = Is( sc , I_sc , dt = 0.7 )
+shift_sc = - is_sc[ 0 ]
 
 Ede1_sc_l = lt( sc , 'Ede1' , Ede1_sc , dt = 1.2 )
 Pan1_sc_l = lt( sc , 'Pan1' , Pan1_sc , dt = 1.2 )

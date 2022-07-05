@@ -3,19 +3,8 @@ from matplotlib import patches
 import numpy as np
 import copy as cp
 from data import *
+from funs import *
 
-def Is( ax , d , dt , col = 'black' ) :
-
-    t0 = d.Fim1_start
-    i = ( d.Invagination_start - t0 ) * dt
-    mi = [ avg( i ) , err( i ) ]
-    
-    #ax.plot( [ 0 ] * 2 , [ -1E10 , 1E10 ] , linewidth = 1 , color = col )
-    ax.plot( [ - mi[ 1 ] ] * 2 , [ -1E10 , 1E10 ] , linewidth = 1 , ls = 'dotted' , color = col )
-    ax.plot( [ mi[ 1 ] ] * 2 , [ -1E10 , 1E10 ] , linewidth = 1 , ls = 'dotted' , color = col )
-
-    return mi
-    
 def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' , is_t0 = True ) :
     
     # set the t0 according to the apperance of the RFP protein (Fim1), if present
@@ -29,22 +18,14 @@ def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' , is_t0 = True )
     e = ( d.GFP_end - t0 + 1 ) * dt # +1 because a patch that appears and disappears in the 
                                     # same frame has still a lifetime of 1 * dt 
     # averages
-    ms = [ avg( s ) , err( s ) ]
-    me = [ avg( e ) , err( e ) ]
+    ms = [ avg( s ) + shift , err( s ) ]
+    me = [ avg( e ) + shift , err( e ) ]
 
-    ax.errorbar( ms[ 0 ] + shift , y0 + tickness / 2 , xerr = ms[ 1 ] , ecolor = col , capsize = 4 )
-    ax.errorbar( me[ 0 ] + shift , y0 + tickness / 2 , xerr = me[ 1 ] , ecolor = col , capsize = 4 )
+    ax.errorbar( ms[ 0 ] , y0 + tickness / 2 , xerr = ms[ 1 ] , ecolor = col , capsize = 4 )
+    ax.errorbar( me[ 0 ] , y0 + tickness / 2 , xerr = me[ 1 ] , ecolor = col , capsize = 4 )
 
-    rect = patches.Rectangle( ( ms[ 0 ] + shift , y0 ) , me[ 0 ] - ms[ 0 ] , tickness , linewidth = 1 , edgecolor = col , facecolor = col + '50' )
+    rect = patches.Rectangle( ( ms[ 0 ] , y0 ) , me[ 0 ] - ms[ 0 ] , tickness , linewidth = 1 , edgecolor = col , facecolor = col + '50' )
     ax.add_patch( rect )
-
-def avg( x ) :
-    return np.mean( x )
-    #return np.median( x )
-
-def err( x , k = 1.4826 ) :
-    return np.std( x )
-    #return k * np.median( np.abs( x - np.median( x ) ) )
 
 ##Fim1
 #Fim1_um = cp.deepcopy( Sla1_um )
