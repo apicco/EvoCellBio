@@ -66,7 +66,7 @@ sp = ax[ 1 ]
 um = ax[ 2 ]
 
 # invagination start
-is_sc = Is( sc , I_sc , dt = 0.7 )
+is_sc = Is( sc , I_sc , dt = 0.7 , do_plot = True )
 shift_sc = - is_sc[ 0 ]
 # lifetimes
 lt( sc , Ede1_sc , -0 , 2 , dt = 1.2 , shift = shift_sc , col = color_Ede1 )
@@ -82,7 +82,7 @@ layout( sc , 'S. cerevisiae' )
 sc.set_yticklabels( [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp', 'Myo3' , 'Myo5' , 'Rvs167' , 'Fim1' ] )
 
 # invagination start
-is_sp = Is( sp , I_sp , dt = 0.71 )
+is_sp = Is( sp , I_sp , dt = 0.71 , do_plot = True )
 shift_sp = - is_sp[ 0 ]
 # lifetimes
 lt( sp , Ede1_sp_Ucp8 , -0 , 2 , dt = 1.2 , shift = shift_sp , col = color_Ede1_Ucp8 )
@@ -97,7 +97,7 @@ layout( sp , 'S. pombe' )
 sp.set_yticklabels( [ 'Ucp8' , 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Rvs167' , 'Fim1' ] )
 
 # invagination start
-is_um = Is( um , I_um , dt = 0.71 )
+is_um = Is( um , I_um , dt = 0.71 , do_plot = True )
 shift_um = - is_um[ 0 ]
 # lifetimes
 lt( um , Ede1_um , -0 , 2 , dt = 1.2 , shift = shift_um , col = color_Ede1 )

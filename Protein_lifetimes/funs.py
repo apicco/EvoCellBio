@@ -1,11 +1,14 @@
-def Is( ax , d , dt , col = 'black' ) :
+import numpy as np
+
+def Is( ax , d , dt , col = 'black' , do_plot = False ) :
 
     t0 = d.Fim1_start
     i = ( d.Invagination_start - t0 ) * dt
     mi = [ avg( i ) , err( i ) ]
-    
-    ax.plot( [ - mi[ 1 ] ] * 2 , [ -1E10 , 1E10 ] , linewidth = 1 , ls = 'dotted' , color = col )
-    ax.plot( [ mi[ 1 ] ] * 2 , [ -1E10 , 1E10 ] , linewidth = 1 , ls = 'dotted' , color = col )
+   
+    if do_plot : 
+        ax.plot( [ - mi[ 1 ] ] * 2 , [ -1E10 , 1E10 ] , linewidth = 1 , ls = 'dotted' , color = col )
+        ax.plot( [ mi[ 1 ] ] * 2 , [ -1E10 , 1E10 ] , linewidth = 1 , ls = 'dotted' , color = col )
 
     return mi
  
