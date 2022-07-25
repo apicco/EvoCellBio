@@ -1,7 +1,7 @@
 from matplotlib import pyplot as plt
 import numpy as np
    
-def plot( r , g , s , dt , output , norm = True , legend = False , xlim = None ) :
+def plot( r , g , s , dt , output , shif = 0 , norm = True , legend = False , xlim = None ) :
   
     lr = len( r )
     lg = len( g )
@@ -9,7 +9,7 @@ def plot( r , g , s , dt , output , norm = True , legend = False , xlim = None )
 
     def norm_data( d , s , dt , norm ) :
 
-        t = ( d[ '[cm]' ] + s ) * dt
+        t = ( d[ '[cm]' ] + s + shift ) * dt
         if norm :
 
             x = ( d[ 'Mean' ] - np.nanmin( d[ 'Mean' ] ) ) / ( np.nanmax( d[ 'Mean' ] ) - np.nanmin( d[ 'Mean' ] ) ) 
