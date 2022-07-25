@@ -1,7 +1,7 @@
 from matplotlib import pyplot as plt
 import numpy as np
    
-def plot( r , g , s , dt , output , norm = True , legend = False ) :
+def plot( r , g , s , dt , output , norm = True , legend = False , xlim = None ) :
   
     lr = len( r )
     lg = len( g )
@@ -38,6 +38,8 @@ def plot( r , g , s , dt , output , norm = True , legend = False ) :
     if legend :
         plt.legend()
 
+    if xlim :
+        plt.xlim( xlim )
     plt.grid()
     plt.xlabel( 'Time (s)' , fontsize = 12 )
     plt.ylabel( 'Fluor. int. (a.u.)' , fontsize = 12 )
