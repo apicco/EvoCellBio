@@ -52,15 +52,20 @@ Arc18_sc = pd.read_csv( path + "Arc18_Lifetimes_Sc.csv" )
 Arc18_sp = pd.read_csv( path + "Arc18_Lifetimes_Sp.csv" )
 
 #Fim1 (GFP)
+
 Fim1_GFP_um = pd.read_csv( path + "Fim1-GFP_Lifetimes_Um.csv" )
 Fim1_GFP_sc = pd.read_csv( path + "Fim1-GFP_Lifetimes_Sc.csv" )
 Fim1_GFP_sp = pd.read_csv( path + "Fim1-GFP_Lifetimes_Sp.csv" )
 
 #Fim1 (RFP)
+
 Fim1_RFP_um = pd.read_csv( path + "Fim1-RFP_Lifetimes_Um.csv" )
 Fim1_RFP_sc = pd.read_csv( path + "Fim1-RFP_Lifetimes_Sc.csv" )
 Fim1_RFP_sp = pd.read_csv( path + "Fim1-RFP_Lifetimes_Sp.csv" )
 
+# WASP swap
+
+las17del_spWasp_sc = pd.read_csv( path + "las17del-spWsp1_lifetimes_Sc.csv" )
 # colors
 
 color_Ede1 = '#49C94D'
