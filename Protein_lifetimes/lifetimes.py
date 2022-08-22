@@ -193,18 +193,18 @@ def layout_swap( ax , title , is_sc = True ) :
 
     ax.plot( ( 0 , 0 ) , ( -100 , 100 ) , 'k--' , lw = 0.5 )
     if is_sc :
-        ax.set_ylim( -4.5 , 3.5 )
-        ax.set_yticks( [ 1 , -2 ] )
+        ax.set_ylim( -7.5 , 3.5 )
+        ax.set_yticks( [ 1 , -2 , -5 ] )
     else : 
         ax.set_ylim( -1 , 3 )
         ax.set_yticks( [ 1 ] )
     
-    ax.set_xlim( -35 , 15 )
+    ax.set_xlim( -180 , 25 )
     ax.yaxis.tick_right()
     ax.set_ylabel( title , fontsize = 18 , style = 'italic' )
     ax.grid( axis = 'x' )
 
-fig , ax = plt.subplots( 2 , 1 , figsize = ( 8 , 5 ) , sharex = 'all' , gridspec_kw = { 'height_ratios' : [2, 1] } )
+fig , ax = plt.subplots( 2 , 1 , figsize = ( 8 , 5 ) , sharex = 'all' , gridspec_kw = { 'height_ratios' : [3, 1] } )
 
 sc = ax[ 0 ]
 sp = ax[ 1 ]
@@ -215,9 +215,10 @@ shift_sc = - is_sc[ 0 ]
 # lifetimes
 lt( sc , Wasp_sc , -0 , 2 , dt = 1.2 , shift = shift_sc , col = color_Wasp )
 lt( sc , las17del_spWasp_sc , -3 , 2 , dt = 1.2 , shift = shift_sc , col = color_Wasp )
+lt( sc , sla1del_Shd1_Las17_sc , -6 , 2 , dt = 1.2 , shift = shift_sc , col = color_Wasp )
 
 layout_swap( sc , 'S. cerevisiae' )
-sc.set_yticklabels( [ 'Wasp', 'las17$\Delta$::spWasp' ] , fontsize = 16 )
+sc.set_yticklabels( [ 'Wasp' , 'wasp$\Delta$::spWasp'  , 'sla1$\Delta$::spSla1, Wasp'] , fontsize = 16 )
 
 # invagination start
 is_sp = Is( sp , I_sp , dt = 0.71 , do_plot = True )

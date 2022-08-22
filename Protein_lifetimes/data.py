@@ -66,6 +66,8 @@ Fim1_RFP_sp = pd.read_csv( path + "Fim1-RFP_Lifetimes_Sp.csv" )
 # WASP swap
 
 las17del_spWasp_sc = pd.read_csv( path + "las17del-spWsp1_lifetimes_Sc.csv" )
+sla1del_Shd1_Las17_sc = pd.read_csv( path + "sla1del-Shd1_las17_lifetimes_Sc.csv" )
+
 # colors
 
 color_Ede1 = '#49C94D'
