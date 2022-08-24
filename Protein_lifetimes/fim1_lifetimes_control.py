@@ -61,8 +61,10 @@ Fim1_RFP_sc_l = flt( species , 'Fim1-RFP' , Fim1_RFP_sc , dt = 1.2 )
 
 ref = [ Fim1_RFP_sc_l.at[ species , 'Fim1 lifetime (s)' ] ,  Fim1_RFP_sc_l.at[ species , 'SD (s)' ] ]
 
+Fim1_RFP_sc_220630_l = flt( species , 'Fim1-RFP\n220630' , Fim1_RFP_sc_220630 , dt = 1.2 , ref = ref )
+data = pd.concat( [ Fim1_RFP_sc_l , Fim1_RFP_sc_220630_l ] )
 Fim1_GFP_sc_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sc , dt = 1.2 , RFP = False , ref = ref )
-data = pd.concat( [ Fim1_RFP_sc_l , Fim1_GFP_sc_l ] )
+data = pd.concat( [ data , Fim1_GFP_sc_l ] )
 Fim1_GFP_sc_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_sc_220630 , dt = 1.2 , RFP = False , ref = ref )
 data = pd.concat( [ data , Fim1_GFP_sc_220630_l ] )
 Ede1_sc_l = flt( species , 'Ede1' , Ede1_sc , dt = 1.2 , ref = ref  )
@@ -155,7 +157,7 @@ def mybarplot( ax , data , what ) :
         ax.text( data.loc[ what ][ 'Protein' ][ i ] , 0.5 , s = data.loc[ what ][ 'pval' ][ i ] , ha = 'center' )
 
 
-fig , ax = plt.subplots( 3 , 1 , figsize = ( 9 , 11 ) ) #, sharex = 'all' )
+fig , ax = plt.subplots( 3 , 1 , figsize = ( 11 , 11 ) ) #, sharex = 'all' )
 
 sc = ax[ 0 ]
 sp = ax[ 1 ]

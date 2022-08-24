@@ -1,5 +1,7 @@
 ,Protein,Fim1 lifetime (s),SD (s),pval
 S. cerevisiae,Fim1-RFP,10.02,0.28,
+S. cerevisiae,"Fim1-RFP
+220630",9.62,0.29,
 S. cerevisiae,Fim1-GFP,10.54,0.29,
 S. cerevisiae,"Fim1-GFP
 220630",11.12,0.33,*

@@ -62,6 +62,7 @@ Fim1_GFP_sp = pd.read_csv( path + "Fim1-GFP_Lifetimes_Sp.csv" )
 
 Fim1_RFP_um = pd.read_csv( path + "Fim1-RFP_Lifetimes_Um.csv" )
 Fim1_RFP_sc = pd.read_csv( path + "Fim1-RFP_Lifetimes_Sc.csv" )
+Fim1_RFP_sc_220630 = pd.read_csv( path + "Fim1-RFP_Lifetimes_Sc_220630.csv" )
 Fim1_RFP_sp = pd.read_csv( path + "Fim1-RFP_Lifetimes_Sp.csv" )
 
 # WASP swap
