@@ -73,8 +73,10 @@ Wasp_sc_l = flt( species , 'Wasp' , Wasp_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Wasp_sc_l ] )
 las17del_spWasp_sc_l = flt( species , 'las17$\Delta$::spWasp' , las17del_spWasp_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , las17del_spWasp_sc_l ] )
-sla1del_Shd1_Las17_sc_l = flt( species , 'sla1$\Delta$::Shd1, Wasp' , sla1del_Shd1_Las17_sc , dt = 1.2 , ref = ref  )
+sla1del_Shd1_Las17_sc_l = flt( species , 'sla1$\Delta$::Shd1,\nWasp' , sla1del_Shd1_Las17_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , sla1del_Shd1_Las17_sc_l ] )
+sla1del_Shd1_las17del_spWasp_sc_l = flt( species , 'sla1$\Delta$::Shd1,\nwasp$\Delta$::spWasp' , sla1del_Shd1_las17del_spWasp_sc , dt = 1.2 , ref = ref  )
+data = pd.concat( [ data , sla1del_Shd1_las17del_spWasp_sc_l ] )
 Myo3_sc_l = flt( species , 'Myo3' , Myo3_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Myo3_sc_l ] )
 Myo5_sc_l = flt( species , 'Myo5' , Myo5_sc , dt = 1.2 , ref = ref  )
@@ -151,7 +153,7 @@ def mybarplot( ax , data , what ) :
         ax.text( data.loc[ what ][ 'Protein' ][ i ] , 0.5 , s = data.loc[ what ][ 'pval' ][ i ] , ha = 'center' )
 
 
-fig , ax = plt.subplots( 3 , 1 , figsize = ( 8 , 11 ) ) #, sharex = 'all' )
+fig , ax = plt.subplots( 3 , 1 , figsize = ( 9 , 11 ) ) #, sharex = 'all' )
 
 sc = ax[ 0 ]
 sp = ax[ 1 ]
