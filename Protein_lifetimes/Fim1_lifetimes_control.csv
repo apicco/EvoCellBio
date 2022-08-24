@@ -1,35 +1,37 @@
 ,Protein,Fim1 lifetime (s),SD (s),pval
-S. cerevisiae,Fim1-RFP,15.87,0.44,
-S. cerevisiae,Fim1-GFP,16.68,0.45,
-S. cerevisiae,Ede1,11.46,0.37,***
-S. cerevisiae,Pan1,10.54,0.3,***
-S. cerevisiae,Sla1,9.41,0.34,***
-S. cerevisiae,Wasp,11.01,0.37,***
-S. cerevisiae,las17$\Delta$::spWasp,11.12,0.39,***
+S. cerevisiae,Fim1-RFP,10.02,0.28,
+S. cerevisiae,Fim1-GFP,10.54,0.29,
+S. cerevisiae,"Fim1-GFP
+220630",11.12,0.33,*
+S. cerevisiae,Ede1,11.46,0.37,**
+S. cerevisiae,Pan1,10.54,0.3,
+S. cerevisiae,Sla1,9.41,0.34,
+S. cerevisiae,Wasp,11.01,0.37,*
+S. cerevisiae,las17$\Delta$::spWasp,11.12,0.39,*
 S. cerevisiae,"sla1$\Delta$::Shd1,
-Wasp",17.01,0.78,
+Wasp",17.01,0.78,***
 S. cerevisiae,"sla1$\Delta$::Shd1,
 wasp$\Delta$::spWasp",22.2,1.35,***
-S. cerevisiae,Myo3,10.56,0.3,***
-S. cerevisiae,Myo5,10.8,0.31,***
-S. cerevisiae,Rvs167,9.33,0.26,***
+S. cerevisiae,Myo3,10.56,0.3,
+S. cerevisiae,Myo5,10.8,0.31,
+S. cerevisiae,Rvs167,9.33,0.26,
 S. cerevisiae,Arc18,12.34,0.34,***
-S. pombe,Fim1-RFP,13.9,0.63,
-S. pombe,Fim1-GFP,15.34,0.61,
-S. pombe,Ucp8,10.08,0.35,***
-S. pombe,Ede1,9.69,0.43,***
-S. pombe,Pan1,9.81,0.49,***
-S. pombe,Sla1,8.45,0.49,***
-S. pombe,Wasp,10.52,0.39,***
-S. pombe,Myo1,7.62,0.32,***
-S. pombe,Rvs167,10.05,0.33,***
-S. pombe,Arc18,15.09,0.54,
-U. maydis,Fim1-RFP,10.51,0.3,
-U. maydis,Fim1-GFP,12.38,0.32,***
-U. maydis,Ede1,7.68,0.27,***
-U. maydis,Pan1,6.47,0.25,***
-U. maydis,Sla1,6.73,0.22,***
-U. maydis,Wasp,6.91,0.19,***
-U. maydis,Myo1,7.08,0.19,***
-U. maydis,Rvs167,7.53,0.29,***
-U. maydis,Arc18,10.95,0.39,
+S. pombe,Fim1-RFP,8.78,0.4,
+S. pombe,Fim1-GFP,9.69,0.39,
+S. pombe,Ucp8,10.08,0.35,*
+S. pombe,Ede1,9.69,0.43,
+S. pombe,Pan1,9.81,0.49,
+S. pombe,Sla1,8.45,0.49,
+S. pombe,Wasp,10.52,0.39,**
+S. pombe,Myo1,7.62,0.32,*
+S. pombe,Rvs167,10.05,0.33,*
+S. pombe,Arc18,15.09,0.54,***
+U. maydis,Fim1-RFP,6.64,0.19,
+U. maydis,Fim1-GFP,7.82,0.2,***
+U. maydis,Ede1,7.68,0.27,**
+U. maydis,Pan1,6.47,0.25,
+U. maydis,Sla1,6.73,0.22,
+U. maydis,Wasp,6.91,0.19,
+U. maydis,Myo1,7.08,0.19,
+U. maydis,Rvs167,7.53,0.29,*
+U. maydis,Arc18,10.95,0.39,***

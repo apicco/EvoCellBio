@@ -55,6 +55,7 @@ Arc18_sp = pd.read_csv( path + "Arc18_Lifetimes_Sp.csv" )
 
 Fim1_GFP_um = pd.read_csv( path + "Fim1-GFP_Lifetimes_Um.csv" )
 Fim1_GFP_sc = pd.read_csv( path + "Fim1-GFP_Lifetimes_Sc.csv" )
+Fim1_GFP_sc_220630 = pd.read_csv( path + "Fim1-GFP_Lifetimes_Sc_220630.csv" )
 Fim1_GFP_sp = pd.read_csv( path + "Fim1-GFP_Lifetimes_Sp.csv" )
 
 #Fim1 (RFP)

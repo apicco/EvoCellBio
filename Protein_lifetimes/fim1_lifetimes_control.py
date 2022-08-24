@@ -57,12 +57,14 @@ def err( x , k = 1.4826 ) :
 # lifetimes
 species = 'S. cerevisiae'
 
-Fim1_RFP_sc_l = flt( species , 'Fim1-RFP' , Fim1_RFP_sc , dt = 1.9 )
+Fim1_RFP_sc_l = flt( species , 'Fim1-RFP' , Fim1_RFP_sc , dt = 1.2 )
 
 ref = [ Fim1_RFP_sc_l.at[ species , 'Fim1 lifetime (s)' ] ,  Fim1_RFP_sc_l.at[ species , 'SD (s)' ] ]
 
-Fim1_GFP_sc_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sc , dt = 1.9 , RFP = False , ref = ref )
+Fim1_GFP_sc_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sc , dt = 1.2 , RFP = False , ref = ref )
 data = pd.concat( [ Fim1_RFP_sc_l , Fim1_GFP_sc_l ] )
+Fim1_GFP_sc_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_sc_220630 , dt = 1.2 , RFP = False , ref = ref )
+data = pd.concat( [ data , Fim1_GFP_sc_220630_l ] )
 Ede1_sc_l = flt( species , 'Ede1' , Ede1_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Ede1_sc_l ] )
 Pan1_sc_l = flt( species , 'Pan1' , Pan1_sc , dt = 1.2 , ref = ref  )
@@ -88,12 +90,12 @@ data = pd.concat( [ data , Arc18_sc_l ] )
 
 species = 'S. pombe'
 
-Fim1_RFP_sp_l = flt( species , 'Fim1-RFP' , Fim1_RFP_sp , dt = 1.9 )
+Fim1_RFP_sp_l = flt( species , 'Fim1-RFP' , Fim1_RFP_sp , dt = 1.2 )
 data = pd.concat( [ data , Fim1_RFP_sp_l ] )
 
 ref = [ Fim1_RFP_sp_l.at[ species , 'Fim1 lifetime (s)' ] ,  Fim1_RFP_sp_l.at[ species , 'SD (s)' ] ]
 
-Fim1_GFP_sp_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sp , dt = 1.9 , RFP = False , ref = ref )
+Fim1_GFP_sp_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sp , dt = 1.2 , RFP = False , ref = ref )
 data = pd.concat( [ data , Fim1_GFP_sp_l ] )
 Ede1_sp_Ucp8_l = flt( species , 'Ucp8' , Ede1_sp_Ucp8 , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Ede1_sp_Ucp8_l ] )
@@ -114,12 +116,12 @@ data = pd.concat( [ data , Arc18_sp_l ] )
 
 species = 'U. maydis'
 
-Fim1_RFP_um_l = flt( species , 'Fim1-RFP' , Fim1_RFP_um , dt = 1.9 )
+Fim1_RFP_um_l = flt( species , 'Fim1-RFP' , Fim1_RFP_um , dt = 1.2 )
 data = pd.concat( [ data , Fim1_RFP_um_l ] )
 
 ref = [ Fim1_RFP_um_l.at[ species , 'Fim1 lifetime (s)' ] ,  Fim1_RFP_um_l.at[ species , 'SD (s)' ] ]
 
-Fim1_GFP_um_l = flt( species , 'Fim1-GFP' , Fim1_GFP_um , dt = 1.9 , RFP = False , ref = ref )
+Fim1_GFP_um_l = flt( species , 'Fim1-GFP' , Fim1_GFP_um , dt = 1.2 , RFP = False , ref = ref )
 data = pd.concat( [ data , Fim1_GFP_um_l ] )
 Ede1_um_l = flt( species , 'Ede1' , Ede1_um , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Ede1_um_l ] )
