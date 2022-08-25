@@ -19,7 +19,11 @@ S. cerevisiae,Myo5,10.8,0.31,
 S. cerevisiae,Rvs167,9.33,0.26,
 S. cerevisiae,Arc18,12.34,0.34,***
 S. pombe,Fim1-RFP,8.78,0.4,
+S. pombe,"Fim1-RFP
+220630",9.08,0.26,
 S. pombe,Fim1-GFP,9.69,0.39,
+S. pombe,"Fim1-GFP
+220630",9.24,0.34,
 S. pombe,Ucp8,10.08,0.35,*
 S. pombe,Ede1,9.69,0.43,
 S. pombe,Pan1,9.81,0.49,

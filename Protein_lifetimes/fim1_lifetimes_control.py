@@ -97,8 +97,12 @@ data = pd.concat( [ data , Fim1_RFP_sp_l ] )
 
 ref = [ Fim1_RFP_sp_l.at[ species , 'Fim1 lifetime (s)' ] ,  Fim1_RFP_sp_l.at[ species , 'SD (s)' ] ]
 
+Fim1_RFP_sp_220630_l = flt( species , 'Fim1-RFP\n220630' , Fim1_RFP_sp_220630 , dt = 1.2 , ref = ref )
+data = pd.concat( [ data , Fim1_RFP_sp_220630_l ] )
 Fim1_GFP_sp_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sp , dt = 1.2 , RFP = False , ref = ref )
 data = pd.concat( [ data , Fim1_GFP_sp_l ] )
+Fim1_GFP_sp_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_sp_220630 , dt = 1.2 , RFP = False , ref = ref )
+data = pd.concat( [ data , Fim1_GFP_sp_220630_l ] )
 Ede1_sp_Ucp8_l = flt( species , 'Ucp8' , Ede1_sp_Ucp8 , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Ede1_sp_Ucp8_l ] )
 Ede1_sp_l = flt( species , 'Ede1' , Ede1_sp , dt = 1.2 , ref = ref  )
