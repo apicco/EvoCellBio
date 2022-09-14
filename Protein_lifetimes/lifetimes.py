@@ -204,7 +204,7 @@ def layout_swap( ax , title , is_sc = True ) :
     ax.set_ylabel( title , fontsize = 18 , style = 'italic' )
     ax.grid( axis = 'x' )
 
-fig , ax = plt.subplots( 2 , 1 , figsize = ( 8 , 5 ) , sharex = 'all' , gridspec_kw = { 'height_ratios' : [4, 1] } )
+fig , ax = plt.subplots( 2 , 1 , figsize = ( 9 , 5 ) , sharex = 'all' , gridspec_kw = { 'height_ratios' : [4, 1] } )
 
 sc = ax[ 0 ]
 sp = ax[ 1 ]
@@ -219,7 +219,8 @@ lt( sc , sla1del_Shd1_Las17_sc , -6 , 2 , dt = 1.2 , shift = shift_sc , col = co
 lt( sc , sla1del_Shd1_las17del_spWasp_sc , -9 , 2 , dt = 1.2 , shift = shift_sc , col = color_Wasp )
 
 layout_swap( sc , 'S. cerevisiae' )
-sc.set_yticklabels( [ 'Wasp' , 'wasp$\Delta$::spWasp'  , 'sla1$\Delta$::spSla1,\nWasp' , 'sla1$\Delta$::spSla1,\nwasp$\Delta$::spWasp' ] , fontsize = 16 )
+sc.set_title( 'Wasp-GFP lifetime' , fontsize = 18 )
+sc.set_yticklabels( [ 'Sla1,\nWasp-GFP' , 'Sla1,\nwasp$\Delta$::spWasp-GFP'  , 'sla1$\Delta$::spSla1,\nWasp-GFP' , 'sla1$\Delta$::spSla1,\nwasp$\Delta$::spWasp-GFP' ] , fontsize = 16 )
 
 # invagination start
 is_sp = Is( sp , I_sp , dt = 0.71 , do_plot = False )
@@ -228,7 +229,7 @@ shift_sp = - is_sp[ 0 ]
 lt( sp , Wasp_sp , -0 , 2 , dt = 1.2 , shift = shift_sp , col = color_Wasp )
 
 layout_swap( sp , 'S. pombe' , is_sc = False  )
-sp.set_yticklabels( [ 'Wasp' ] , fontsize = 16 )
+sp.set_yticklabels( [ 'spSla1,\nspWasp-GFP' ] , fontsize = 16 )
 
 plt.xlabel( 'Time (s)' , fontsize = 18 )
 plt.tight_layout()
