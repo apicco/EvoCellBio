@@ -10,15 +10,6 @@ from funs import *
 
 matplotlib.rcParams['pgf.texsystem'] = "pdflatex" 
 matplotlib.rcParams['pgf.preamble'] = [ r'\usepackage{color}' ]
-#pgf_with_latex = {
-#    "text.usetex": True,            # use LaTeX to write all text
-#    "pgf.rcfonts": False,           # Ignore Matplotlibrc
-#    "pgf.preamble": [
-#        r'\usepackage{color}'     # xcolor for colours
-#    ]
-#}
-#
-#matplotlib.rcParams.update(pgf_with_latex)
 
 def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' , is_t0 = True ) :
     
@@ -41,17 +32,6 @@ def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' , is_t0 = True )
 
     rect = patches.Rectangle( ( ms[ 0 ] , y0 ) , me[ 0 ] - ms[ 0 ] , tickness , linewidth = 1 , edgecolor = col , facecolor = col + '50' )
     ax.add_patch( rect )
-
-##Fim1
-#Fim1_um = cp.deepcopy( Sla1_um )
-#Fim1_um.GFP_start = Fim1_um.RFP_start
-#Fim1_um.GFP_end = Fim1_um.RFP_end
-#Fim1_sc = cp.deepcopy( Sla1_sc )
-#Fim1_sc.GFP_start = Fim1_sc.RFP_start
-#Fim1_sc.GFP_end = Fim1_sc.RFP_end
-#Fim1_sp = cp.deepcopy( Sla1_sp )
-#Fim1_sp.GFP_start = Fim1_sp.RFP_start
-#Fim1_sp.GFP_end = Fim1_sp.RFP_end
 
 #Fim1_ctrl for Arc18
 Fim1_ctrl_um = cp.deepcopy( Arc18_um )
