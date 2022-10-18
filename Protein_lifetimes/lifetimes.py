@@ -234,12 +234,12 @@ lt( sc , sla1del_Shd1_Las17_sc , -6 , 2 , dt = 1.2 , shift = shift_sc , col = co
 lt( sc , sla1del_Shd1_las17del_spWasp_sc , -9 , 2 , dt = 1.2 , shift = shift_sc , col = color_Wasp )
 
 layout_swap( sc , 'S. cerevisiae (' + r'\textcolor{red}{Sc}' + ')' , ft = 21 )
-sc.set_title( 'Wasp-GFP lifetime' , fontsize = 18 )
+sc.set_title( 'Wasp-GFP lifetime' , fontsize = 30 )
 sc.set_yticklabels( [ 
-                     r'\textcolor{red}{$Sc$}$_{Sla1}$'+'\n'+r'\textcolor{red}{$Sc$}$_{Wasp}$' , 
-                     r'\textcolor{red}{$Sc$}$_{Sla1}$'+'\n'+r'\textcolor{blue}{$Sp$}$_{Wasp}$' , 
-                     r'\textcolor{blue}{$Sp$}$_{Sla1}$'+'\n'+r'\textcolor{red}{$Sc$}$_{Wasp}$' , 
-                     r'\textcolor{blue}{$Sp$}$_{Sla1}$'+'\n'+r'\textcolor{blue}{$Sp$}$_{Wasp}$'
+                     r'\textcolor{red}{$Sc$}$_{~Sla1}$'+'\n'+r'\textcolor{red}{$Sc$}$_{~Wasp}$' , 
+                     r'\textcolor{red}{$Sc$}$_{~Sla1}$'+'\n'+r'\textcolor{blue}{$Sp$}$_{~Wasp}$' , 
+                     r'\textcolor{blue}{$Sp$}$_{~Sla1}$'+'\n'+r'\textcolor{red}{$Sc$}$_{~Wasp}$' , 
+                     r'\textcolor{blue}{$Sp$}$_{~Sla1}$'+'\n'+r'\textcolor{blue}{$Sp$}$_{~Wasp}$'
                      ] , fontsize = 18 )
 
 # invagination start
@@ -250,7 +250,7 @@ lt( sp , Wasp_sp , -0 , 2 , dt = 1.2 , shift = shift_sp , col = color_Wasp )
 
 layout_swap( sp , 'S. pombe (' + r'\textcolor{blue}{Sp}' + ')' , is_sc = False , ft = 21 )
 sp.set_yticklabels( [ 
-                     r'\textcolor{blue}{$Sp$}$_{Sla1}$'+'\n'+r'\textcolor{blue}{$Sp$}$_{Wasp}$'
+                     r'\textcolor{blue}{$Sp$}$_{~Sla1}$'+'\n'+r'\textcolor{blue}{$Sp$}$_{~Wasp}$'
                      ] , fontsize = 18 )
 
 plt.xlabel( 'Time (s)' , fontsize = 18 )
