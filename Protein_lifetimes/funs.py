@@ -47,10 +47,10 @@ def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' , is_t0 = True )
 
     ms , me , _ = lifetime( d , dt , shift , is_t0 )
 
-    ax.errorbar( ms[ 0 ] , y0 + tickness / 2 , xerr = ms[ 1 ] , ecolor = col , capsize = 4 )
-    ax.errorbar( me[ 0 ] , y0 + tickness / 2 , xerr = me[ 1 ] , ecolor = col , capsize = 4 )
+    ax.errorbar( ms[ 0 ] , y0 + tickness / 2 , xerr = ms[ 1 ] , ecolor = 'black' , capsize = 4 )
+    ax.errorbar( me[ 0 ] , y0 + tickness / 2 , xerr = me[ 1 ] , ecolor = 'black' , capsize = 4 )
 
-    rect = patches.Rectangle( ( ms[ 0 ] , y0 ) , me[ 0 ] - ms[ 0 ] , tickness , linewidth = 1 , edgecolor = col , facecolor = col + '90' )
+    rect = patches.Rectangle( ( ms[ 0 ] , y0 ) , me[ 0 ] - ms[ 0 ] , tickness , linewidth = 1 , edgecolor = 'black' , facecolor = col )
     ax.add_patch( rect )
 
 # numeric lifetime representation
