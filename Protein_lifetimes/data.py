@@ -77,16 +77,16 @@ sla1del_Shd1_las17del_spWasp_sc = pd.read_csv( path + "sla1del-Shd1_las17del-spW
 
 # colors
 
-color_Ede1 = '#49C94D'
+color_Ede1 = '#F9DDBD'
 color_Ede1_Ucp8 =  color_Ede1
-color_Sla1 = '#357A37'
-color_Pan1 = '#BDBD02'
-color_Wasp = '#41E2BA'
-color_Myo1 = '#753673'
+color_Sla1 = '#EC9939'
+color_Pan1 = '#F2BB7B'
+color_Wasp = '#1191D1'
+color_Myo1 = '#88C8E8'
 color_Myo3 = color_Myo1
 color_Myo5 = color_Myo1
-color_Rvs = '#4293AD'
-color_Arc18 = '#C24D16'
-color_Fim1 = '#F24D16'
+color_Rvs = '#147C33'
+color_Arc18 = '#DD5C6A'
+color_Fim1 = '#CC0A20'
 
 
