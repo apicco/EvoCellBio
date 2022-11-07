@@ -5,14 +5,16 @@ import copy as cp
 from data import *
 from funs import *
 
-def layout( ax , title ) :
+def layout( ax , title , labels , colord ) :
 
     ax.plot( ( 0 , 0 ) , ( -100 , 100 ) , 'k--' , lw = 0.5 )
     ax.set_ylim( -22 , 3 )
     ax.set_xlim( -175 , 15 )
     ax.yaxis.tick_right()
     ax.set_yticks( [ 1 , -2 , -5 , -8 , -11 , -14 , -17 , -20 ] )
-    ax.set_ylabel( title , fontsize = 18 , style = 'italic' )
+    ax.set_yticklabels( labels , fontdict = {'fontsize': 14 , 'fontweight': 'bold' } )
+    [ t.set_color(i) for (i,t) in zip( colors , ax.get_yticklabels() ) ]
+    ax.set_ylabel( title , fontsize = 21 , style = 'italic' )
     ax.grid( axis = 'x' )
 
 fig , ax = plt.subplots( 3 , 1 , figsize = ( 8 , 11 ) , sharex = 'all' )
@@ -34,8 +36,9 @@ lt( sc , Myo5_sc , -15 , 2 , dt = 1.2 , shift = shift_sc , col = color_Myo5 )
 lt( sc , Fim1_GFP_sc , -18 , 2 , dt = 1.19 , shift = shift_sc , col = color_Fim1 , is_t0 = False )
 lt( sc , Rvs_sc , -21 , 2 , dt = 1.19 , shift = shift_sc , col = color_Rvs )
 
-layout( sc , 'S. cerevisiae' )
-sc.set_yticklabels( [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp', 'Myo3' , 'Myo5' , 'Fim1' , 'Rvs167' ] )
+labels = [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp', 'Myo3' , 'Myo5' , 'Fim1' , 'Rvs167' ]
+colors = [ color_Pan1 , color_Pan1 , color_Sla1 , color_Wasp , color_Myo3 , color_Myo5 , color_Fim1 , color_Rvs ] 
+layout( sc , 'S. cerevisiae' , labels , colors )
 
 # invagination start
 is_sp = Is( sp , I_sp , dt = 0.71 , do_plot = True )
@@ -49,8 +52,10 @@ lt( sp , Wasp_sp , -12 , 2 , dt = 1.2 , shift = shift_sp , col = color_Wasp )
 lt( sp , Myo1_sp , -15 , 2 , dt = 1.2 , shift = shift_sp , col = color_Myo1 )
 lt( sp , Fim1_GFP_sp , -18 , 2 , dt = 1.19 , shift = shift_sp , col = color_Fim1 , is_t0 = False )
 lt( sp , Rvs_sp , -21 , 2 , dt = 1.19 , shift = shift_sp , col = color_Rvs )
-layout( sp , 'S. pombe' )
-sp.set_yticklabels( [ 'Ucp8' , 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Fim1' , 'Rvs167' ] )
+
+labels = [ 'Ucp8' , 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Fim1' , 'Rvs167' ]
+colors = [ color_Pan1 , color_Pan1 , color_Pan1 , color_Sla1 , color_Wasp , color_Myo1 , color_Fim1 , color_Rvs ] 
+layout( sp , 'S. pombe' , labels , colors )
 
 # invagination start
 is_um = Is( um , I_um , dt = 0.71 , do_plot = True )
@@ -63,10 +68,12 @@ lt( um , Wasp_um , -9 , 2 , dt = 1.2 , shift = shift_um , col = color_Wasp )
 lt( um , Myo1_um , -12 , 2 , dt = 1.2 , shift = shift_um , col = color_Myo1 )
 lt( um , Fim1_GFP_um , -15 , 2 , dt = 1.19 , shift = shift_um , col = color_Fim1 , is_t0 = False )
 lt( um , Rvs_um , -18 , 2 , dt = 1.19 , shift = shift_um , col = color_Rvs )
-layout( um , 'U. maydis' )
-um.set_yticklabels( [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Fim1' , 'Rvs167' , '' ] )
 
-plt.xlabel( 'Time (s)' , fontsize = 18 )
+labels = [ 'Ede1' , 'Pan1' , 'Sla1' , 'Wasp' , 'Myo1' , 'Fim1' , 'Rvs167' , '' ]
+colors = [ color_Pan1 ,  color_Pan1 , color_Sla1 , color_Wasp , color_Myo1 , color_Fim1 , color_Rvs ] 
+layout( um , 'U. maydis' , labels , colors )
+
+plt.xlabel( 'Time (s)' , fontsize = 21 )
 plt.tight_layout()
 plt.savefig( "Protein_lifetimes.pdf" )
 
