@@ -6,7 +6,7 @@ from data import *
 from funs import *
 
 matplotlib.rcParams['pgf.texsystem'] = "pdflatex" 
-matplotlib.rcParams['pgf.preamble'] = [ r'\usepackage{color}' ]
+matplotlib.rcParams['pgf.preamble'] = r'\usepackage{color}'
 
 def layout_swap( ax , title , is_sc = True , ft = 18 ) :
 
