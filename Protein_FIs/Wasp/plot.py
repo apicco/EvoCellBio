@@ -29,5 +29,8 @@ ax[0,1].set_xlim( xlim )
 ax[1,0].set_xlim( xlim )
 ax[1,1].set_xlim( xlim )
 
+ax[0,0].set_title( '$sla1\Delta$' )
+ax[0,1].set_title( '$sla1\Delta$' )
+
 plt.tight_layout()
 plt.savefig( 'plot.pdf' )
