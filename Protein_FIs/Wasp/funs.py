@@ -60,9 +60,7 @@ def cc_2colors( g , r ) :
 
     return g , r
 
-def plot_all( g , r ) :
-
-    f , ax = plt.subplots( 2 , 1 , sharex = True ) 
+def plot_all( ax_g , ax_r , g , r , g_label , r_label ) :
 
     if len( g ) != len( r ) :
         raise AttributeError( 'len of inputs differs!' )
@@ -70,28 +68,21 @@ def plot_all( g , r ) :
     for i in range( len( r ) ) :
 
         if i ==0 :
-	        ax[0].plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = 0.2 , label = '$Sc_{Wasp}$')
-	        ax[1].plot( r[ i ].t() , r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = 0.2 , label = 'Fim1')
+	        ax_g.plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = 0.2 , label = g_label )
+	        ax_r.plot( r[ i ].t() , r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = 0.2 , label = r_label )
 
-        ax[0].plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = 0.2 )
-        ax[1].plot( r[ i ].t() , r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = 0.2 )
+        ax_g.plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = 0.2 )
+        ax_r.plot( r[ i ].t() , r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = 0.2 )
 
-    ax[0].grid()
-    ax[1].grid()
+    ax_g.grid()
+    ax_r.grid()
     
-    #ax[0].set_xlim( 50 , 325 )
-    #ax[1].set_xlim( 50 , 325 )
-   
-    ax[0].set_ylabel( 'Fluor. int. (a.u.)' )
-    ax[1].set_ylabel( 'Fluor. int. (a.u.)' )
+    ax_g.set_ylabel( 'Fluor. int. (a.u.)' )
+    ax_r.set_ylabel( 'Fluor. int. (a.u.)' )
 
-    ax[0].legend()
-    ax[1].legend()
+    ax_g.legend()
+    ax_r.legend()
     
-    ax[0].set_title( '$sla1\Delta$' )
-    ax[1].set_xlabel( 'Time (s)' )
-    
-
-    plt.savefig( 'plot.pdf' )
+    ax_r.set_xlabel( 'Time (s)' )
 
 
