@@ -1,2 +1,7 @@
 # Tilde files
 *~
+.DS_Store
+tmp*
+pwd
+__pycache__
+

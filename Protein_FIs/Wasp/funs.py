@@ -68,11 +68,11 @@ def plot_all( ax_g , ax_r , g , r , g_label , r_label ) :
     for i in range( len( r ) ) :
 
         if i ==0 :
-	        ax_g.plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = 0.2 , label = g_label )
-	        ax_r.plot( r[ i ].t() , r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = 0.2 , label = r_label )
+	        ax_g.plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = 0.05 , label = g_label )
+	        ax_r.plot( r[ i ].t() , r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = 0.05 , label = r_label )
 
-        ax_g.plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = 0.2 )
-        ax_r.plot( r[ i ].t() , r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = 0.2 )
+        ax_g.plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = 0.05 )
+        ax_r.plot( r[ i ].t() , r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = 0.05 )
 
     ax_g.grid()
     ax_r.grid()
