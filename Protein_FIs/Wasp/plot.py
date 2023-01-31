@@ -47,8 +47,8 @@ g_4794 , r_4794 = cc_2colors( gfp_4794 , rfp_4794 )
 
 f , ax = plt.subplots( 2 , 2 , figsize = ( 8 , 4 ) , sharex = True )
 
-plot_all( ax[0,0] , ax[1,0] , g_4390 , r_4390 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' )
-plot_all( ax[0,1] , ax[1,1] , g_4021 , r_4021 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' )
+plot_all( ax[0,0] , ax[1,0] , g_4390 , r_4390 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
+plot_all( ax[0,1] , ax[1,1] , g_4021 , r_4021 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
 
 # set common xlim
 xlim = ( -50 , 30 )
@@ -57,8 +57,8 @@ ax[0,1].set_xlim( xlim )
 ax[1,0].set_xlim( xlim )
 ax[1,1].set_xlim( xlim )
 
-ax[0,0].set_title( '$WT$' )
-ax[0,1].set_title( '$WT$' )
+ax[0,0].set_title( '$Sc, WT$' )
+ax[0,1].set_title( '$Sc, WT$' )
 
 plt.tight_layout()
 plt.savefig( 'plot.pdf' )
@@ -67,8 +67,8 @@ plt.savefig( 'plot.pdf' )
 
 f , ax = plt.subplots( 2 , 2 , figsize = ( 8 , 4 ) , sharex = True )
 
-plot_all( ax[0,0] , ax[1,0] , g_4801 , r_4801 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' )
-plot_all( ax[0,1] , ax[1,1] , g_4794 , r_4794 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' )
+plot_all( ax[0,0] , ax[1,0] , g_4801 , r_4801 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 )
+plot_all( ax[0,1] , ax[1,1] , g_4794 , r_4794 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 )
 
 # set common xlim
 xlim = ( -230 , 80 )
@@ -77,8 +77,8 @@ ax[0,1].set_xlim( xlim )
 ax[1,0].set_xlim( xlim )
 ax[1,1].set_xlim( xlim )
 
-ax[0,0].set_title( '$sla1\Delta$' )
-ax[0,1].set_title( '$sla1\Delta$' )
+ax[0,0].set_title( '$Sc, sla1\Delta$' )
+ax[0,1].set_title( '$Sc, sla1\Delta$' )
 
 plt.tight_layout()
 plt.savefig( 'plot_sla1delta.pdf' )
