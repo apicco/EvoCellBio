@@ -1,5 +1,6 @@
 from trajalign.traj import Traj
 import copy as cp
+import numpy as np
 from matplotlib import pyplot as plt 
 
  
@@ -65,7 +66,20 @@ def plot_all( ax_g , ax_r , g , r , g_label , r_label , alpha ) :
     if len( g ) != len( r ) :
         raise AttributeError( 'len of inputs differs!' )
 
+    # define initial t values to search for max trajectory length for merge
+    # for average
+    g_s = [] # collect start values
+    r_s = [] # collect start values
+    g_e = [] # collect end values
+    r_e = [] # collect end values
+
     for i in range( len( r ) ) :
+       
+        # iteratively search the time lowest starting point and the highest end pooint 
+        g_s.append( g[ i ].start() ) 
+        g_e.append( g[ i ].end() )
+        r_s.append( r[ i ].start() ) 
+        r_e.append( r[ i ].end() )
 
         if i ==0 :
 	        ax_g.plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha , label = g_label )
@@ -73,6 +87,46 @@ def plot_all( ax_g , ax_r , g , r , g_label , r_label , alpha ) :
 
         ax_g.plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha )
         ax_r.plot( r[ i ].t() , r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+
+    # compute the average
+    g_avrg = Traj()
+    r_avrg = Traj()
+    g_a = [] # container for the trajectories to be averaged
+    r_a = [] # container for the trajectories to be averaged
+    g_s_min = min( g_s )
+    g_e_max = max( g_e )
+    r_s_min = min( r_s )
+    r_e_max = max( r_e )
+    
+    for i in range( len( r ) ) :
+
+        # extend the start and en to match the max start and end time 
+        # point in the dataset
+        g[ i ].start( g_s_min )
+        g[ i ].end( g_e_max )
+        r[ i ].start( r_s_min )
+        r[ i ].end( r_e_max )
+
+        # set the time span of the average trajectory
+        if i == 0 : 
+            g_avrg.input_values( 't' , g[ i ].t() )
+            r_avrg.input_values( 't' , r[ i ].t() )
+        # collect the f values 
+        g_a.append( g[ i ].f() )
+        r_a.append( r[ i ].f() )
+    
+    # compute the average
+    g_avrg.input_values( 'f' , np.nanmedian( g_a , axis = 0 ) )
+    r_avrg.input_values( 'f' , np.nanmedian( r_a , axis = 0 ) )
+
+    # start and end the average trajectory at the average start and end points
+    g_avrg.start( np.mean( g_s ) - 1.96 * np.std( g_s ) / np.sqrt( len( g_s ) ) )
+    g_avrg.end( np.median( g_e ) + 1.96 * np.std( g_e ) / np.sqrt( len( g_e ) ) )
+    r_avrg.start( np.mean( r_s ) - 1.96 * np.std( r_s ) / np.sqrt( len( r_s ) ) )
+    r_avrg.end( np.median( r_e ) + 1.96 * np.std( r_e ) / np.sqrt( len( r_e ) ) )
+    # plot the average
+    ax_g.plot( g_avrg.t() , g_avrg.f() , color = '#74c2bb' )
+    ax_r.plot( r_avrg.t() , r_avrg.f() , color = '#ee8262' )
 
     ax_g.grid()
     ax_r.grid()

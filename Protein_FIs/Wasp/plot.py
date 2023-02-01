@@ -23,6 +23,16 @@ rfp_0026 = load_directory( 'Data/220506_MKUM24_MKYP26_MKY4021/Pombe/' , pattern 
 
 g_0026 , r_0026 = cc_2colors( gfp_0026 , rfp_0026 )
 
+#--- Um_Wasp and Fim1 in Um (WT)
+
+# load GFP trajectories and time them
+gfp_0024 = load_directory( 'Data/220506_MKUM24_MKYP26_MKY4021/Ustilago/' , pattern = 'GFP.txt' , dt = 1.2 , t_unit = 's' , comment_char = '%' , frames = 0 , f = 3 , intensity_normalisation = 'Absolute' )
+
+# load RFP trajectories and time them
+rfp_0024 = load_directory( 'Data/220506_MKUM24_MKYP26_MKY4021/Ustilago/' , pattern = 'RFP.txt' , dt = 1.2 , t_unit = 's' , comment_char = '%' , frames = 0 , f = 3 , intensity_normalisation = 'Integral' )
+
+g_0024 , r_0024 = cc_2colors( gfp_0024 , rfp_0024 )
+
 #--- Sp_Wasp and Fim1 in Sc
 
 # load GFP trajectories and time them
@@ -78,7 +88,7 @@ plt.savefig( 'plot_Sc.pdf' )
 f , ax = plt.subplots( 2 , 2 , figsize = ( 8 , 4 ) , sharex = True )
 
 plot_all( ax[0,0] , ax[1,0] , g_0026 , r_0026 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
-#plot_all( ax[0,1] , ax[1,1] , g_4021 , r_4021 , g_label = '$Um_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
+plot_all( ax[0,1] , ax[1,1] , g_0024 , r_0024 , g_label = '$Um_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
 
 # set common xlim
 xlim = ( -50 , 30 )
@@ -87,8 +97,8 @@ ax[0,1].set_xlim( xlim )
 ax[1,0].set_xlim( xlim )
 ax[1,1].set_xlim( xlim )
 
-ax[0,0].set_title( '$Sc, WT$' )
-ax[0,1].set_title( '$Sc, WT$' )
+ax[0,0].set_title( '$Sp, WT$' )
+ax[0,1].set_title( '$Um, WT$' )
 
 plt.tight_layout()
 plt.savefig( 'plot.pdf' )
