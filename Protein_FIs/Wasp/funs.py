@@ -125,8 +125,8 @@ def plot_all( ax_g , ax_r , g , r , g_label , r_label , alpha ) :
     r_avrg.start( np.mean( r_s ) - 1.96 * np.std( r_s ) / np.sqrt( len( r_s ) ) )
     r_avrg.end( np.median( r_e ) + 1.96 * np.std( r_e ) / np.sqrt( len( r_e ) ) )
     # plot the average
-    ax_g.plot( g_avrg.t() , g_avrg.f() , color = '#74c2bb' )
-    ax_r.plot( r_avrg.t() , r_avrg.f() , color = '#ee8262' )
+    ax_g.plot( g_avrg.t() , g_avrg.f() , color = '#4C5B61' )
+    ax_r.plot( r_avrg.t() , r_avrg.f() , color = '#2C423F' )
 
     ax_g.grid()
     ax_r.grid()

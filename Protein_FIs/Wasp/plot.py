@@ -81,7 +81,7 @@ ax[0,0].set_title( '$Sp, WT$' )
 ax[0,1].set_title( '$Sc, WT$' )
 
 plt.tight_layout()
-plt.savefig( 'plot_Sc.pdf' )
+plt.savefig( 'plot_Sc_WT.pdf' )
 
 #--- PLOT THE WT in Sp and Um
 
@@ -101,7 +101,7 @@ ax[0,0].set_title( '$Sp, WT$' )
 ax[0,1].set_title( '$Um, WT$' )
 
 plt.tight_layout()
-plt.savefig( 'plot.pdf' )
+plt.savefig( 'plot_Sc_Um.pdf' )
 
 
 #--- PLOT sla1delta
@@ -122,5 +122,5 @@ ax[0,0].set_title( '$Sc, sla1\Delta$' )
 ax[0,1].set_title( '$Sc, sla1\Delta$' )
 
 plt.tight_layout()
-plt.savefig( 'plot_sla1delta.pdf' )
+plt.savefig( 'plot_Sc_sla1delta.pdf' )
 
