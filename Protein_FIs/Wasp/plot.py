@@ -63,57 +63,46 @@ rfp_4794 = load_directory( 'Data/221111_MKY4794_TIRF/' , pattern = 'RFP.txt' , d
 
 g_4794 , r_4794 = cc_2colors( gfp_4794 , rfp_4794 )
 
-#--- PLOT THE WT in Sc
+#--- PLOT THE WT
 
-f , ax = plt.subplots( 1 , 2 , figsize = ( 8 , 4 ) , sharex = True )
+f , ax = plt.subplots( 1 , 3 , figsize = ( 12 , 4 ) , sharex = True )
 
-plot_all( ax[0] , g_4390 , r_4390 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
-plot_all( ax[1] , g_4021 , r_4021 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
+plot_all( ax[0] , g_4021 , r_4021 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
+plot_all( ax[1] , g_0026 , r_0026 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
+plot_all( ax[2] , g_0024 , r_0024 , g_label = '$Um_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
 
 # set common xlim
 xlim = ( -50 , 30 )
 ax[0].set_xlim( xlim )
 ax[1].set_xlim( xlim )
+ax[2].set_xlim( xlim )
 
 ax[0].set_title( '$Sc, WT$' )
-ax[1].set_title( '$Sc, WT$' )
+ax[1].set_title( '$Sp, WT$' )
+ax[2].set_title( '$Um, WT$' )
 
 plt.tight_layout()
-plt.savefig( 'plot_Sc_WT.pdf' )
+plt.savefig( 'plot_WT.pdf' )
 
-#--- PLOT THE WT in Sp and Um
 
-f , ax = plt.subplots( 1 , 2 , figsize = ( 8 , 4 ) , sharex = True )
+#--- PLOT mutations in Sc
 
-plot_all( ax[0] , g_0026 , r_0026 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
-plot_all( ax[1] , g_0024 , r_0024 , g_label = '$Um_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
+f , ax = plt.subplots( 1 , 3 , figsize = ( 12 , 4 ) , sharex = True )
+
+plot_all( ax[0] , g_4390 , r_4390 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
+plot_all( ax[1] , g_4801 , r_4801 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 )
+plot_all( ax[2] , g_4794 , r_4794 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 )
 
 # set common xlim
 xlim = ( -50 , 30 )
 ax[0].set_xlim( xlim )
 ax[1].set_xlim( xlim )
+ax[2].set_xlim( xlim )
 
-ax[0].set_title( '$Sp, WT$' )
-ax[1].set_title( '$Um, WT$' )
-
-plt.tight_layout()
-plt.savefig( 'plot_Sc_Um.pdf' )
-
-#--- PLOT sla1delta
-
-f , ax = plt.subplots( 1 , 2 , figsize = ( 8 , 4 ) , sharex = True )
-
-plot_all( ax[0] , g_4801 , r_4801 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 )
-plot_all( ax[1] , g_4794 , r_4794 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 )
-
-# set common xlim
-xlim = ( -230 , 80 )
-ax[0].set_xlim( xlim )
-ax[1].set_xlim( xlim )
-
-ax[0].set_title( '$Sc, sla1\Delta$' )
+ax[0].set_title( '$Sc$' )
 ax[1].set_title( '$Sc, sla1\Delta$' )
+ax[2].set_title( '$Sc, sla1\Delta$' )
 
 plt.tight_layout()
-plt.savefig( 'plot_Sc_sla1delta.pdf' )
+plt.savefig( 'plot_mutations.pdf' )
 
