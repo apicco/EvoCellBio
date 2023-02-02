@@ -119,7 +119,8 @@ def plot_all( ax , g , r , g_label , r_label , alpha , xlim = None ) :
     # Compute a scaling factor to level the two average
     # peaks to the same hight.
 
-    scl = np.nanmax( g_avrg.f() ) / np.nanmax( r_avrg.f() )
+    r_scl = 1 / np.nanmax( r_avrg.f() )
+    g_scl = 1 / np.nanmax( g_avrg.f() )
 
     shift = r_avrg.start()
 
@@ -128,15 +129,15 @@ def plot_all( ax , g , r , g_label , r_label , alpha , xlim = None ) :
         # set the time span of the average trajectory
         if i == 0 : 
 
-	        ax.plot( g[ i ].t() - shift , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha )
-	        ax.plot( r[ i ].t() - shift , scl * r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+	        ax.plot( g[ i ].t() - shift , g_scl * g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+	        ax.plot( r[ i ].t() - shift , r_scl * r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
 
-        ax.plot( g[ i ].t() - shift , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha )
-        ax.plot( r[ i ].t() - shift , scl * r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+        ax.plot( g[ i ].t() - shift , g_scl * g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+        ax.plot( r[ i ].t() - shift , r_scl * r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
 
     # plot the average
-    ax.plot( g_avrg.t() - shift , g_avrg.f() , color = '#74c2bF' , label = g_label , lw = 2 )
-    ax.plot( r_avrg.t() - shift , scl * r_avrg.f() , color = '#ee826F' , label = r_label , lw = 2 )
+    ax.plot( g_avrg.t() - shift , g_scl * g_avrg.f() , color = '#74c2bF' , label = g_label , lw = 2 )
+    ax.plot( r_avrg.t() - shift , r_scl * r_avrg.f() , color = '#ee826F' , label = r_label , lw = 2 )
 
     xl = [ i for i in range(  0 , xlim[ 0 ] , -25 ) ]
     xr = [ i for i in range(  0 , xlim[ 1 ] , 25 ) ]
