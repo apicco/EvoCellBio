@@ -61,7 +61,7 @@ def cc_2colors( g , r ) :
 
     return g , r
 
-def plot_all( ax , g , r , g_label , r_label , alpha ) :
+def plot_all( ax , g , r , g_label , r_label , alpha , xlim = None ) :
 
     if len( g ) != len( r ) :
         raise AttributeError( 'len of inputs differs!' )
@@ -138,10 +138,14 @@ def plot_all( ax , g , r , g_label , r_label , alpha ) :
     ax.plot( g_avrg.t() - shift , g_avrg.f() , color = '#74c2bF' , label = g_label , lw = 2 )
     ax.plot( r_avrg.t() - shift , scl * r_avrg.f() , color = '#ee826F' , label = r_label , lw = 2 )
 
+    xl = [ i for i in range(  0 , xlim[ 0 ] , -25 ) ]
+    xr = [ i for i in range(  0 , xlim[ 1 ] , 25 ) ]
+    ax.set_xticks( xl[::-1] + xr[1:] )
     ax.grid()
     
     ax.set_ylabel( 'Fluor. int. (a.u.)' )
     ax.set_xlabel( 'Time (s)' )
+    ax.set_xlim( xlim )
     ax.legend()
 
 

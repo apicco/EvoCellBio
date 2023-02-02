@@ -65,29 +65,33 @@ g_4794 , r_4794 = cc_2colors( gfp_4794 , rfp_4794 )
 
 #--- DEFINE THE XLIM
 
-xlim_sc = [ -50 , 30 ]
-xlim_sp = [ -50 , 30 ]
-xlim_um = [ -50 , 30 ]
-
-xlim_sc = [ -50 , 30 ]
-xlim_sp = [ -50 , 30 ]
-xlim_um = [ -50 , 30 ]
+xlim_sc = [ -45 , 40 ]
+xlim_sp = [ -45 , 40 ]
+xlim_um = [ -45 , 40 ]
 
 d_xlim_sc = xlim_sc[ 1 ] - xlim_sc[ 0 ]
 d_xlim_sp = xlim_sp[ 1 ] - xlim_sp[ 0 ]
+d_xlim_um = xlim_um[ 1 ] - xlim_um[ 0 ]
+d_wt = d_xlim_sc + d_xlim_sp + d_xlim_um 
+wt_figsize_x = 8
+
+xlim_sc_spwasp = [ -40 , 35 ]
+xlim_sc_sla1del= [ -225 , 50 ]
+xlim_sc_sla1del_spwasp= [ -30 , 65 ]
+
+d_spwasp = xlim_sc_spwasp[ 1 ] - xlim_sc_spwasp[ 0 ]
+d_sla1del = xlim_sc_sla1del[ 1 ] - xlim_sc_sla1del[ 0 ]
+d_sla1del_spwasp = xlim_sc_sla1del_spwasp[ 1 ] - xlim_sc_sla1del_spwasp[ 0 ]
+d_mut = d_spwasp + d_sla1del + d_sla1del_spwasp
+mut_figsize_x = wt_figsize_x * ( d_mut ) / ( d_wt )
+
 #--- PLOT THE WT
 
-f , ax = plt.subplots( 1 , 3 , figsize = ( 12 , 4 ) , gridspec_kw=dict( width_ratios = [1,1, 1] ) )
+f , ax = plt.subplots( 1 , 3 , figsize = ( wt_figsize_x , 4 ) , gridspec_kw=dict( width_ratios = [1 , 1 , 1] ) )
 
-plot_all( ax[0] , g_4021 , r_4021 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
-plot_all( ax[1] , g_0026 , r_0026 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
-plot_all( ax[2] , g_0024 , r_0024 , g_label = '$Um_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
-
-# set common xlim
-xlim = ( -50 , 30 )
-ax[0].set_xlim( xlim_sc )
-ax[1].set_xlim( xlim_sp )
-ax[2].set_xlim( xlim_um )
+plot_all( ax[0] , g_4021 , r_4021 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc )
+plot_all( ax[1] , g_0026 , r_0026 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sp )
+plot_all( ax[2] , g_0024 , r_0024 , g_label = '$Um_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_um )
 
 ax[0].set_title( '$Sc$' )
 ax[1].set_title( '$Sp$' )
@@ -96,24 +100,20 @@ ax[2].set_title( '$Um$' )
 plt.tight_layout()
 plt.savefig( 'plot_WT.pdf' )
 
-
 #--- PLOT mutations in Sc
 
-f , ax = plt.subplots( 1 , 3 , figsize = ( 12 , 4 ) , sharex = True )
+f , bx = plt.subplots( 1 , 3 , figsize = ( mut_figsize_x , 4 ) , gridspec_kw=dict( width_ratios = [ d_spwasp / d_mut , d_sla1del / d_mut , d_sla1del_spwasp / d_mut ] ) )
 
-plot_all( ax[0] , g_4390 , r_4390 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 )
-plot_all( ax[1] , g_4801 , r_4801 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 )
-plot_all( ax[2] , g_4794 , r_4794 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 )
+plot_all( bx[0] , g_4390 , r_4390 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc_spwasp )
+plot_all( bx[1] , g_4801 , r_4801 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 , xlim = xlim_sc_sla1del )
+plot_all( bx[2] , g_4794 , r_4794 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 , xlim = xlim_sc_sla1del_spwasp )
 
 # set common xlim
-xlim = ( -200 , 40 )
-ax[0].set_xlim( xlim )
-ax[1].set_xlim( xlim )
-ax[2].set_xlim( xlim )
+#bx[1].set_xlim( [ -2 , 200 ]  )
 
-ax[0].set_title( '$Sc$' )
-ax[1].set_title( '$Sc, sla1\Delta$' )
-ax[2].set_title( '$Sc, sla1\Delta$' )
+bx[0].set_title( '$Sc$' )
+bx[1].set_title( '$Sc, sla1\Delta$' )
+bx[2].set_title( '$Sc, sla1\Delta$' )
 
 plt.tight_layout()
 plt.savefig( 'plot_mutations.pdf' )
