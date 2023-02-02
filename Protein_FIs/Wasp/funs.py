@@ -136,8 +136,10 @@ def plot_all( ax , g , r , g_label , r_label , alpha , xlim = None ) :
         ax.plot( r[ i ].t() - shift , r_scl * r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
 
     # plot the average
-    ax.plot( g_avrg.t() - shift , g_scl * g_avrg.f() , color = '#74c2bF' , label = g_label , lw = 2 )
-    ax.plot( r_avrg.t() - shift , r_scl * r_avrg.f() , color = '#ee826F' , label = r_label , lw = 2 )
+    # darker shades of #74c2bb : #68aea8 , #5c9b95
+    # darker shades of #ee8262 : #d67558 , #be684e
+    ax.plot( g_avrg.t() - shift , g_scl * g_avrg.f() , color = '#68aea8' , label = g_label , lw = 2 )
+    ax.plot( r_avrg.t() - shift , r_scl * r_avrg.f() , color = '#d67558' , label = r_label , lw = 2 )
 
     xl = [ i for i in range(  0 , xlim[ 0 ] , -25 ) ]
     xr = [ i for i in range(  0 , xlim[ 1 ] , 25 ) ]

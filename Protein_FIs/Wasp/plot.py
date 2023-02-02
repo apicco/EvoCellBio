@@ -105,8 +105,8 @@ plt.savefig( 'plot_WT.pdf' )
 f , bx = plt.subplots( 1 , 3 , figsize = ( mut_figsize_x , 4 ) , gridspec_kw=dict( width_ratios = [ d_spwasp / d_mut , d_sla1del / d_mut , d_sla1del_spwasp / d_mut ] ) )
 
 plot_all( bx[0] , g_4390 , r_4390 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc_spwasp )
-plot_all( bx[1] , g_4801 , r_4801 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 , xlim = xlim_sc_sla1del )
-plot_all( bx[2] , g_4794 , r_4794 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.05 , xlim = xlim_sc_sla1del_spwasp )
+plot_all( bx[1] , g_4801 , r_4801 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc_sla1del )
+plot_all( bx[2] , g_4794 , r_4794 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc_sla1del_spwasp )
 
 # set common xlim
 #bx[1].set_xlim( [ -2 , 200 ]  )
