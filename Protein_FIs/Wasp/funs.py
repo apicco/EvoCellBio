@@ -121,20 +121,22 @@ def plot_all( ax , g , r , g_label , r_label , alpha ) :
 
     scl = np.nanmax( g_avrg.f() ) / np.nanmax( r_avrg.f() )
 
+    shift = r_avrg.start()
+
     for i in range( len( r ) ) :
 
         # set the time span of the average trajectory
         if i == 0 : 
 
-	        ax.plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha )
-	        ax.plot( r[ i ].t() , scl * r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+	        ax.plot( g[ i ].t() - shift , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+	        ax.plot( r[ i ].t() - shift , scl * r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
 
-        ax.plot( g[ i ].t() , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha )
-        ax.plot( r[ i ].t() , scl * r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+        ax.plot( g[ i ].t() - shift , g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+        ax.plot( r[ i ].t() - shift , scl * r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
 
     # plot the average
-    ax.plot( g_avrg.t() , g_avrg.f() , color = '#74c2bF' , label = g_label , lw = 2 )
-    ax.plot( r_avrg.t() , scl * r_avrg.f() , color = '#ee826F' , label = r_label , lw = 2 )
+    ax.plot( g_avrg.t() - shift , g_avrg.f() , color = '#74c2bF' , label = g_label , lw = 2 )
+    ax.plot( r_avrg.t() - shift , scl * r_avrg.f() , color = '#ee826F' , label = r_label , lw = 2 )
 
     ax.grid()
     
