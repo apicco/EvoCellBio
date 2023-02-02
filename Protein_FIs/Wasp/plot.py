@@ -87,22 +87,25 @@ mut_figsize_x = wt_figsize_x * ( d_mut ) / ( d_wt )
 
 #--- PLOT THE WT
 
-f , ax = plt.subplots( 1 , 3 , figsize = ( wt_figsize_x , 4 ) , gridspec_kw=dict( width_ratios = [1 , 1 , 1] ) )
+f , ax = plt.subplots( 1 , 3 , figsize = ( wt_figsize_x , 4 ) , gridspec_kw=dict( width_ratios = [1 , 1 , 1] ) , sharey = True )
+plt.subplots_adjust( wspace = 0.1 )
 
 plot_all( ax[0] , g_4021 , r_4021 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc )
 plot_all( ax[1] , g_0026 , r_0026 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sp )
 plot_all( ax[2] , g_0024 , r_0024 , g_label = '$Um_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_um )
 
+ax[0].set_ylabel( 'Fluor. int. (a.u.)' )
 ax[0].set_title( '$Sc$' )
 ax[1].set_title( '$Sp$' )
 ax[2].set_title( '$Um$' )
 
-plt.tight_layout()
 plt.savefig( 'plot_WT.pdf' )
+plt.close()
 
 #--- PLOT mutations in Sc
 
-f , bx = plt.subplots( 1 , 3 , figsize = ( mut_figsize_x , 4 ) , gridspec_kw=dict( width_ratios = [ d_spwasp / d_mut , d_sla1del / d_mut , d_sla1del_spwasp / d_mut ] ) )
+f , bx = plt.subplots( 1 , 3 , figsize = ( mut_figsize_x , 4 ) , gridspec_kw=dict( width_ratios = [ d_spwasp / d_mut , d_sla1del / d_mut , d_sla1del_spwasp / d_mut ] ) , sharey = True )
+plt.subplots_adjust( wspace = 0.1 * d_wt / d_mut )
 
 plot_all( bx[0] , g_4390 , r_4390 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc_spwasp )
 plot_all( bx[1] , g_4801 , r_4801 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc_sla1del )
@@ -111,10 +114,10 @@ plot_all( bx[2] , g_4794 , r_4794 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' ,
 # set common xlim
 #bx[1].set_xlim( [ -2 , 200 ]  )
 
+bx[0].set_ylabel( 'Fluor. int. (a.u.)' )
 bx[0].set_title( '$Sc$' )
 bx[1].set_title( '$Sc, sla1\Delta$' )
 bx[2].set_title( '$Sc, sla1\Delta$' )
 
-plt.tight_layout()
 plt.savefig( 'plot_mutations.pdf' )
 

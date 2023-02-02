@@ -144,9 +144,9 @@ def plot_all( ax , g , r , g_label , r_label , alpha , xlim = None ) :
     xl = [ i for i in range(  0 , xlim[ 0 ] , -25 ) ]
     xr = [ i for i in range(  0 , xlim[ 1 ] , 25 ) ]
     ax.set_xticks( xl[::-1] + xr[1:] )
+    ax.set_yticks( [ i / 10 for i in range( 0 , 25 , 5 ) ] )
     ax.grid()
     
-    ax.set_ylabel( 'Fluor. int. (a.u.)' )
     ax.set_xlabel( 'Time (s)' )
     ax.set_xlim( xlim )
     ax.legend()
