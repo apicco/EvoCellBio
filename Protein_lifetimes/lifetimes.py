@@ -33,7 +33,7 @@ is_sc = Is( sc , I_sc , dt = 0.7 , do_plot = True )
 shift_sc = - is_sc[ 0 ]
 # lifetimes
 lt( sc , Ede1_sc , -0 , 2 , dt = 1.2 , shift = shift_sc , col = color_Ede1 )
-lt( sc , Apl1_sc , -3 , 2 , dt = 1.2 , shift = shift_sc , col = color_Ede1 )
+lt( sc , Apl1_sc , -3 , 2 , dt = 1.2428 , shift = shift_sc , col = color_Ede1 )
 lt( sc , Pan1_sc , -6 , 2 , dt = 1.2 , shift = shift_sc , col = color_Pan1 )
 lt( sc , Sla1_sc , -9 , 2 , dt = 1.2 , shift = shift_sc , col = color_Sla1 )
 lt( sc , Wasp_sc , -12 , 2 , dt = 1.2 , shift = shift_sc , col = color_Wasp )
@@ -52,7 +52,7 @@ shift_sp = - is_sp[ 0 ]
 # lifetimes
 lt( sp , Ede1_sp_Ucp8 , -0 , 2 , dt = 1.2 , shift = shift_sp , col = color_Ede1_Ucp8 )
 lt( sp , Ede1_sp , -3 , 2 , dt = 1.2 , shift = shift_sp , col = color_Ede1 )
-lt( sp , Apl1_sp , -6 , 2 , dt = 1.2 , shift = shift_sp , col = color_Ede1 )
+lt( sp , Apl1_sp , -6 , 2 , dt = 1.2428 , shift = shift_sp , col = color_Ede1 )
 lt( sp , Pan1_sp , -9 , 2 , dt = 1.2 , shift = shift_sp , col = color_Pan1 )
 lt( sp , Sla1_sp , -12 , 2 , dt = 1.2 , shift = shift_sp , col = color_Sla1 )
 lt( sp , Wasp_sp , -15 , 2 , dt = 1.2 , shift = shift_sp , col = color_Wasp )
@@ -69,7 +69,7 @@ is_um = Is( um , I_um , dt = 0.71 , do_plot = True )
 shift_um = - is_um[ 0 ]
 # lifetimes
 lt( um , Ede1_um , -0 , 2 , dt = 1.2 , shift = shift_um , col = color_Ede1 )
-lt( um , Apl1_um , -3 , 2 , dt = 1.2 , shift = shift_um , col = color_Ede1 )
+lt( um , Apl1_um , -3 , 2 , dt = 1.2428 , shift = shift_um , col = color_Ede1 )
 lt( um , Pan1_um , -6 , 2 , dt = 1.2 , shift = shift_um , col = color_Pan1 )
 lt( um , Sla1_um , -9 , 2 , dt = 1.2 , shift = shift_um , col = color_Sla1 )
 lt( um , Wasp_um , -12 , 2 , dt = 1.2 , shift = shift_um , col = color_Wasp )
