@@ -14,6 +14,12 @@ Ede1_sc = pd.read_csv( path + "Ede1_lifetimes_Sc.csv" )
 Ede1_sp = pd.read_csv( path + "Ede1_lifetimes_Sp-Ede1.csv" )
 Ede1_sp_Ucp8 = pd.read_csv( path + "Ede1_lifetimes_Sp-Ucp8.csv" )
 
+#Apl1
+
+Apl1_um = pd.read_csv( path + "Apl1_lifetimes_Um.csv" )
+Apl1_sc = pd.read_csv( path + "Apl1_lifetimes_Sc.csv" )
+Apl1_sp = pd.read_csv( path + "Apl1_lifetimes_Sp.csv" )
+
 #Sla1
 
 Sla1_um = pd.read_csv( path + "Sla1_lifetimes_Um.csv" )
