@@ -1,7 +1,6 @@
 from trajalign.average import load_directory
 from funs import *
-
-#------ LOAD DATA 
+import matplotlib
 
 #--- Sc_Wasp and Fim1 in Sc (WT)
 
@@ -85,10 +84,14 @@ d_sla1del_spwasp = xlim_sc_sla1del_spwasp[ 1 ] - xlim_sc_sla1del_spwasp[ 0 ]
 d_mut = d_spwasp + d_sla1del + d_sla1del_spwasp
 mut_figsize_x = wt_figsize_x * ( d_mut ) / ( d_wt )
 
+# figure is
+# l1 + x1 + x2 + x3 + 2*d1 + r1 = f
+# where l1 = 0.125 f, r1 = 0.9f, and d1 = 0.1 * ( x1 + x2 + x3 )
+
 #--- PLOT THE WT
 
 f , ax = plt.subplots( 1 , 3 , figsize = ( wt_figsize_x , 4 ) , gridspec_kw=dict( width_ratios = [1 , 1 , 1] ) , sharey = True )
-plt.subplots_adjust( wspace = 0.1 )
+plt.subplots_adjust( left = 0 , right = 1 , wspace = 0.1 )
 
 plot_all( ax[0] , g_4021 , r_4021 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc )
 plot_all( ax[1] , g_0026 , r_0026 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sp )
@@ -105,7 +108,7 @@ plt.close()
 #--- PLOT mutations in Sc
 
 f , bx = plt.subplots( 1 , 3 , figsize = ( mut_figsize_x , 4 ) , gridspec_kw=dict( width_ratios = [ d_spwasp / d_mut , d_sla1del / d_mut , d_sla1del_spwasp / d_mut ] ) , sharey = True )
-plt.subplots_adjust( wspace = 0.1 * d_wt / d_mut )
+plt.subplots_adjust( left = 0 , right = 1 , wspace = 0.1 * d_wt / d_mut )
 
 plot_all( bx[0] , g_4390 , r_4390 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc_spwasp )
 plot_all( bx[1] , g_4801 , r_4801 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc_sla1del )
