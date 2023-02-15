@@ -85,8 +85,15 @@ d_mut = d_spwasp + d_sla1del + d_sla1del_spwasp
 mut_figsize_x = wt_figsize_x * ( d_mut ) / ( d_wt )
 
 # figure is
-# l1 + x1 + x2 + x3 + 2*d1 + r1 = f
-# where l1 = 0.125 f, r1 = 0.9f, and d1 = 0.1 * ( x1 + x2 + x3 )
+# l1 * f + [ Y + ( x2 / x1 ) * Y  + ( x3 / x1 ) * Y ] * ( 1 + 2 * d1 )  + r1 * f = f
+# thus
+# Y * ( 1 + x2 / x1 + x3 / x1 ) = ( 1 - l1 - r1 ) * f / ( 1 + 2 * d1 ) 
+# thus
+# Y = ( 1 - l1 - r1 ) * f / [ ( 1 + 2 * d1 ) * ( 1 + x2 / x1 + x3 / x1 ) ]
+
+# where l1 = 0.125 ,  r1 = 0.9 , and d1 = 0.1 
+
+
 
 #--- PLOT THE WT
 
