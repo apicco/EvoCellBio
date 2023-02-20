@@ -1,52 +1,31 @@
-#-------------------------
-# Define data
-#-------------------------
-
-# Saccaromyces cerevisiae (Sc)
-sla1_sc_30 = Traj()
-sla1_sc_30.load( 'Data/Sla1/30_degree/Sc/sla1_sc_30deg.txt' )
-sla1_sc_30.norm_f()
-
-# Schizoaccaromyces pombe (Sp)
-sla1_sp_30 = Traj()
-sla1_sp_30.load( 'Data/Sla1/30_degree/Sp/sla1_sp_30deg.txt' )
-sla1_sp_30.norm_f()
-
-
-# Ustilago maydis (Um)
-sla1_um_30 = Traj()
-sla1_um_30.load( 'Data/Sla1/30_degree/Um/sla1_um_30deg.txt' )
-sla1_um_30.norm_f()
+from data import *
+from trajalign.average import unified_start , unified_end
 
 #-------------------------
 # Define plot parameters
 #-------------------------
+
 tlim = ( -34 , 7.5 )
 movlim = ( -25 ,470 )
 
+# Shifts to align the different trajectories
+
+# at 30 degree
+# in space
+x0_sc_30deg = -0.03
+x0_pb_24deg = -0.25
+x0_pb_30deg= -0.55
+x0_um_30deg = -0.01
+# and in time
+t0_sc_30deg = unified_start( sla1_sc_30 ) - 5.3 
+t0_pb_30deg= unified_start( sla1_sp_30 ) - 12.65
+t0_pb_24deg = unified_start( sla1_sp_24 ) - 6.5
+t0_um_30deg = unified_start( sla1_um_30 ) - 5.7 
+
+
 # Colors
-sac6_color = "#CC0A20"
-fim1_color = "#CC0A20"
-fim1_GA_color = "#CC0AFF"
+sla1_sp_color = '#000000'
+sla1_sc_color = "#EC9937"
+sla1_um_color = '#ff0000'
 
-arc3_color = "#005aff"
-
-pan1_sc_color = "#3A230C"
-pan1_sp_color = "#3A230C"
-
-sla1_color = "#EC9937"
-shd1_color = "#EC9937"
-
-rvs167_color = "#147D32"
-hob1_color = "#147D32"
-
-las17_color = "#2791D1"
-wsp1_color = "#2791D1"
-
-gfp_sla2_color = "#000000"
-
-sp_color = "#000000"
-#sp_color = "#888888"
-fim1_ust_color = fim1_color
-
-
+sla1_sp_color_24deg = '#CDCDCD'
