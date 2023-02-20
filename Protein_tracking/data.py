@@ -5,7 +5,16 @@ from trajalign.average import unified_start , unified_end
 #       Load data
 #-------------------------
 
+#--------------------------------
 # Saccaromyces cerevisiae (Sc)
+#--------------------------------
+# at 18 degree
+sla1_sc_18 = Traj()
+sla1_sc_18.load( 'Data/Sla1/18_degree/Sc/sla1_sc_18deg.txt' )
+sla1_sc_18.start( unified_start( sla1_sc_18 ) )
+sla1_sc_18.end( unified_end( sla1_sc_18 ) )
+sla1_sc_18.norm_f()
+
 # at 21 degree
 sla1_sc_21 = Traj()
 sla1_sc_21.load( 'Data/Sla1/21_degree/Sc/sla1_sc_21deg.txt' )
@@ -20,7 +29,16 @@ sla1_sc_30.start( unified_start( sla1_sc_30 ) )
 sla1_sc_30.end( unified_end( sla1_sc_30 ) )
 sla1_sc_30.norm_f()
 
+#--------------------------------
 # Schizoaccaromyces pombe (Sp)
+#--------------------------------
+# at 18 degree
+sla1_sp_18 = Traj()
+sla1_sp_18.load( 'Data/Sla1/18_degree/Sp/sla1_sp_18deg.txt' )
+sla1_sp_18.start( unified_start( sla1_sp_18 ) )
+sla1_sp_18.end( unified_end( sla1_sp_18 ) )
+sla1_sp_18.norm_f()
+
 # at 21 degree
 sla1_sp_21 = Traj()
 sla1_sp_21.load( 'Data/Sla1/21_degree/Sp/sla1_sp_21deg.txt' )
@@ -42,7 +60,16 @@ sla1_sp_30.start( unified_start( sla1_sp_30 ) )
 sla1_sp_30.end( unified_end( sla1_sp_30 ) )
 sla1_sp_30.norm_f()
 
+#--------------------------------
 # Ustilago maydis (Um)
+#--------------------------------
+# at 18 degree
+sla1_um_18 = Traj()
+sla1_um_18.load( 'Data/Sla1/18_degree/Um/sla1_um_18deg.txt' )
+sla1_um_18.start( unified_start( sla1_um_18 ) )
+sla1_um_18.end( unified_end( sla1_um_18 ) )
+sla1_um_18.norm_f()
+
 # at 21 degree
 sla1_um_21 = Traj()
 sla1_um_21.load( 'Data/Sla1/21_degree/Um/sla1_um_21deg.txt' )
