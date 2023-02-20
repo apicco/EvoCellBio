@@ -34,6 +34,7 @@ shd1_color_rt = '#CDCDCD'
 sla1_um_30_color = '#ff0000'
 
 f , ( trj_wt , fi_wt ) = plt.subplots( 2 , 1 , gridspec_kw={'height_ratios': [2, 1]} , figsize = ( 11 , 11 ) , sharex = True )
+
 myplot( trj_wt , sla1_sc_30 , what = 'coord' , label = 'Sla1-GFP in $S. cerevisiae$ at $30\degree$C' , x0 = x0_wt , t0 = t0_wt , col = sla1_color , x_scale = 100 )
 
 myplot( trj_wt , sla1_sp_30 , what = 'coord' , label = 'Sla1-GFP in $S. pombe$ at $30\degree$C' , x0 = x0_pb , t0 = t0_pb , col = shd1_color , x_scale = 100 )
