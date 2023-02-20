@@ -6,10 +6,22 @@ from trajalign.average import unified_start , unified_end
 #-------------------------
 
 tlim = ( -15 , 35 )
-movlim = ( -30 ,550 )
-flim = ( -0.2 , 1.2 )
+movlim = ( -55 ,550 )
+flim = ( -0.5 , 1.5 )
 
 # Shifts to align the different trajectories
+
+# at 21 degree
+# in space
+x0_sc_21deg = -0.1
+x0_pb_21deg= -0.25
+x0_pb_24deg = -0.25
+x0_um_21deg = -0.03
+# and in time
+t0_sc_21deg = unified_start( sla1_sc_21 ) + 5.95
+t0_pb_21deg= unified_start( sla1_sp_21 ) - 7
+t0_pb_24deg = unified_start( sla1_sp_24 ) - 6.5
+t0_um_21deg = unified_start( sla1_um_21 ) - 2.7 
 
 # at 30 degree
 # in space
