@@ -1,23 +1,25 @@
-import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+from matplotlib import pyplot as plt
 
-def unified_start( t ) :
-
-    try :
-
-        return float( t.annotations()[ 'mean_starts' ] ) - 1.96 * float( t.annotations()[ 'std_starts' ] ) / np.sqrt( float( t.annotations()[ 'n_starts' ] ) )
-        
-    except :
-        
-        print( 'Error: one or more of the annotations mean_starts, std_starts, and n_starts is/are missiong' )
-
-def unified_end( t ) :
-
-    try :
-
-        return float( t.annotations()[ 'mean_ends' ] ) + 1.96 * float( t.annotations()[ 'std_ends' ] ) / np.sqrt( float( t.annotations()[ 'n_ends' ] ) )
-        
-    except :
-        
-        print( 'Error: one or more of the annotations mean_ends, std_ends, and n_ends is/are missiong' )
-
+def layout( tlim , movlim , flim ) :
+	
+	plt.subplot( 211 )
+	plt.ylim( movlim )
+	plt.xlim( tlim )
+	plt.xticks( fontsize = 16 )
+	plt.yticks( fontsize = 16 )
+	plt.ylabel( 'Inward movement (nm)' , fontsize = 30 )
+	plt.grid()
+	plt.legend( loc = 'upper left' , fontsize = 20 )
+	
+	plt.subplot( 212 )
+	plt.xlim( tlim )
+	plt.ylim( flim )
+	plt.xticks( fontsize = 16 )
+	plt.yticks( fontsize = 16 )
+	plt.ylabel( 'FI (a.u.)' , fontsize = 30 )
+	plt.xlabel( 'Time (s)' , fontsize = 30 )
+	plt.grid()
+	
 

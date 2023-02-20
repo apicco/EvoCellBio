@@ -5,8 +5,9 @@ from trajalign.average import unified_start , unified_end
 # Define plot parameters
 #-------------------------
 
-tlim = ( -34 , 7.5 )
-movlim = ( -25 ,470 )
+tlim = ( -15 , 35 )
+movlim = ( -30 ,550 )
+flim = ( -0.2 , 1.2 )
 
 # Shifts to align the different trajectories
 
