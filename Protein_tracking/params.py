@@ -45,6 +45,18 @@ t0_sc_24deg = unified_start( sla1_sc_24 ) + 2
 t0_pb_24deg = unified_start( sla1_sp_24 ) - 6.5
 t0_um_24deg = unified_start( sla1_um_24 ) + 3.5 
 
+# at 27 degree
+# in space
+x0_sc_27deg = -0.03
+x0_pb_24deg = -0.26
+x0_pb_27deg = -0.26
+x0_um_27deg = -0.01
+# and in time
+t0_sc_27deg = unified_start( sla1_sc_27 ) - 2.3 
+t0_pb_27deg = unified_start( sla1_sp_27 ) - 9.35
+t0_pb_24deg = unified_start( sla1_sp_24 ) - 6.5
+t0_um_27deg = unified_start( sla1_um_27 ) - 4.7 
+
 # at 30 degree
 # in space
 x0_sc_30deg = -0.03

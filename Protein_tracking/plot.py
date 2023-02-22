@@ -51,6 +51,21 @@ myplot( fi_wt , sla1_um_24 , what = 'f' , t0 = t0_um_24deg , col = sla1_um_color
 layout( tlim , movlim , flim )
 f.savefig( 'plot_24deg.pdf')
 
+# 27 degree
+f , ( trj_wt , fi_wt ) = plt.subplots( 2 , 1 , gridspec_kw={'height_ratios': [2, 1]} , figsize = ( 11 , 11 ) , sharex = True )
+
+myplot( trj_wt , sla1_sc_27 , what = 'coord' , label = 'Sla1-GFP in $S. cerevisiae$ at $27\degree$C' , x0 = x0_sc_27deg , t0 = t0_sc_27deg , col = sla1_sc_color , x_scale = 100 )
+myplot( trj_wt , sla1_sp_27 , what = 'coord' , label = 'Sla1-GFP in $S. pombe$ at $27\degree$C' , x0 = x0_pb_27deg, t0 = t0_pb_27deg, col = sla1_sp_color , x_scale = 100 )
+myplot( trj_wt , sla1_sp_24 , what = 'coord' , label = 'Sla1-GFP in $S. pombe$ at $24\degree$C' , x0 = x0_pb_24deg , t0 = t0_pb_24deg , col = sla1_sp_color_24deg , x_scale = 100 )
+myplot( trj_wt , sla1_um_27 , what = 'coord' , label = 'Sla1-GFP in $U. maydis$ at $27\degree$C' , x0 = x0_um_27deg , t0 = t0_um_27deg , col = sla1_um_color , x_scale = 100 )
+
+myplot( fi_wt , sla1_sc_27 , what = 'f' , t0 = t0_sc_27deg , col = sla1_sc_color , label = 'Sla1-GFP in $S. cerevisiae$ at 24 deg' )
+myplot( fi_wt , sla1_sp_27 , what = 'f' , t0 = t0_pb_27deg, col = sla1_sp_color , label = 'Sla1-GFP in $S. pombe$' )
+myplot( fi_wt , sla1_um_27 , what = 'f' , t0 = t0_um_27deg , col = sla1_um_color , label = 'Sla1-GFP in $U. maydis$' )
+
+layout( tlim , movlim , flim )
+f.savefig( 'plot_27deg.pdf')
+
 # 30 degree
 f , ( trj_wt , fi_wt ) = plt.subplots( 2 , 1 , gridspec_kw={'height_ratios': [2, 1]} , figsize = ( 11 , 11 ) , sharex = True )
 
