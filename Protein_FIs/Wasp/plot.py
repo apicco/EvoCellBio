@@ -35,15 +35,6 @@ mut_figsize_x = wt_figsize_x * ( d_mut ) / ( d_wt )
 
 # where l1 = 0.125 ,  r1 = 0.9 , and d1 = 0.1 
 
-f = plt.figure( figsize = ( mut_figsize_x , 8 ) )
-ax1 = plt.subplot( 2,2,1 )
-ax1.set_xlim = ( 0 , 1 )
-ax2 = plt.subplot( 2,2,2 )
-ax2.set_xlim = ( 0 , 2 )
-ax2.set_title = 'cial' 
-ax3 = plt.subplot( 2,1,2 )
-plt.savefig( 'tmp.pdf' )
-
 #------------------
 # PLOT
 #------------------
