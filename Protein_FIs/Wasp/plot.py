@@ -19,7 +19,6 @@ d_xlim_um = xlim_um[ 1 ] - xlim_um[ 0 ]
 d_wt = d_xlim_sc + d_xlim_sp + d_xlim_um 
 wt_figsize_x = 8
 
-
 d_spwasp = xlim_sc_spwasp[ 1 ] - xlim_sc_spwasp[ 0 ]
 d_sla1del = xlim_sc_sla1del[ 1 ] - xlim_sc_sla1del[ 0 ]
 d_sla1del_spwasp = xlim_sc_sla1del_spwasp[ 1 ] - xlim_sc_sla1del_spwasp[ 0 ]
