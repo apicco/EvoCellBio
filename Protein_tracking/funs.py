@@ -3,7 +3,7 @@ matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
 #def layout( tlim , movlim , flim ) :
-def layout( ax , tlim , movlim , yaxis_label = True ) :
+def layout( ax , tlim , movlim , title , yaxis_label = True , legend = False ) :
     
     xl = [ i for i in range( 0 , tlim[ 0 ] , -5 ) ]
     xr = [ i for i in range( 0 , tlim[ 1 ] , 5 ) ]
@@ -16,7 +16,8 @@ def layout( ax , tlim , movlim , yaxis_label = True ) :
     ax.set_xlabel( 'Time (s)' , fontsize = 17 )
     if yaxis_label : ax.set_ylabel( 'Inward movement (nm)' , fontsize = 17 )
     ax.grid()
-    ax.legend( loc = 'upper left' , fontsize = 10 )
+    if legend : ax.legend( loc = 'upper left' , fontsize = 17 )
+    ax.set_title( title , fontsize = 17 )
 	
 	#plt.subplot( 212 )
 #	plt.xlim( tlim )
