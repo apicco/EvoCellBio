@@ -2,6 +2,9 @@ import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
+import copy as cp
+import numpy as np
+
 #def layout( tlim , movlim , flim ) :
 def layout( ax , tlim , movlim , title , yaxis_label = True , legend = False ) :
     
@@ -28,4 +31,20 @@ def layout( ax , tlim , movlim , title , yaxis_label = True , legend = False ) :
 #	plt.xlabel( 'Time (s)' , fontsize = 30 )
 #	plt.grid()
 	
+def velocity( t , range , t0 , scale ) :
 
+
+    tt = cp.deepcopy( t )
+    tt.start( range[ 0 ] + t0 )
+    tt.end( range[ 1 ] + t0 )
+
+    X = np.array( tt.t() )
+    y = np.array( tt.coord()[ 0 ] )
+    
+    # linear interpolation (lsq)
+    p , cov = np.polyfit( X , y , deg = 1 , cov = True )
+ 
+    # error
+    e = np.sqrt( cov[ 0 , 0 ] ) / ( 2 * np.sqrt( p[ 0 ] ) )
+
+    return [ p[ 0 ] * scale , e * scale ]
