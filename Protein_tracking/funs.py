@@ -38,13 +38,19 @@ def velocity( t , range , t0 , scale ) :
     tt.start( range[ 0 ] + t0 )
     tt.end( range[ 1 ] + t0 )
 
+
     X = np.array( tt.t() )
     y = np.array( tt.coord()[ 0 ] )
     
     # linear interpolation (lsq)
     p , cov = np.polyfit( X , y , deg = 1 , cov = True )
+
  
+    v , D = tt.msdfit( scale = scale )
     # error
     e = np.sqrt( cov[ 0 , 0 ] ) / ( 2 * np.sqrt( p[ 0 ] ) )
 
-    return [ p[ 0 ] * scale , e * scale ]
+    #print(  [ p[ 0 ] * scale , e * scale ] )
+    #print( v )
+    #return [ p[ 0 ] * scale , e * scale ]
+    return v

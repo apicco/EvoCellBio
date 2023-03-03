@@ -16,14 +16,8 @@ def layout( ax , title , ylabel = True ) :
     ax.set_xticks( [ 18, 21,24,27,30] )
     if ylabel : ax.set_ylabel( "$nm/s$" , fontsize = 10 )
     ax.grid()
-# compute velocities using Savitzky-Golay filter
-#filter = [ 748 , -98 , -643 , -930 , -1002 , -902 , -673 , -358 , 0 , 358 , 673 , 902 , 1002 , 930 , 643 , 98 , -748 ]
-#filter = [ i / 23256 for i in filter ]
-filter = [ 84075 , 10032 , -43284 , -78176 , -96947 , - 101900 , -95338 , -79564 , -56881 , -29592 , 0 , 29592 , 56881 , 79504 , 95338 , 101900 , 96947 , 78176 , 43284 , -10032 , 84075 ]
-filter = [ i / 3634092 for i in filter ]
 
-
-t_fit = [ 1.0 , 2.5]
+t_fit = [ 1.0 , 3]
 # S. cerevisiae
 vsla1_sc_18 = velocity( sla1_sc_18 , t_fit , t0_sc_18deg , scale = 100 ) 
 vsla1_sc_21 = velocity( sla1_sc_21 , t_fit , t0_sc_21deg , scale = 100 ) 
