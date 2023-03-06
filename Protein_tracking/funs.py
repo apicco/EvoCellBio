@@ -1,11 +1,18 @@
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
-
+from trajalign.traj import Traj
 import copy as cp
 import numpy as np
 
-#def layout( tlim , movlim , flim ) :
+def set_x0( t , range = [ -5 , 0 ] ) :
+    tt = cp.deepcopy( t )
+    tt.start( -5 )
+    tt.end( 0 )
+
+    x0 = np.nanmedian( tt.coord()[ 0 ] )
+    return x0
+
 def layout( ax , tlim , movlim , title , yaxis_label = True , legend = False ) :
     
     xl = [ i for i in range( 0 , int( tlim[ 0 ] ) , -5 ) ]

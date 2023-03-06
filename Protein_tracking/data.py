@@ -1,3 +1,4 @@
+from funs import set_x0
 from trajalign.traj import Traj
 from trajalign.average import unified_start , unified_end
 
@@ -18,7 +19,7 @@ sla1_sc_18.start( unified_start( sla1_sc_18 ) )
 sla1_sc_18.end( unified_end( sla1_sc_18 ) )
 sla1_sc_18.norm_f()
 sla1_sc_18.tshift( t0_sc_18deg )
-sla1_sc_18.translate( [ x0_sc_18deg , 0 ] ) 
+sla1_sc_18.translate( [ -set_x0( sla1_sc_18 ) , 0 ] ) 
 
 # at 21 degree
 x0_sc_21deg = 0.12
@@ -30,7 +31,7 @@ sla1_sc_21.start( unified_start( sla1_sc_21 ) )
 sla1_sc_21.end( unified_end( sla1_sc_21 ) )
 sla1_sc_21.norm_f()
 sla1_sc_21.tshift( t0_sc_21deg )
-sla1_sc_21.translate( [ x0_sc_21deg , 0 ] ) 
+sla1_sc_21.translate( [ -set_x0( sla1_sc_21 ) , 0 ] ) 
 
 # at 24 degree
 x0_sc_24deg = 0.03
@@ -42,7 +43,7 @@ sla1_sc_24.start( unified_start( sla1_sc_24 ) )
 sla1_sc_24.end( unified_end( sla1_sc_24 ) )
 sla1_sc_24.norm_f()
 sla1_sc_24.tshift( t0_sc_24deg )
-sla1_sc_24.translate( [ x0_sc_24deg , 0 ] ) 
+sla1_sc_24.translate( [ -set_x0( sla1_sc_24 ) , 0 ] ) 
 
 # at 27 degree
 x0_sc_27deg = 0.06
@@ -54,7 +55,7 @@ sla1_sc_27.start( unified_start( sla1_sc_27 ) )
 sla1_sc_27.end( unified_end( sla1_sc_27 ) )
 sla1_sc_27.norm_f()
 sla1_sc_27.tshift( t0_sc_27deg )
-sla1_sc_27.translate( [ x0_sc_27deg , 0 ] ) 
+sla1_sc_27.translate( [ -set_x0( sla1_sc_27 ) , 0 ] ) 
 
 # at 30 degree
 x0_sc_30deg = 0.04
@@ -66,7 +67,7 @@ sla1_sc_30.start( unified_start( sla1_sc_30 ) )
 sla1_sc_30.end( unified_end( sla1_sc_30 ) )
 sla1_sc_30.norm_f()
 sla1_sc_30.tshift( t0_sc_30deg )
-sla1_sc_30.translate( [ x0_sc_30deg , 0 ] ) 
+sla1_sc_30.translate( [ -set_x0( sla1_sc_30 ) , 0 ] ) 
 
 #--------------------------------
 # Schizoaccaromyces pombe (Sp)
@@ -81,7 +82,7 @@ sla1_sp_18.start( unified_start( sla1_sp_18 ) )
 sla1_sp_18.end( unified_end( sla1_sp_18 ) )
 sla1_sp_18.norm_f()
 sla1_sp_18.tshift( t0_sp_18deg )
-sla1_sp_18.translate( [ x0_sp_18deg , 0 ] ) 
+sla1_sp_18.translate( [ -set_x0( sla1_sp_18 ) , 0 ] ) 
 
 # at 21 degree
 x0_sp_21deg = 0.26
@@ -93,7 +94,7 @@ sla1_sp_21.start( unified_start( sla1_sp_21 ) )
 sla1_sp_21.end( unified_end( sla1_sp_21 ) )
 sla1_sp_21.norm_f()
 sla1_sp_21.tshift( t0_sp_21deg )
-sla1_sp_21.translate( [ x0_sp_21deg , 0 ] ) 
+sla1_sp_21.translate( [ -set_x0( sla1_sp_21 ) , 0 ] ) 
 
 # at 24 degree
 x0_sp_24deg = 0.20
@@ -105,7 +106,7 @@ sla1_sp_24.start( unified_start( sla1_sp_24 ) )
 sla1_sp_24.end( unified_end( sla1_sp_24 ) )
 sla1_sp_24.norm_f()
 sla1_sp_24.tshift( t0_sp_24deg )
-sla1_sp_24.translate( [ x0_sp_24deg , 0 ] ) 
+sla1_sp_24.translate( [ -set_x0( sla1_sp_24 ) , 0 ] ) 
 
 # at 27 degree
 x0_sp_27deg = 0.26
@@ -117,7 +118,7 @@ sla1_sp_27.start( unified_start( sla1_sp_27 ) )
 sla1_sp_27.end( unified_end( sla1_sp_27 ) )
 sla1_sp_27.norm_f()
 sla1_sp_27.tshift( t0_sp_27deg )
-sla1_sp_27.translate( [ x0_sp_27deg , 0 ] ) 
+sla1_sp_27.translate( [ -set_x0( sla1_sp_27 ) , 0 ] ) 
 
 # at 30 degree
 x0_sp_30deg = 0.55
@@ -129,7 +130,7 @@ sla1_sp_30.start( unified_start( sla1_sp_30 ) )
 sla1_sp_30.end( unified_end( sla1_sp_30 ) )
 sla1_sp_30.norm_f()
 sla1_sp_30.tshift( t0_sp_30deg )
-sla1_sp_30.translate( [ x0_sp_30deg , 0 ] ) 
+sla1_sp_30.translate( [ -set_x0( sla1_sp_30 ) , 0 ] ) 
 
 #--------------------------------
 # Ustilago maydis (Um)
@@ -144,7 +145,7 @@ sla1_um_18.start( unified_start( sla1_um_18 ) )
 sla1_um_18.end( unified_end( sla1_um_18 ) )
 sla1_um_18.norm_f()
 sla1_um_18.tshift( t0_um_18deg )
-sla1_um_18.translate( [ x0_um_18deg , 0 ] ) 
+sla1_um_18.translate( [ -set_x0( sla1_um_18 ) , 0 ] ) 
 
 # at 21 degree
 x0_um_21deg = 0.01
@@ -156,7 +157,7 @@ sla1_um_21.start( unified_start( sla1_um_21 ) )
 sla1_um_21.end( unified_end( sla1_um_21 ) )
 sla1_um_21.norm_f()
 sla1_um_21.tshift( t0_um_21deg )
-sla1_um_21.translate( [ x0_um_21deg , 0 ] ) 
+sla1_um_21.translate( [ -set_x0( sla1_um_21 ) , 0 ] ) 
 
 # at 24 degree
 x0_um_24deg = 0.01
