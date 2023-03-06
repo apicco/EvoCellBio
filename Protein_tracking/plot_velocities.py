@@ -17,27 +17,28 @@ def layout( ax , title , ylabel = True ) :
     if ylabel : ax.set_ylabel( "$nm/s$" , fontsize = 10 )
     ax.grid()
 
-t_fit = [ 1.0 , 3]
+x_fit = [ 0.3 , 0.8 ]
 # S. cerevisiae
-vsla1_sc_18 = velocity( sla1_sc_18 , t_fit , scale = 100 ) 
-vsla1_sc_21 = velocity( sla1_sc_21 , t_fit , scale = 100 ) 
-vsla1_sc_24 = velocity( sla1_sc_24 , t_fit , scale = 100 ) 
-vsla1_sc_27 = velocity( sla1_sc_27 , t_fit , scale = 100 ) 
-vsla1_sc_30 = velocity( sla1_sc_30 , t_fit , scale = 100 ) 
+vsla1_sc_18 = velocity( sla1_sc_18 , x_fit , scale = 100 ) 
+vsla1_sc_21 = velocity( sla1_sc_21 , x_fit , scale = 100 ) 
+vsla1_sc_24 = velocity( sla1_sc_24 , x_fit , scale = 100 ) 
+vsla1_sc_27 = velocity( sla1_sc_27 , x_fit , scale = 100 ) 
+vsla1_sc_30 = velocity( sla1_sc_30 , x_fit , scale = 100 ) 
 
 # S. pombe
-vsla1_sp_18 = velocity( sla1_sp_18 , t_fit , scale = 100 ) 
-vsla1_sp_21 = velocity( sla1_sp_21 , t_fit , scale = 100 ) 
-vsla1_sp_24 = velocity( sla1_sp_24 , t_fit , scale = 100 ) 
-vsla1_sp_27 = velocity( sla1_sp_27 , t_fit , scale = 100 ) 
-vsla1_sp_30 = velocity( sla1_sp_30 , t_fit , scale = 100 ) 
+vsla1_sp_18 = velocity( sla1_sp_18 , x_fit , scale = 100 ) 
+vsla1_sp_21 = velocity( sla1_sp_21 , x_fit , scale = 100 ) 
+vsla1_sp_24 = velocity( sla1_sp_24 , x_fit , scale = 100 ) 
+vsla1_sp_27 = velocity( sla1_sp_27 , x_fit , scale = 100 ) 
+vsla1_sp_30 = velocity( sla1_sp_30 , x_fit , scale = 100 ) 
 
 # U. maydis
-vsla1_um_18 = velocity( sla1_um_18 , t_fit , scale = 100 ) 
-vsla1_um_21 = velocity( sla1_um_21 , t_fit , scale = 100 ) 
-vsla1_um_24 = velocity( sla1_um_24 , t_fit , scale = 100 ) 
-vsla1_um_27 = velocity( sla1_um_27 , t_fit , scale = 100 ) 
-vsla1_um_30 = velocity( sla1_um_30 , t_fit , scale = 100 ) 
+x_fit = [ 0.15 , 0.38 ]
+vsla1_um_18 = velocity( sla1_um_18 , x_fit , scale = 100 ) 
+vsla1_um_21 = velocity( sla1_um_21 , x_fit , scale = 100 ) 
+vsla1_um_24 = velocity( sla1_um_24 , x_fit , scale = 100 ) 
+vsla1_um_27 = velocity( sla1_um_27 , x_fit , scale = 100 ) 
+vsla1_um_30 = velocity( sla1_um_30 , x_fit , scale = 100 ) 
 
 fig = plt.figure( constrained_layout = True , figsize = ( 7 , 5 ) )
 axes = fig.subplot_mosaic( 

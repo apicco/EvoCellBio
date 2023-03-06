@@ -31,12 +31,22 @@ def layout( ax , tlim , movlim , title , yaxis_label = True , legend = False ) :
 #	plt.xlabel( 'Time (s)' , fontsize = 30 )
 #	plt.grid()
 	
-def velocity( t , range , scale ) :
-
+def velocity( t , range , scale , t0 = 0 ) :
 
     tt = cp.deepcopy( t )
-    tt.start( range[ 0 ] )
-    tt.end( range[ 1 ] )
+    tt.start( t0 )
+
+    x = tt.coord()[ 0 ] * scale
+    ds = [ abs( i - range[ 0 ] * scale ) for i in x ]
+    de = [ abs( i - range[ 1 ] * scale ) for i in x ]
+   
+    s = ds.index( min(ds) )
+    e = de.index( min(de) )
+   
+    t_start = tt.t()[ s ]
+    t_end = tt.t()[ e ]
+    tt.start( t_start )
+    tt.end( t_end )
 
 
     X = np.array( tt.t() )
@@ -44,13 +54,7 @@ def velocity( t , range , scale ) :
     
     # linear interpolation (lsq)
     p , cov = np.polyfit( X , y , deg = 1 , cov = True )
-
- 
-    v , D = tt.msdfit( scale = scale )
     # error
     e = np.sqrt( cov[ 0 , 0 ] ) / ( 2 * np.sqrt( p[ 0 ] ) )
 
-    #print(  [ p[ 0 ] * scale , e * scale ] )
-    #print( v )
-    #return [ p[ 0 ] * scale , e * scale ]
-    return v
+    return [ p[ 0 ] * scale , e * scale ]
