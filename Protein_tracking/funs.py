@@ -22,15 +22,17 @@ def layout( ax , tlim , movlim , title , yaxis_label = True , legend = False ) :
     if legend : ax.legend( loc = 'upper left' , fontsize = 10 )
     ax.set_title( title , fontsize = 18 )
 	
-	#plt.subplot( 212 )
-#	plt.xlim( tlim )
-#	plt.ylim( flim )
-#	plt.xticks( fontsize = 16 )
-#	plt.yticks( fontsize = 16 )
-#	plt.ylabel( 'FI (a.u.)' , fontsize = 30 )
-#	plt.xlabel( 'Time (s)' , fontsize = 30 )
-#	plt.grid()
-	
+def layout_velocities( ax , title , ylabel = True , legend = False ) :
+
+    ax.set_xlim( 16 , 32 )
+    ax.set_xticks( [ 18,21,24,27,30] )
+    ax.tick_params( labelsize = 10 )
+    ax.set_xlabel( "T ($^{o}C$)" , fontsize = 13 )
+    if ylabel : ax.set_ylabel( "$nm/s$" , fontsize = 13 )
+    ax.grid()
+    if legend : ax.legend( loc = 'upper left' , fontsize = 10 )
+    ax.set_title( title , fontsize = 18 )
+
 def velocity( t , range , scale , t0 = 0 ) :
 
     tt = cp.deepcopy( t )
