@@ -8,12 +8,11 @@ mpl.use('Agg')
 cmap = mpl.colormaps['plasma'].resampled( 6 )
 from matplotlib import pyplot as plt
 
-fig = plt.figure( constrained_layout = True , figsize = ( 10 , 15 ) )
+fig = plt.figure( constrained_layout = True , figsize = ( 8 , 3 ) )
 
 axes = fig.subplot_mosaic( 
     """
-    AAAAAAA...
-    BBBBBBCCCC
+    AAAAAAABBBBBBCCCC
     """ , 
     sharey = True )
 # S. cerevisiae
@@ -33,7 +32,7 @@ myplot( axes["B"] , sla1_sp_24 , what = 'coord' , label = '$24\degree$C' , col =
 myplot( axes["B"] , sla1_sp_27 , what = 'coord' , label = '$27\degree$C' , col = cmap(3) , x_scale = 100 )
 myplot( axes["B"] , sla1_sp_30 , what = 'coord' , label = '$30\degree$C' , col = cmap(4) , x_scale = 100 )
 
-layout( axes[ "B"] , species_tlim["B"] , movlim["B"] , '$S. pombe$' )
+layout( axes[ "B"] , species_tlim["B"] , movlim["B"] , '$S. pombe$' , yaxis_label = False )
 
 
 # U. maydis
