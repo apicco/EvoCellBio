@@ -8,8 +8,8 @@ import numpy as np
 #def layout( tlim , movlim , flim ) :
 def layout( ax , tlim , movlim , title , yaxis_label = True , legend = False ) :
     
-    xl = [ i for i in range( 0 , tlim[ 0 ] , -5 ) ]
-    xr = [ i for i in range( 0 , tlim[ 1 ] , 5 ) ]
+    xl = [ i for i in range( 0 , int( tlim[ 0 ] ) , -5 ) ]
+    xr = [ i for i in range( 0 , int( tlim[ 1 ] ) , 5 ) ]
     ax.set_xticks( xl[::-1] + xr[1:] )
     
     #plt.subplot( 211 )
