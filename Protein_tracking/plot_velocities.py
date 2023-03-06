@@ -34,34 +34,32 @@ vsla1_um_30 = velocity( sla1_um_30 , x_fit , scale = 100 )
 fig = plt.figure( constrained_layout = True , figsize = ( 5 , 3 ) )
 axes = fig.subplot_mosaic( 
     """
-    ABC
+    A
     """ , 
     sharey = True )
 
 # S. cerevisiae
-axes["A"].errorbar( 18 , vsla1_sc_18[ 0 ] , vsla1_sc_18[ 1 ] , label = '$18\degree$C' , color = cmap( 0 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["A"].errorbar( 21 , vsla1_sc_21[ 0 ] , vsla1_sc_21[ 1 ] , label = '$21\degree$C' , color = cmap( 1 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["A"].errorbar( 24 , vsla1_sc_24[ 0 ] , vsla1_sc_24[ 1 ] , label = '$24\degree$C' , color = cmap( 2 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["A"].errorbar( 27 , vsla1_sc_27[ 0 ] , vsla1_sc_27[ 1 ] , label = '$27\degree$C' , color = cmap( 3 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["A"].errorbar( 30 , vsla1_sc_30[ 0 ] , vsla1_sc_30[ 1 ] , label = '$30\degree$C' , color = cmap( 4 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 18 , vsla1_sc_18[ 0 ] , vsla1_sc_18[ 1 ] , label = '$S. cerevisiae$' , color = sla1_sc_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 21 , vsla1_sc_21[ 0 ] , vsla1_sc_21[ 1 ] , color = sla1_sc_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 24 , vsla1_sc_24[ 0 ] , vsla1_sc_24[ 1 ] , color = sla1_sc_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 27 , vsla1_sc_27[ 0 ] , vsla1_sc_27[ 1 ] , color = sla1_sc_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 30 , vsla1_sc_30[ 0 ] , vsla1_sc_30[ 1 ] , color = sla1_sc_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["A"].plot( [ 18,21,24,27,30 ] , [ vsla1_sc_18[0] , vsla1_sc_21[0] , vsla1_sc_24[0] , vsla1_sc_27[0] , vsla1_sc_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
-layout_velocities( axes["A"] , "$S.cerevisiae$" , legend = True )
 
-axes["B"].errorbar( 18 , vsla1_sp_18[ 0 ] , vsla1_sp_18[ 1 ] , label = '$18\degree$C' , color = cmap( 0 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["B"].errorbar( 21 , vsla1_sp_21[ 0 ] , vsla1_sp_21[ 1 ] , label = '$21\degree$C' , color = cmap( 1 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["B"].errorbar( 24 , vsla1_sp_24[ 0 ] , vsla1_sp_24[ 1 ] , label = '$24\degree$C' , color = cmap( 2 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["B"].errorbar( 27 , vsla1_sp_27[ 0 ] , vsla1_sp_27[ 1 ] , label = '$27\degree$C' , color = cmap( 3 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["B"].errorbar( 30 , vsla1_sp_30[ 0 ] , vsla1_sp_30[ 1 ] , label = '$30\degree$C' , color = cmap( 4 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["B"].plot( [ 18,21,24,27,30 ] , [ vsla1_sp_18[0] , vsla1_sp_21[0] , vsla1_sp_24[0] , vsla1_sp_27[0] , vsla1_sp_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
-layout_velocities( axes["B"] , "$S.pombe$" , ylabel = False )
+axes["A"].errorbar( 18 , vsla1_sp_18[ 0 ] , vsla1_sp_18[ 1 ] , label = '$S. pombe$' , color = sla1_sp_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 21 , vsla1_sp_21[ 0 ] , vsla1_sp_21[ 1 ] , color = sla1_sp_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 24 , vsla1_sp_24[ 0 ] , vsla1_sp_24[ 1 ] , color = sla1_sp_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 27 , vsla1_sp_27[ 0 ] , vsla1_sp_27[ 1 ] , color = sla1_sp_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 30 , vsla1_sp_30[ 0 ] , vsla1_sp_30[ 1 ] , color = sla1_sp_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].plot( [ 18,21,24,27,30 ] , [ vsla1_sp_18[0] , vsla1_sp_21[0] , vsla1_sp_24[0] , vsla1_sp_27[0] , vsla1_sp_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
 
-axes["C"].errorbar( 18 , vsla1_um_18[ 0 ] , vsla1_um_18[ 1 ] , label = '$18\degree$C' , color = cmap( 0 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["C"].errorbar( 21 , vsla1_um_21[ 0 ] , vsla1_um_21[ 1 ] , label = '$21\degree$C' , color = cmap( 1 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["C"].errorbar( 24 , vsla1_um_24[ 0 ] , vsla1_um_24[ 1 ] , label = '$24\degree$C' , color = cmap( 2 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["C"].errorbar( 27 , vsla1_um_27[ 0 ] , vsla1_um_27[ 1 ] , label = '$27\degree$C' , color = cmap( 3 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["C"].errorbar( 30 , vsla1_um_30[ 0 ] , vsla1_um_30[ 1 ] , label = '$30\degree$C' , color = cmap( 4 ) , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
-axes["C"].plot( [ 18,21,24,27,30 ] , [ vsla1_um_18[0] , vsla1_um_21[0] , vsla1_um_24[0] , vsla1_um_27[0] , vsla1_um_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
-layout_velocities( axes["C"] , "$U.maydis$" , ylabel = False )
+axes["A"].errorbar( 18 , vsla1_um_18[ 0 ] , vsla1_um_18[ 1 ] , label = '$U.maydis$' , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 21 , vsla1_um_21[ 0 ] , vsla1_um_21[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 24 , vsla1_um_24[ 0 ] , vsla1_um_24[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 27 , vsla1_um_27[ 0 ] , vsla1_um_27[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].errorbar( 30 , vsla1_um_30[ 0 ] , vsla1_um_30[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["A"].plot( [ 18,21,24,27,30 ] , [ vsla1_um_18[0] , vsla1_um_21[0] , vsla1_um_24[0] , vsla1_um_27[0] , vsla1_um_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
+layout_velocities( axes["A"] , "$v$ reaction norm" , legend = True )
 
 fig.savefig( "plot_velocities.pdf" )
 

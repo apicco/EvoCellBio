@@ -28,7 +28,7 @@ def layout_velocities( ax , title , ylabel = True , legend = False ) :
     ax.set_xticks( [ 18,21,24,27,30] )
     ax.tick_params( labelsize = 10 )
     ax.set_xlabel( "T ($^{o}C$)" , fontsize = 13 )
-    if ylabel : ax.set_ylabel( "$nm/s$" , fontsize = 13 )
+    if ylabel : ax.set_ylabel( "$v$ ($nm/s$)" , fontsize = 13 )
     ax.grid()
     if legend : ax.legend( loc = 'upper left' , fontsize = 10 )
     ax.set_title( title , fontsize = 18 )
