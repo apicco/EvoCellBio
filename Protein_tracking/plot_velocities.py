@@ -19,25 +19,25 @@ def layout( ax , title , ylabel = True ) :
 
 t_fit = [ 1.0 , 3]
 # S. cerevisiae
-vsla1_sc_18 = velocity( sla1_sc_18 , t_fit , t0_sc_18deg , scale = 100 ) 
-vsla1_sc_21 = velocity( sla1_sc_21 , t_fit , t0_sc_21deg , scale = 100 ) 
-vsla1_sc_24 = velocity( sla1_sc_24 , t_fit , t0_sc_24deg , scale = 100 ) 
-vsla1_sc_27 = velocity( sla1_sc_27 , t_fit , t0_sc_27deg , scale = 100 ) 
-vsla1_sc_30 = velocity( sla1_sc_30 , t_fit , t0_sc_30deg , scale = 100 ) 
+vsla1_sc_18 = velocity( sla1_sc_18 , t_fit , scale = 100 ) 
+vsla1_sc_21 = velocity( sla1_sc_21 , t_fit , scale = 100 ) 
+vsla1_sc_24 = velocity( sla1_sc_24 , t_fit , scale = 100 ) 
+vsla1_sc_27 = velocity( sla1_sc_27 , t_fit , scale = 100 ) 
+vsla1_sc_30 = velocity( sla1_sc_30 , t_fit , scale = 100 ) 
 
 # S. pombe
-vsla1_sp_18 = velocity( sla1_sp_18 , t_fit , t0_sp_18deg , scale = 100 ) 
-vsla1_sp_21 = velocity( sla1_sp_21 , t_fit , t0_sp_21deg , scale = 100 ) 
-vsla1_sp_24 = velocity( sla1_sp_24 , t_fit , t0_sp_24deg , scale = 100 ) 
-vsla1_sp_27 = velocity( sla1_sp_27 , t_fit , t0_sp_27deg , scale = 100 ) 
-vsla1_sp_30 = velocity( sla1_sp_30 , t_fit , t0_sp_30deg , scale = 100 ) 
+vsla1_sp_18 = velocity( sla1_sp_18 , t_fit , scale = 100 ) 
+vsla1_sp_21 = velocity( sla1_sp_21 , t_fit , scale = 100 ) 
+vsla1_sp_24 = velocity( sla1_sp_24 , t_fit , scale = 100 ) 
+vsla1_sp_27 = velocity( sla1_sp_27 , t_fit , scale = 100 ) 
+vsla1_sp_30 = velocity( sla1_sp_30 , t_fit , scale = 100 ) 
 
 # U. maydis
-vsla1_um_18 = velocity( sla1_um_18 , t_fit , t0_um_18deg , scale = 100 ) 
-vsla1_um_21 = velocity( sla1_um_21 , t_fit , t0_um_21deg , scale = 100 ) 
-vsla1_um_24 = velocity( sla1_um_24 , t_fit , t0_um_24deg , scale = 100 ) 
-vsla1_um_27 = velocity( sla1_um_27 , t_fit , t0_um_27deg , scale = 100 ) 
-vsla1_um_30 = velocity( sla1_um_30 , t_fit , t0_um_30deg , scale = 100 ) 
+vsla1_um_18 = velocity( sla1_um_18 , t_fit , scale = 100 ) 
+vsla1_um_21 = velocity( sla1_um_21 , t_fit , scale = 100 ) 
+vsla1_um_24 = velocity( sla1_um_24 , t_fit , scale = 100 ) 
+vsla1_um_27 = velocity( sla1_um_27 , t_fit , scale = 100 ) 
+vsla1_um_30 = velocity( sla1_um_30 , t_fit , scale = 100 ) 
 
 fig = plt.figure( constrained_layout = True , figsize = ( 7 , 5 ) )
 axes = fig.subplot_mosaic( 

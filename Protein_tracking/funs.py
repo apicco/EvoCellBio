@@ -31,12 +31,12 @@ def layout( ax , tlim , movlim , title , yaxis_label = True , legend = False ) :
 #	plt.xlabel( 'Time (s)' , fontsize = 30 )
 #	plt.grid()
 	
-def velocity( t , range , t0 , scale ) :
+def velocity( t , range , scale ) :
 
 
     tt = cp.deepcopy( t )
-    tt.start( range[ 0 ] + t0 )
-    tt.end( range[ 1 ] + t0 )
+    tt.start( range[ 0 ] )
+    tt.end( range[ 1 ] )
 
 
     X = np.array( tt.t() )
