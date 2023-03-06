@@ -61,5 +61,5 @@ axes["A"].errorbar( 30 , vsla1_um_30[ 0 ] , vsla1_um_30[ 1 ] , color = sla1_um_c
 axes["A"].plot( [ 18,21,24,27,30 ] , [ vsla1_um_18[0] , vsla1_um_21[0] , vsla1_um_24[0] , vsla1_um_27[0] , vsla1_um_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
 layout_velocities( axes["A"] , "$v$ reaction norm" , legend = True )
 
-fig.savefig( "plot_velocities.pdf" )
+fig.savefig( "reaction_norm.pdf" )
 
