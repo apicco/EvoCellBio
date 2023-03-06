@@ -7,8 +7,8 @@ import matplotlib as mpl
 mpl.use('Agg')
 cmap = mpl.colormaps['plasma'].resampled( 6 )
 from matplotlib import pyplot as plt
-x_fit = [ 0.3 , 0.8 ]
 
+x_fit = [ 0.3 , 0.9 ]
 # S. cerevisiae
 vsla1_sc_18 = velocity( sla1_sc_18 , x_fit , scale = 100 ) 
 vsla1_sc_21 = velocity( sla1_sc_21 , x_fit , scale = 100 ) 
@@ -24,11 +24,15 @@ vsla1_sp_27 = velocity( sla1_sp_27 , x_fit , scale = 100 )
 vsla1_sp_30 = velocity( sla1_sp_30 , x_fit , scale = 100 ) 
 
 # U. maydis
-x_fit = [ 0.15 , 0.38 ]
+x_fit = [ 0.3 , 0.9 ]
 vsla1_um_18 = velocity( sla1_um_18 , x_fit , scale = 100 ) 
+x_fit = [ 0.2 , 0.6 ]
 vsla1_um_21 = velocity( sla1_um_21 , x_fit , scale = 100 ) 
+x_fit = [ 0.2 , 0.8 ]
 vsla1_um_24 = velocity( sla1_um_24 , x_fit , scale = 100 ) 
+x_fit = [ 0.2 , 0.6 ]
 vsla1_um_27 = velocity( sla1_um_27 , x_fit , scale = 100 ) 
+x_fit = [ 0.1 , 0.4 ]
 vsla1_um_30 = velocity( sla1_um_30 , x_fit , scale = 100 ) 
 
 fig = plt.figure( constrained_layout = True , figsize = ( 5 , 3 ) )

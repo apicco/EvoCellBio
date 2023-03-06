@@ -5,7 +5,7 @@ from trajplot.plotfuns import myplot , plot_raw
 
 import matplotlib as mpl
 mpl.use('Agg')
-cmap = mpl.colormaps['plasma'].resampled( 6 )
+cmap = mpl.colormaps['tab10'].resampled( 10 )
 from matplotlib import pyplot as plt
 
 fig = plt.figure( constrained_layout = True , figsize = ( 8 , 3 ) )
