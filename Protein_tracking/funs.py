@@ -50,7 +50,7 @@ def velocity( t , range , scale , t0 = 0 ) :
     return [ p[ 0 ] * scale , e * scale ]
 
 # LAYOUTS
-def layout( ax , tlim , movlim , title , yaxis_label = True , legend = False ) :
+def layout( ax , tlim , movlim , title , yaxis_label = True , legend = False , legend_title = None ) :
     
     xl = [ i for i in range( 0 , int( tlim[ 0 ] ) , -5 ) ]
     xr = [ i for i in range( 0 , int( tlim[ 1 ] ) , 5 ) ]
@@ -63,7 +63,12 @@ def layout( ax , tlim , movlim , title , yaxis_label = True , legend = False ) :
     ax.set_xlabel( 'Time (s)' , fontsize = 13 )
     if yaxis_label : ax.set_ylabel( 'Inward movement (nm)' , fontsize = 13 )
     ax.grid()
-    if legend : ax.legend( loc = 'upper left' , fontsize = 10 )
+    if legend : 
+        leg = ax.legend( loc = 'upper left' , fontsize = 10 , title = legend_title )
+        # set the linewidth of each legend object
+        for legobj in leg.legendHandles:
+            legobj.set_linewidth(5.0)
+
     ax.set_title( title , fontsize = 18 )
 	
 def layout_rn( ax , title , ylabel , legend = False ) :

@@ -8,22 +8,22 @@ matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
 def reference_plot_at_24deg( ax ) :
-    ax.plot( sla1_sp_24.t() , 100 * ( sla1_sp_24.coord()[ 0 ] ) ,label = 'Sla1-GFP in $S. pombe$ at $24\degree$C' , color = sla1_sp_color_24deg )
+    ax.plot( sla1_sp_24.t() , 100 * ( sla1_sp_24.coord()[ 0 ] ) ,label = '$S. pombe$ at $24\degree$C' , color = sla1_sp_color_24deg )
 
-fig = plt.figure( constrained_layout = True , figsize = ( 8 , 5 ) )
+fig = plt.figure( figsize = ( 8 , 5 ) , layout = 'compressed' )
 
 axes = fig.subplot_mosaic( 
     """
-    AAAAABBBB
-    CCCDDDEEE
+    AAAAAAAAABBBBBBB
+    CCCCCCDDDDDEEEEE
     """ , 
     sharey = True )
 
 # 18 degree
 
-myplot( axes["A"] , sla1_sc_18 , what = 'coord' , label = 'Sla1-GFP in $S. cerevisiae$' , col = sla1_sc_color , x_scale = 100 , add_CI = False )
-myplot( axes["A"] , sla1_sp_18 , what = 'coord' , label = 'Sla1-GFP in $S. pombe$' , col = sla1_sp_color , x_scale = 100 , add_CI = False )
-myplot( axes["A"] , sla1_um_18 , what = 'coord' , label = 'Sla1-GFP in $U. maydis$' , col = sla1_um_color , x_scale = 100 , add_CI = False )
+myplot( axes["A"] , sla1_sc_18 , what = 'coord' , label = '$S. cerevisiae$' , col = sla1_sc_color , x_scale = 100 , add_CI = False )
+myplot( axes["A"] , sla1_sp_18 , what = 'coord' , label = '$S. pombe$' , col = sla1_sp_color , x_scale = 100 , add_CI = False )
+myplot( axes["A"] , sla1_um_18 , what = 'coord' , label = '$U. maydis$' , col = sla1_um_color , x_scale = 100 , add_CI = False )
 #reference_plot_at_24deg( axes["A"] )
 # v reaction norm range
 # measured from the maximal ~linear region under 100 nm 
@@ -31,7 +31,7 @@ myplot( axes["A"] , sla1_um_18 , what = 'coord' , label = 'Sla1-GFP in $U. maydi
 # with these commented plots
 #axes[ "A" ].plot( [ 0 , 10 ] , [ 30 , 30 ] )
 #axes[ "A" ].plot( [ 0 , 10 ] , [ 90 , 90 ] )
-layout( axes[ "A"] , tlim[ "A"] , movlim["A"] , '$18\degree$C' , legend = True )
+layout( axes[ "A"] , tlim[ "A"] , movlim["A"] , '$18\degree$C' , legend = True , legend_title = "Sla1-GFP" )
 
 # 21 degree
 
