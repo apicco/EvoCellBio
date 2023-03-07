@@ -26,6 +26,9 @@ myplot( axes["A"] , sla1_sp_18 , what = 'coord' , label = 'Sla1-GFP in $S. pombe
 myplot( axes["A"] , sla1_um_18 , what = 'coord' , label = 'Sla1-GFP in $U. maydis$' , col = sla1_um_color , x_scale = 100 )
 #reference_plot_at_24deg( axes["A"] )
 # v reaction norm range
+# measured from the maximal ~linear region under 100 nm 
+# for each species at each temperature. Regions are highlighted
+# with these commented plots
 #axes[ "A" ].plot( [ 0 , 10 ] , [ 30 , 30 ] )
 #axes[ "A" ].plot( [ 0 , 10 ] , [ 90 , 90 ] )
 layout( axes[ "A"] , tlim[ "A"] , movlim["A"] , '$18\degree$C' , legend = True )
