@@ -17,7 +17,7 @@ def coat_movement( t , scale , n = 5 ) :
 
     l = len( t ) - 1
     
-    h = np.mean( t.coord()[ 0 ][ l - n : l ] * scale )
+    h = np.median( t.coord()[ 0 ][ l - n : l ] * scale )
     h_err = np.sqrt( np.sum( t.coord_err()[ 0 ][ l - n : l ] ** 2 ) ) * scale / n
     return [ h , h_err ]
 
