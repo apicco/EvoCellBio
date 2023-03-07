@@ -26,8 +26,12 @@ species_tlim = {
 }
 
 # Colors
-sla1_sp_color = '#000000'
-sla1_sc_color = "#EC9937"
-sla1_um_color = '#ff0000'
+# old
+#sla1_sp_color = '#000000'
+#sla1_sc_color = "#EC9937"
+#sla1_um_color = '#ff0000'
+sla1_sp_color = '#08A045'
+sla1_sc_color = "#30011E"
+sla1_um_color = '#00487C'
 
 sla1_sp_color_24deg = '#CDCDCD'
