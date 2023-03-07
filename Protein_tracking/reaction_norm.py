@@ -56,11 +56,12 @@ hsla1_sp_27 = coat_movement( sla1_sp_27 , last = last_sp , scale = 100 )
 hsla1_sp_30 = coat_movement( sla1_sp_30 , last = last_sp , scale = 100 )
 
 # U. maydis
-hsla1_um_18 = coat_movement( sla1_um_18 , scale = 100 )
-hsla1_um_21 = coat_movement( sla1_um_21 , scale = 100 )
-hsla1_um_24 = coat_movement( sla1_um_24 , scale = 100 )
-hsla1_um_27 = coat_movement( sla1_um_27 , scale = 100 )
-hsla1_um_30 = coat_movement( sla1_um_30 , scale = 100 )
+last_um = 16
+hsla1_um_18 = coat_movement( sla1_um_18 , last = last_um , scale = 100 )
+hsla1_um_21 = coat_movement( sla1_um_21 , last = last_um , scale = 100 )
+hsla1_um_24 = coat_movement( sla1_um_24 , last = last_um , scale = 100 )
+hsla1_um_27 = coat_movement( sla1_um_27 , last = last_um , scale = 100 )
+hsla1_um_30 = coat_movement( sla1_um_30 , last = last_um , scale = 100 )
 
 fig = plt.figure( constrained_layout = True , figsize = ( 8 , 3 ) )
 axes = fig.subplot_mosaic( 

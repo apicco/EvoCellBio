@@ -23,7 +23,8 @@ sla1_sc_18.translate( [ -set_x0( sla1_sc_18 ) , 0 ] )
 
 # at 21 degree
 x0_sc_21deg = 0.12
-t0_sc_21deg = -14.8
+t0_sc_21deg = -14.8# if 3 and 6 removed
+t0_sc_21deg = -40.5
 
 sla1_sc_21 = Traj()
 sla1_sc_21.load( 'Data/Sla1/21_degree/Sc/sla1_sc_21deg.txt' )
@@ -149,7 +150,7 @@ sla1_um_18.translate( [ -set_x0( sla1_um_18 ) , 0 ] )
 
 # at 21 degree
 x0_um_21deg = 0.01
-t0_um_21deg = -7.66
+t0_um_21deg = -7.66 
 
 sla1_um_21 = Traj()
 sla1_um_21.load( 'Data/Sla1/21_degree/Um/sla1_um_21deg.txt' )
