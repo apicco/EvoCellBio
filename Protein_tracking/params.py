@@ -33,5 +33,6 @@ species_tlim = {
 sla1_sp_color = '#08A045'
 sla1_sc_color = "#30011E"
 sla1_um_color = '#00487C'
+#sla1_um_color = '#82A6B1'
 
 sla1_sp_color_24deg = '#CDCDCD'
