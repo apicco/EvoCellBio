@@ -5,7 +5,6 @@ from trajplot.plotfuns import myplot , plot_raw
 
 import matplotlib as mpl
 mpl.use('Agg')
-cmap = mpl.colormaps['plasma'].resampled( 6 )
 from matplotlib import pyplot as plt
 
 # compute velocitis
@@ -94,7 +93,7 @@ axes["A"].errorbar( 24 , vsla1_um_24[ 0 ] , vsla1_um_24[ 1 ] , color = sla1_um_c
 axes["A"].errorbar( 27 , vsla1_um_27[ 0 ] , vsla1_um_27[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["A"].errorbar( 30 , vsla1_um_30[ 0 ] , vsla1_um_30[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["A"].plot( [ 18,21,24,27,30 ] , [ vsla1_um_18[0] , vsla1_um_21[0] , vsla1_um_24[0] , vsla1_um_27[0] , vsla1_um_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
-layout_rn( axes["A"] , "$v$ reaction norm" , "$v$ ($nm/s$)" , legend = True )
+layout_rn( axes["A"] , "coat velocity" , "$nm/s$" , legend = True )
 
 # Coat dynamics reaction norm
 # S. cerevisiae
@@ -120,7 +119,7 @@ axes["B"].errorbar( 24 , hsla1_um_24[ 0 ] , hsla1_um_24[ 1 ] , color = sla1_um_c
 axes["B"].errorbar( 27 , hsla1_um_27[ 0 ] , hsla1_um_27[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["B"].errorbar( 30 , hsla1_um_30[ 0 ] , hsla1_um_30[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["B"].plot( [ 18,21,24,27,30 ] , [ hsla1_um_18[0] , hsla1_um_21[0] , hsla1_um_24[0] , hsla1_um_27[0] , hsla1_um_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
-layout_rn( axes["B"] , "movement reaction norm" , "coat movement ($nm$)" , legend = False )
+layout_rn( axes["B"] , "coat displacement" , "$nm$" , legend = False )
 
 fig.savefig( "reaction_norm.pdf" )
 
