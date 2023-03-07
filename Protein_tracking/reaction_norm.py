@@ -41,18 +41,20 @@ vsla1_um_30 = velocity( sla1_um_30 , x_fit , scale = 100 )
 
 # compute coat movement heights
 # S. cerevisiae
-hsla1_sc_18 = coat_movement( sla1_sc_18 , scale = 100 )
-hsla1_sc_21 = coat_movement( sla1_sc_21 , scale = 100 )
-hsla1_sc_24 = coat_movement( sla1_sc_24 , scale = 100 )
-hsla1_sc_27 = coat_movement( sla1_sc_27 , scale = 100 )
-hsla1_sc_30 = coat_movement( sla1_sc_30 , scale = 100 )
+last_sc = 16 
+hsla1_sc_18 = coat_movement( sla1_sc_18 , last = last_sc , scale = 100 )
+hsla1_sc_21 = coat_movement( sla1_sc_21 , last = last_sc , scale = 100 )
+hsla1_sc_24 = coat_movement( sla1_sc_24 , last = last_sc , scale = 100 )
+hsla1_sc_27 = coat_movement( sla1_sc_27 , last = last_sc , scale = 100 )
+hsla1_sc_30 = coat_movement( sla1_sc_30 , last = last_sc , scale = 100 )
 
 # S. pombe
-hsla1_sp_18 = coat_movement( sla1_sp_18 , scale = 100 )
-hsla1_sp_21 = coat_movement( sla1_sp_21 , scale = 100 )
-hsla1_sp_24 = coat_movement( sla1_sp_24 , scale = 100 )
-hsla1_sp_27 = coat_movement( sla1_sp_27 , scale = 100 )
-hsla1_sp_30 = coat_movement( sla1_sp_30 , scale = 100 )
+last_sp = 16
+hsla1_sp_18 = coat_movement( sla1_sp_18 , last = last_sp , scale = 100 )
+hsla1_sp_21 = coat_movement( sla1_sp_21 , last = last_sp , scale = 100 )
+hsla1_sp_24 = coat_movement( sla1_sp_24 , last = last_sp , scale = 100 )
+hsla1_sp_27 = coat_movement( sla1_sp_27 , last = last_sp , scale = 100 )
+hsla1_sp_30 = coat_movement( sla1_sp_30 , last = last_sp , scale = 100 )
 
 # U. maydis
 hsla1_um_18 = coat_movement( sla1_um_18 , scale = 100 )

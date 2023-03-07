@@ -13,11 +13,13 @@ def set_x0( t , range = [ -5 , 0 ] ) :
     x0 = np.nanmedian( tt.coord()[ 0 ] )
     return x0
 
-def coat_movement( t , scale , n = 5 ) :
+def coat_movement( t , scale , n = 3 , last = 1 ) :
 
-    l = len( t ) - 1
+    if last < 1 :
+        raise AttribureError( '"last" must be 1 or bigger' )
+    l = len( t ) - last
     
-    h = np.median( t.coord()[ 0 ][ l - n : l ] * scale )
+    h = np.mean( t.coord()[ 0 ][ l - n : l ] * scale )
     h_err = np.sqrt( np.sum( t.coord_err()[ 0 ][ l - n : l ] ** 2 ) ) * scale / n
     return [ h , h_err ]
 
