@@ -21,9 +21,9 @@ axes = fig.subplot_mosaic(
 
 # 18 degree
 
-myplot( axes["A"] , sla1_sc_18 , what = 'coord' , label = 'Sla1-GFP in $S. cerevisiae$' , col = sla1_sc_color , x_scale = 100 )
-myplot( axes["A"] , sla1_sp_18 , what = 'coord' , label = 'Sla1-GFP in $S. pombe$' , col = sla1_sp_color , x_scale = 100 )
-myplot( axes["A"] , sla1_um_18 , what = 'coord' , label = 'Sla1-GFP in $U. maydis$' , col = sla1_um_color , x_scale = 100 )
+myplot( axes["A"] , sla1_sc_18 , what = 'coord' , label = 'Sla1-GFP in $S. cerevisiae$' , col = sla1_sc_color , x_scale = 100 , add_CI = False )
+myplot( axes["A"] , sla1_sp_18 , what = 'coord' , label = 'Sla1-GFP in $S. pombe$' , col = sla1_sp_color , x_scale = 100 , add_CI = False )
+myplot( axes["A"] , sla1_um_18 , what = 'coord' , label = 'Sla1-GFP in $U. maydis$' , col = sla1_um_color , x_scale = 100 , add_CI = False )
 #reference_plot_at_24deg( axes["A"] )
 # v reaction norm range
 # measured from the maximal ~linear region under 100 nm 
@@ -35,9 +35,9 @@ layout( axes[ "A"] , tlim[ "A"] , movlim["A"] , '$18\degree$C' , legend = True )
 
 # 21 degree
 
-myplot( axes["B"] , sla1_sc_21 , what = 'coord' , label = None, col = sla1_sc_color , x_scale = 100 )
-myplot( axes["B"] , sla1_sp_21 , what = 'coord' , label = None, col = sla1_sp_color , x_scale = 100 )
-myplot( axes["B"] , sla1_um_21 , what = 'coord' , label = None, col = sla1_um_color , x_scale = 100 )
+myplot( axes["B"] , sla1_sc_21 , what = 'coord' , label = None, col = sla1_sc_color , x_scale = 100 , add_CI = False )
+myplot( axes["B"] , sla1_sp_21 , what = 'coord' , label = None, col = sla1_sp_color , x_scale = 100 , add_CI = False )
+myplot( axes["B"] , sla1_um_21 , what = 'coord' , label = None, col = sla1_um_color , x_scale = 100 , add_CI = False )
 #reference_plot_at_24deg( axes["B"] )
 # v reaction norm range
 #axes[ "B" ].plot( [ 0 , 10 ] , [ 30 , 30 ] )
@@ -49,9 +49,9 @@ layout( axes[ "B"] , tlim[ "B"] , movlim["B"] , '$21\degree$C' , yaxis_label = F
 
 # 24 degree
 
-myplot( axes["C"] , sla1_sc_24 , what = 'coord' , label = None, col = sla1_sc_color , x_scale = 100 )
-myplot( axes["C"] , sla1_sp_24 , what = 'coord' , label = None, col = sla1_sp_color , x_scale = 100 )
-myplot( axes["C"] , sla1_um_24 , what = 'coord' , label = None, col = sla1_um_color , x_scale = 100 )
+myplot( axes["C"] , sla1_sc_24 , what = 'coord' , label = None, col = sla1_sc_color , x_scale = 100 , add_CI = False )
+myplot( axes["C"] , sla1_sp_24 , what = 'coord' , label = None, col = sla1_sp_color , x_scale = 100 , add_CI = False )
+myplot( axes["C"] , sla1_um_24 , what = 'coord' , label = None, col = sla1_um_color , x_scale = 100 , add_CI = False )
 # v reaction norm range
 #axes[ "C" ].plot( [ 0 , 10 ] , [ 30 , 30 ] )
 #axes[ "C" ].plot( [ 0 , 10 ] , [ 90 , 90 ] )
@@ -61,9 +61,9 @@ layout( axes[ "C"] , tlim[ "C"] , movlim["C"] , '$24\degree$C' )
 
 # 27 degree
 
-myplot( axes["D"] , sla1_sc_27 , what = 'coord' , label = None, col = sla1_sc_color , x_scale = 100 )
-myplot( axes["D"] , sla1_sp_27 , what = 'coord' , label = None, col = sla1_sp_color , x_scale = 100 )
-myplot( axes["D"] , sla1_um_27 , what = 'coord' , label = None, col = sla1_um_color , x_scale = 100 )
+myplot( axes["D"] , sla1_sc_27 , what = 'coord' , label = None, col = sla1_sc_color , x_scale = 100 , add_CI = False )
+myplot( axes["D"] , sla1_sp_27 , what = 'coord' , label = None, col = sla1_sp_color , x_scale = 100 , add_CI = False )
+myplot( axes["D"] , sla1_um_27 , what = 'coord' , label = None, col = sla1_um_color , x_scale = 100 , add_CI = False )
 #reference_plot_at_24deg( axes["D"] )
 # v reaction norm range
 #axes[ "D" ].plot( [ 0 , 10 ] , [ 30 , 30 ] )
@@ -75,9 +75,9 @@ layout( axes[ "D"] , tlim[ "D"] , movlim["D"] , '$27\degree$C' , yaxis_label = F
 
 # 30 degree
 
-myplot( axes["E"] , sla1_sc_30 , what = 'coord' , label = None, col = sla1_sc_color , x_scale = 100 )
-myplot( axes["E"] , sla1_sp_30 , what = 'coord' , label = None, col = sla1_sp_color , x_scale = 100 )
-myplot( axes["E"] , sla1_um_30 , what = 'coord' , label = None, col = sla1_um_color , x_scale = 100 )
+myplot( axes["E"] , sla1_sc_30 , what = 'coord' , label = None, col = sla1_sc_color , x_scale = 100 , add_CI = False )
+myplot( axes["E"] , sla1_sp_30 , what = 'coord' , label = None, col = sla1_sp_color , x_scale = 100 , add_CI = False )
+myplot( axes["E"] , sla1_um_30 , what = 'coord' , label = None, col = sla1_um_color , x_scale = 100 , add_CI = False )
 #reference_plot_at_24deg( axes["E"] )
 # v reaction norm range
 #axes[ "E" ].plot( [ 0 , 10 ] , [ 30 , 30 ] )
