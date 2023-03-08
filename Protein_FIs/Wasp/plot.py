@@ -10,33 +10,27 @@ from data import *
 
 import matplotlib
 
-fig = plt.figure( constrained_layout = True , figsize = ( 8 , 4 ) )
-
-axes = fig.subplot_mosaic(
-        """
-        ..ABC
-        DEEEF
-        """ ,
-        sharey = True )
+fig = plt.figure( figsize = ( 8 , 6 ) )#, layout = 'constrained' )
+fig.set_tight_layout(True)
+axes = fig.subplot_mosaic([
+    3*['A'] + 4*['B'] + 3*['C'] + 6*['.'] ,
+    3*['D'] + 9*['E'] + 4*['F']
+    ], sharey = True )
 
 # WT
-plot_all( axes['A'] , g_4021 , r_4021 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc )
-layout( axes[ 'A' ] , tlim[ 'A' ] , flim[ 'A' ] , '$S. cerevisiae' , legend = True )
-plot_all( axes['B'] , g_0026 , r_0026 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sp )
-plot_all( axes['C'] , g_0024 , r_0024 , g_label = '$Um_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_um )
+plot_all( axes['A'] , g_0024 , r_0024 , g_label = '$Um_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'A' ] )
+layout( axes[ 'A' ] , tlim[ 'A' ] , flim , '$U.maydis$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , xtick_interval = 25 )
+plot_all( axes['B'] , g_4021 , r_4021 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'B' ] )
+layout( axes[ 'B' ] , tlim[ 'B' ] , flim , '$S.cerevisiae$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
+plot_all( axes['C'] , g_0026 , r_0026 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'C' ] )
+layout( axes[ 'C' ] , tlim[ 'C' ] , flim , '$S.pombe$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
 # mutations
-plot_all( axes['D'] , g_4390 , r_4390 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc_spwasp )
-plot_all( axes['E'] , g_4801 , r_4801 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc_sla1del )
-plot_all( axes['F'] , g_4794 , r_4794 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = xlim_sc_sla1del_spwasp )
-
-axes['A'].set_ylabel( 'Fluor. int. (a.u.)' )
-axes['A'].set_title( '$Sc$' )
-axes['B'].set_title( '$Sp$' )
-axes['C'].set_title( '$Um$' )
-axes['D'].set_ylabel( 'Fluor. int. (a.u.)' )
-axes['D'].set_title( '$Sc$' )
-axes['E'].set_title( '$Sc, sla1\Delta$' )
-axes['F'].set_title( '$Sc, sla1\Delta$' )
+plot_all( axes['D'] , g_4390 , r_4390 , g_label = '' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'D' ] )
+layout( axes[ 'D' ] , tlim[ 'D' ] , flim , '$Wasp_{Sp}$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , xtick_interval = 25 )
+plot_all( axes['E'] , g_4801 , r_4801 , g_label = '' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'E' ] )
+layout( axes[ 'E' ] , tlim[ 'E' ] , flim , '$Wasp_{Sc}$, $sla1\Delta$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 50 )
+plot_all( axes['F'] , g_4794 , r_4794 , g_label = '' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'F' ] )
+layout( axes[ 'F' ] , tlim[ 'F' ] , flim , '$Wasp_{Sp}$, $sla1\Delta$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
 
 plt.savefig( 'plot.pdf' )
 

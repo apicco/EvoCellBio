@@ -140,15 +140,3 @@ def plot_all( ax , g , r , g_label , r_label , alpha , xlim = None ) :
     # darker shades of #ee8262 : #d67558 , #be684e
     ax.plot( g_avrg.t() - shift , g_scl * g_avrg.f() , color = '#68aea8' , label = g_label , lw = 2 )
     ax.plot( r_avrg.t() - shift , r_scl * r_avrg.f() , color = '#d67558' , label = r_label , lw = 2 )
-
-    xl = [ i for i in range(  0 , xlim[ 0 ] , -25 ) ]
-    xr = [ i for i in range(  0 , xlim[ 1 ] , 25 ) ]
-    ax.set_xticks( xl[::-1] + xr[1:] )
-    ax.set_yticks( [ i / 10 for i in range( 0 , 25 , 5 ) ] )
-    ax.grid()
-    
-    ax.set_xlabel( 'Time (s)' )
-    ax.set_xlim( xlim )
-    ax.legend()
-
-
