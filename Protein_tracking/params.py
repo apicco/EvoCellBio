@@ -24,7 +24,7 @@ species_tlim = {
     "B" : ( -2 , 17.5 ) , #-15,35
     "C" : ( -2 , 11 ) , #-25,35
 }
-
+flim = ( 0 , 1.5 )
 # Colors
 # old
 #sla1_sp_color = '#000000'
