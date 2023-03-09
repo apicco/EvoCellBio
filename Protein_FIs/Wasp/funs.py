@@ -129,14 +129,14 @@ def plot_all( ax , g , r , g_label , r_label , alpha , xlim = None ) :
         # set the time span of the average trajectory
         if i == 0 : 
 
-	        ax.plot( g[ i ].t() - shift , g_scl * g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha )
-	        ax.plot( r[ i ].t() - shift , r_scl * r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+	        ax.plot( g[ i ].t() - shift , g_scl * g[ i ].f() , color = '#29A300' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+	        ax.plot( r[ i ].t() - shift , r_scl * r[ i ].f() , color = '#813381' , marker = 'o' , linestyle = 'none' , alpha = alpha )
 
-        ax.plot( g[ i ].t() - shift , g_scl * g[ i ].f() , color = '#74c2bb' , marker = 'o' , linestyle = 'none' , alpha = alpha )
-        ax.plot( r[ i ].t() - shift , r_scl * r[ i ].f() , color = '#ee8262' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+        ax.plot( g[ i ].t() - shift , g_scl * g[ i ].f() , color = '#29A300' , marker = 'o' , linestyle = 'none' , alpha = alpha )
+        ax.plot( r[ i ].t() - shift , r_scl * r[ i ].f() , color = '#813381' , marker = 'o' , linestyle = 'none' , alpha = alpha )
 
     # plot the average
     # darker shades of #74c2bb : #68aea8 , #5c9b95
     # darker shades of #ee8262 : #d67558 , #be684e
-    ax.plot( g_avrg.t() - shift , g_scl * g_avrg.f() , color = '#68aea8' , label = g_label , lw = 2 )
-    ax.plot( r_avrg.t() - shift , r_scl * r_avrg.f() , color = '#d67558' , label = r_label , lw = 2 )
+    ax.plot( g_avrg.t() - shift , g_scl * g_avrg.f() , color = '#84E063' , label = g_label , lw = 2 )
+    ax.plot( r_avrg.t() - shift , r_scl * r_avrg.f() , color = '#EE5EF1' , label = r_label , lw = 2 )

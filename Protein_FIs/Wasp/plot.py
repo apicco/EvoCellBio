@@ -8,7 +8,7 @@ from params import *
 from funs import *
 from data import *
 
-ys = 4 # vertical size
+ys = 3 # vertical size
 
 fig1 = plt.figure( figsize = ( 8 , ys ) )#, layout = 'constrained' )
 fig1.set_tight_layout(True)
@@ -34,11 +34,11 @@ axes = fig2.subplot_mosaic([
 
 # mutations
 plot_all( axes['D'] , g_4390 , r_4390 , g_label = '' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'D' ] )
-layout( axes[ 'D' ] , tlim[ 'D' ] , flim , '$Wasp_{Sp}$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , xtick_interval = 25 )
+layout( axes[ 'D' ] , tlim[ 'D' ] , flim , 'SpWasp' , legend = False , ylabel = "Fluor. int .($a.u.$)" , xtick_interval = 25 )
 plot_all( axes['E'] , g_4801 , r_4801 , g_label = '' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'E' ] )
-layout( axes[ 'E' ] , tlim[ 'E' ] , flim , '$Wasp_{Sc}$, $sla1\Delta$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 50 )
+layout( axes[ 'E' ] , tlim[ 'E' ] , flim , 'ScWasp, $sla1\Delta$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 50 )
 plot_all( axes['F'] , g_4794 , r_4794 , g_label = '' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'F' ] )
-layout( axes[ 'F' ] , tlim[ 'F' ] , flim , '$Wasp_{Sp}$, $sla1\Delta$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
+layout( axes[ 'F' ] , tlim[ 'F' ] , flim , 'SpWasp, $sla1\Delta$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
 
 plt.savefig( 'Swap_Wasp.pdf' )
 
