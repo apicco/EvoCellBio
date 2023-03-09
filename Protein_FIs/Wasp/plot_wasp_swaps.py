@@ -17,11 +17,11 @@ axes = fig1.subplot_mosaic([
     ], sharey = True )
 
 # WT
-plot_all( axes['A'] , g_0024 , r_0024 , g_label = '$Um_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'A' ] )
+plot_all( axes['A'] , g_0024 , r_0024 , g_label = 'Wasp' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'A' ] )
 layout( axes[ 'A' ] , tlim[ 'A' ] , flim , '$U.maydis$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , xtick_interval = 25 )
-plot_all( axes['B'] , g_4021 , r_4021 , g_label = '$Sc_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'B' ] )
-layout( axes[ 'B' ] , tlim[ 'B' ] , flim , '$S.cerevisiae$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
-plot_all( axes['C'] , g_0026 , r_0026 , g_label = '$Sp_{Wasp}$' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'C' ] )
+plot_all( axes['B'] , g_4021 , r_4021 , g_label = 'Wasp' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'B' ] )
+layout( axes[ 'B' ] , tlim[ 'B' ] , flim , '$S.cerevisiae$' , legend = True , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
+plot_all( axes['C'] , g_0026 , r_0026 , g_label = 'Wasp' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'C' ] )
 layout( axes[ 'C' ] , tlim[ 'C' ] , flim , '$S.pombe$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
 
 plt.savefig( 'WT_Wasp.pdf' )
