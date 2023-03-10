@@ -1,3 +1,8 @@
+# append parent directory for global plot properties
+import sys
+sys.path.append( '../' )
+from Global.layouts import layout_barplot
+
 from matplotlib import pyplot as plt
 from matplotlib import patches
 from scipy.stats import norm as norm
@@ -57,30 +62,30 @@ def err( x , k = 1.4826 ) :
 # lifetimes
 species = 'S. cerevisiae'
 
-Fim1_RFP_sc_l = flt( species , 'Fim1-RFP' , Fim1_RFP_sc , dt = 1.2 )
+Fim1_RFP_sc_l = flt( species , 'Fim1' , Fim1_RFP_sc , dt = 1.2 )
 
 ref = [ Fim1_RFP_sc_l.at[ species , 'Fim1 lifetime (s)' ] ,  Fim1_RFP_sc_l.at[ species , 'SD (s)' ] ]
 
-Fim1_RFP_sc_220630_l = flt( species , 'Fim1-RFP\n220630' , Fim1_RFP_sc_220630 , dt = 1.2 , ref = ref )
-data = pd.concat( [ Fim1_RFP_sc_l , Fim1_RFP_sc_220630_l ] )
-Fim1_GFP_sc_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sc , dt = 1.2 , RFP = False , ref = ref )
-data = pd.concat( [ data , Fim1_GFP_sc_l ] )
-Fim1_GFP_sc_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_sc_220630 , dt = 1.2 , RFP = False , ref = ref )
-data = pd.concat( [ data , Fim1_GFP_sc_220630_l ] )
+#Fim1_RFP_sc_220630_l = flt( species , 'Fim1-RFP\n220630' , Fim1_RFP_sc_220630 , dt = 1.2 , ref = ref )
+#data = pd.concat( [ Fim1_RFP_sc_l , Fim1_RFP_sc_220630_l ] )
+#Fim1_GFP_sc_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sc , dt = 1.2 , RFP = False , ref = ref )
+#data = pd.concat( [ data , Fim1_GFP_sc_l ] )
+#Fim1_GFP_sc_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_sc_220630 , dt = 1.2 , RFP = False , ref = ref )
+#data = pd.concat( [ data , Fim1_GFP_sc_220630_l ] )
 Ede1_sc_l = flt( species , 'Ede1' , Ede1_sc , dt = 1.2 , ref = ref  )
-data = pd.concat( [ data , Ede1_sc_l ] )
+data = pd.concat( [ Fim1_RFP_sc_l , Ede1_sc_l ] )
 Pan1_sc_l = flt( species , 'Pan1' , Pan1_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Pan1_sc_l ] )
 Sla1_sc_l = flt( species , 'Sla1' , Sla1_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Sla1_sc_l ] )
 Wasp_sc_l = flt( species , 'Wasp' , Wasp_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Wasp_sc_l ] )
-las17del_spWasp_sc_l = flt( species , 'las17$\Delta$::spWasp' , las17del_spWasp_sc , dt = 1.2 , ref = ref  )
+las17del_spWasp_sc_l = flt( species , 'las17$\Delta$\nspWasp' , las17del_spWasp_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , las17del_spWasp_sc_l ] )
-sla1del_Shd1_Las17_sc_l = flt( species , 'sla1$\Delta$::Shd1,\nWasp' , sla1del_Shd1_Las17_sc , dt = 1.2 , ref = ref  )
-data = pd.concat( [ data , sla1del_Shd1_Las17_sc_l ] )
-sla1del_Shd1_las17del_spWasp_sc_l = flt( species , 'sla1$\Delta$::Shd1,\nwasp$\Delta$::spWasp' , sla1del_Shd1_las17del_spWasp_sc , dt = 1.2 , ref = ref  )
-data = pd.concat( [ data , sla1del_Shd1_las17del_spWasp_sc_l ] )
+#sla1del_Shd1_Las17_sc_l = flt( species , 'sla1$\Delta$::Shd1,\nWasp' , sla1del_Shd1_Las17_sc , dt = 1.2 , ref = ref  )
+#data = pd.concat( [ data , sla1del_Shd1_Las17_sc_l ] )
+#sla1del_Shd1_las17del_spWasp_sc_l = flt( species , 'sla1$\Delta$::Shd1,\nwasp$\Delta$::spWasp' , sla1del_Shd1_las17del_spWasp_sc , dt = 1.2 , ref = ref  )
+#data = pd.concat( [ data , sla1del_Shd1_las17del_spWasp_sc_l ] )
 Myo3_sc_l = flt( species , 'Myo3' , Myo3_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Myo3_sc_l ] )
 Myo5_sc_l = flt( species , 'Myo5' , Myo5_sc , dt = 1.2 , ref = ref  )
@@ -92,17 +97,17 @@ data = pd.concat( [ data , Arc18_sc_l ] )
 
 species = 'S. pombe'
 
-Fim1_RFP_sp_l = flt( species , 'Fim1-RFP' , Fim1_RFP_sp , dt = 1.2 )
+Fim1_RFP_sp_l = flt( species , 'Fim1' , Fim1_RFP_sp , dt = 1.2 )
 data = pd.concat( [ data , Fim1_RFP_sp_l ] )
 
 ref = [ Fim1_RFP_sp_l.at[ species , 'Fim1 lifetime (s)' ] ,  Fim1_RFP_sp_l.at[ species , 'SD (s)' ] ]
 
-Fim1_RFP_sp_220630_l = flt( species , 'Fim1-RFP\n220630' , Fim1_RFP_sp_220630 , dt = 1.2 , ref = ref )
-data = pd.concat( [ data , Fim1_RFP_sp_220630_l ] )
-Fim1_GFP_sp_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sp , dt = 1.2 , RFP = False , ref = ref )
-data = pd.concat( [ data , Fim1_GFP_sp_l ] )
-Fim1_GFP_sp_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_sp_220630 , dt = 1.2 , RFP = False , ref = ref )
-data = pd.concat( [ data , Fim1_GFP_sp_220630_l ] )
+#Fim1_RFP_sp_220630_l = flt( species , 'Fim1-RFP\n220630' , Fim1_RFP_sp_220630 , dt = 1.2 , ref = ref )
+#data = pd.concat( [ data , Fim1_RFP_sp_220630_l ] )
+#Fim1_GFP_sp_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sp , dt = 1.2 , RFP = False , ref = ref )
+#data = pd.concat( [ data , Fim1_GFP_sp_l ] )
+#Fim1_GFP_sp_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_sp_220630 , dt = 1.2 , RFP = False , ref = ref )
+#data = pd.concat( [ data , Fim1_GFP_sp_220630_l ] )
 Ede1_sp_Ucp8_l = flt( species , 'Ucp8' , Ede1_sp_Ucp8 , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Ede1_sp_Ucp8_l ] )
 Ede1_sp_l = flt( species , 'Ede1' , Ede1_sp , dt = 1.2 , ref = ref  )
@@ -122,17 +127,17 @@ data = pd.concat( [ data , Arc18_sp_l ] )
 
 species = 'U. maydis'
 
-Fim1_RFP_um_l = flt( species , 'Fim1-RFP' , Fim1_RFP_um , dt = 1.2 )
+Fim1_RFP_um_l = flt( species , 'Fim1' , Fim1_RFP_um , dt = 1.2 )
 data = pd.concat( [ data , Fim1_RFP_um_l ] )
 
 ref = [ Fim1_RFP_um_l.at[ species , 'Fim1 lifetime (s)' ] ,  Fim1_RFP_um_l.at[ species , 'SD (s)' ] ]
 
-Fim1_RFP_um_220630_l = flt( species , 'Fim1-RFP\n220630' , Fim1_RFP_um_220630 , dt = 1.2 , ref = ref )
-data = pd.concat( [ data , Fim1_RFP_um_220630_l ] )
-Fim1_GFP_um_l = flt( species , 'Fim1-GFP' , Fim1_GFP_um , dt = 1.2 , RFP = False , ref = ref )
-data = pd.concat( [ data , Fim1_GFP_um_l ] )
-Fim1_GFP_um_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_um_220630 , dt = 1.2 , RFP = False , ref = ref )
-data = pd.concat( [ data , Fim1_GFP_um_220630_l ] )
+#Fim1_RFP_um_220630_l = flt( species , 'Fim1-RFP\n220630' , Fim1_RFP_um_220630 , dt = 1.2 , ref = ref )
+#data = pd.concat( [ data , Fim1_RFP_um_220630_l ] )
+#Fim1_GFP_um_l = flt( species , 'Fim1-GFP' , Fim1_GFP_um , dt = 1.2 , RFP = False , ref = ref )
+#data = pd.concat( [ data , Fim1_GFP_um_l ] )
+#Fim1_GFP_um_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_um_220630 , dt = 1.2 , RFP = False , ref = ref )
+#data = pd.concat( [ data , Fim1_GFP_um_220630_l ] )
 Ede1_um_l = flt( species , 'Ede1' , Ede1_um , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Ede1_um_l ] )
 Pan1_um_l = flt( species , 'Pan1' , Pan1_um , dt = 1.2 , ref = ref  )
@@ -151,29 +156,16 @@ data = pd.concat( [ data , Arc18_um_l ] )
 data.to_csv( 'Fim1_lifetimes_control.csv' )
 
 print( data )
-def mybarplot( ax , data , what ) :
-    
-    ax.title.set_text( what )
-    ax.grid( axis = 'y' )
-    #data.loc[ what ].plot.bar( x = 'Protein' , y = 'Fim1 lifetime (s)' )
-    ax.bar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'Fim1 lifetime (s)' ] )
-    ax.errorbar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'Fim1 lifetime (s)' ] , yerr =  data.loc[ what ][ 'SD (s)' ] , color = 'black' , capsize = 5 , ls = '' )
-    ax.set_ylabel( 's' )
-    ax.tick_params( labelrotation = 45 , axis = 'x' )
-    
-    for i in range( len( data.loc[ what ] ) ) :
-        ax.text( data.loc[ what ][ 'Protein' ][ i ] , 0.5 , s = data.loc[ what ][ 'pval' ][ i ] , ha = 'center' )
 
-
-fig , ax = plt.subplots( 3 , 1 , figsize = ( 11 , 11 ) ) #, sharex = 'all' )
+fig , ax = plt.subplots( 3 , 1 , figsize = ( 5.5 , 7 ) ) #, sharex = 'all' )
 
 sc = ax[ 0 ]
 sp = ax[ 1 ]
 um = ax[ 2 ]
 
-mybarplot( sc , data , 'S. cerevisiae' )
-mybarplot( sp , data , 'S. pombe' )
-mybarplot( um , data , 'U. maydis' )
-fig.tight_layout()
+layout_barplot( sc , data , 'S. cerevisiae' )
+layout_barplot( sp , data , 'S. pombe' )
+layout_barplot( um , data , 'U. maydis' )
+plt.tight_layout()
 plt.savefig( 'Fim1_lifetimes_control.pdf' )
 plt.close()
