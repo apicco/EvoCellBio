@@ -16,9 +16,9 @@ Ede1_sp_Ucp8 = pd.read_csv( path + "Ede1_lifetimes_Sp-Ucp8.csv" )
 
 #Apl1
 
-Apl1_um = pd.read_csv( path + "Apl1_lifetimes_Um.csv" )
-Apl1_sc = pd.read_csv( path + "Apl1_lifetimes_Sc.csv" )
-Apl1_sp = pd.read_csv( path + "Apl1_lifetimes_Sp.csv" )
+#Apl1_um = pd.read_csv( path + "Apl1_lifetimes_Um.csv" )
+#Apl1_sc = pd.read_csv( path + "Apl1_lifetimes_Sc.csv" )
+#Apl1_sp = pd.read_csv( path + "Apl1_lifetimes_Sp.csv" )
 
 #Sla1
 
@@ -78,8 +78,8 @@ Fim1_RFP_sp_220630 = pd.read_csv( path + "Fim1-RFP_Lifetimes_Sp_220630.csv" )
 # WASP swap
 
 las17del_spWasp_sc = pd.read_csv( path + "las17del-spWsp1_lifetimes_Sc.csv" )
-sla1del_Shd1_Las17_sc = pd.read_csv( path + "sla1del-Shd1_las17_lifetimes_Sc.csv" )
-sla1del_Shd1_las17del_spWasp_sc = pd.read_csv( path + "sla1del-Shd1_las17del-spWasp_lifetimes_Sc.csv" )
+#sla1del_Shd1_Las17_sc = pd.read_csv( path + "sla1del-Shd1_las17_lifetimes_Sc.csv" )
+#sla1del_Shd1_las17del_spWasp_sc = pd.read_csv( path + "sla1del-Shd1_las17del-spWasp_lifetimes_Sc.csv" )
 sla1del_Las17_sc = pd.read_csv( path + "sla1del_Wasp_lifetimes_Sc.csv" )
 sla1del_spWasp_sc = pd.read_csv( path + "sla1del_spWsp1_lifetimes_Sc.csv" )
 

@@ -48,19 +48,20 @@ def layout_lt( ax , title , labels , colors , xaxt = True ) :
     if xaxt : 
         ax.set_xlabel( 'Time (s)' , fontsize = 13 )
 
-def layout_swap( ax , title , is_sc = True , ft = 18 ) :
+def layout_swap( ax , title , is_sc = True ) :
 
     ax.plot( ( 0 , 0 ) , ( -100 , 100 ) , 'k--' , lw = 0.5 )
     if is_sc :
-        ax.set_ylim( -16 , 3 )
-        ax.set_yticks( [ 1 , -2 , -5 , -8 , -11 , -14 ] )
+        ax.set_ylim( -10 , 3 )
+        ax.set_yticks( [ 1 , -2 , -5 , -8 ] )
     else : 
         ax.set_ylim( -1 , 3 )
         ax.set_yticks( [ 1 ] )
+        ax.tick_params(axis='x', which='major', labelsize=10)
     
-    ax.set_xlim( -275 , 55 )
+    ax.set_xlim( -125 , 55 )
     ax.yaxis.tick_right()
-    ax.set_ylabel( title , fontsize = ft , style = 'italic' )
+    ax.set_ylabel( title , fontsize = 18 )
     ax.grid( axis = 'x' )
 
 
