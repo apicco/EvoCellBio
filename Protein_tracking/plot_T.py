@@ -1,3 +1,8 @@
+# append parent directory for global plot properties
+import sys
+sys.path.append( '../' )
+from Global.layouts import layout
+
 from data import *
 from params import *
 from funs import *
