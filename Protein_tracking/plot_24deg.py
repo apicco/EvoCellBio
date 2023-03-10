@@ -12,7 +12,7 @@ import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
-fig = plt.figure( figsize = ( 5 , 7 ) , layout = 'compressed' )
+fig = plt.figure( figsize = ( 5 , 5 ) , layout = 'compressed' )
 
 axes = fig.subplot_mosaic( 
     """
