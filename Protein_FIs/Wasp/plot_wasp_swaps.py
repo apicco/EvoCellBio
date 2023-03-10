@@ -33,11 +33,11 @@ axes = fig2.subplot_mosaic([
     ], sharey = True )
 
 # mutations
-plot_all( axes['D'] , g_4390 , r_4390 , g_label = '' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'D' ] )
+plot_all( axes['D'] , g_4390 , r_4390 , g_label = 'Wasp' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'D' ] )
 layout( axes[ 'D' ] , tlim[ 'D' ] , flim , 'SpWasp' , legend = False , ylabel = "Fluor. int .($a.u.$)" , xtick_interval = 25 )
-plot_all( axes['E'] , g_4801 , r_4801 , g_label = '' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'E' ] )
-layout( axes[ 'E' ] , tlim[ 'E' ] , flim , 'ScWasp, $sla1\Delta$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 50 )
-plot_all( axes['F'] , g_4794 , r_4794 , g_label = '' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'F' ] )
+plot_all( axes['E'] , g_4801 , r_4801 , g_label = 'Wasp' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'E' ] )
+layout( axes[ 'E' ] , tlim[ 'E' ] , flim , 'ScWasp, $sla1\Delta$' , legend = True , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 50 )
+plot_all( axes['F'] , g_4794 , r_4794 , g_label = 'Wasp' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'F' ] )
 layout( axes[ 'F' ] , tlim[ 'F' ] , flim , 'SpWasp, $sla1\Delta$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
 
 plt.savefig( 'Swap_Wasp.pdf' )
