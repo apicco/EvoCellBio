@@ -1,3 +1,8 @@
+# append parent directory for global plot properties
+import sys
+sys.path.append( '../' )
+from Global.layouts import layout_swap
+
 import matplotlib
 from matplotlib import pyplot as plt
 import numpy as np
@@ -7,22 +12,6 @@ from funs import *
 
 matplotlib.rcParams['pgf.texsystem'] = "pdflatex" 
 matplotlib.rcParams['pgf.preamble'] = r'\usepackage{color}'
-
-def layout_swap( ax , title , is_sc = True , ft = 18 ) :
-
-    ax.plot( ( 0 , 0 ) , ( -100 , 100 ) , 'k--' , lw = 0.5 )
-    if is_sc :
-        ax.set_ylim( -16 , 3 )
-        ax.set_yticks( [ 1 , -2 , -5 , -8 , -11 , -14 ] )
-    else : 
-        ax.set_ylim( -1 , 3 )
-        ax.set_yticks( [ 1 ] )
-    
-    ax.set_xlim( -275 , 55 )
-    ax.yaxis.tick_right()
-    ax.set_ylabel( title , fontsize = ft , style = 'italic' )
-    ax.grid( axis = 'x' )
-
 fig , ax = plt.subplots( 2 , 1 , figsize = ( 13 , 7 ) , sharex = 'all' , gridspec_kw = { 'height_ratios' : [5, 1] } )
 
 sc = ax[ 0 ]
