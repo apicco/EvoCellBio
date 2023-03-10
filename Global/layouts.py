@@ -29,4 +29,24 @@ def layout_rn( ax , title , ylabel , legend = False ) :
     if legend : ax.legend( loc = 'upper left' , fontsize = 10 )
     ax.set_title( title , fontsize = 18 )
 
+# layout for the lifetime bar plot
+def layout_lt( ax , title , labels , colors , xaxt = True ) :
+
+    ax.plot( ( 0 , 0 ) , ( -100 , 100 ) , 'k--' , lw = 0.5 )
+    ax.set_ylim( -22 , 3 )
+    ax.set_xlim( -175 , 15 )
+
+    ax.tick_params(axis='y', which='major', labelsize=13)
+    ax.tick_params(axis='x', which='major', labelsize=10)
+    ax.yaxis.tick_right()
+    ax.set_yticks( [ 1 , -2 , -5 , -8 , -11 , -14 , -17 , -20 ] )
+    ax.set_yticklabels( labels , fontdict = { 'fontweight': 'bold' } )
+    [ t.set_color(i) for (i,t) in zip( colors , ax.get_yticklabels() ) ]
+    ax.set_ylabel( title , fontsize = 18 , style = 'italic' )
+    ax.grid( axis = 'x' )
+
+    if xaxt : 
+        ax.set_xlabel( 'Time (s)' , fontsize = 13 )
+
+
 
