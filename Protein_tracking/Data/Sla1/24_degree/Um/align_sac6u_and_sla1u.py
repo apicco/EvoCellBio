@@ -35,4 +35,4 @@ fim1u_trajectories = load_directory(
 		intensity_normalisation = 'Absolute' )
 
 
-align( path_target = '210202_MKUM0001.txt' , path_reference = '../Fim1/210610_MKUM0005.txt' , ch1 = sla1u_trajectories , ch2 = fim1u_trajectories , fimax2 = True )
+align( path_target = 'sla1_um_24deg.txt' , path_reference = '../../../Fimbrin/24_degree/Um/210610_MKUM0005.txt' , ch1 = sla1u_trajectories , ch2 = fim1u_trajectories , fimax2 = True )

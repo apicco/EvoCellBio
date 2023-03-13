@@ -29,5 +29,5 @@ fim1 = Traj()
 fim1.load( '180620_MKYP0010.txt' )
 fim1.rotate( np.pi )
 #print( - fim1.center_mass() )
-fim1.save( '180620_MKYP0010_flipped.txt' )
+fim1.save( '180620_MKYP0010_rotated.txt' )
 
