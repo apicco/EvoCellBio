@@ -36,4 +36,4 @@ fim1_trajectories = load_directory(
 
 from trajalign.traj import Traj
 
-align( path_target = 'sla1_sp_24deg.txt' , path_reference = '../../../Fimbrin/24_degree/Sp/180620_MKYP0010_rotated.txt' , ch1 = shd1_trajectories , ch2 = fim1_trajectories , fimax2 = True )#, unify_start_end_in_output = True )
+align( path_target = 'sla1_sp_24deg.txt' , path_reference = '../../../Fimbrin/24_degree/Sp/180620_MKYP0010_rotated.txt' , ch1 = shd1_trajectories , ch2 = fim1_trajectories , fimax2 = True )
