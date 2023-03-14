@@ -23,18 +23,24 @@ axes = fig.subplot_mosaic(
     """ , 
     sharex = True )
 
-# 24 degree
+# 24 degree dynamics
+# S. cerevisiae
+myplot( axes["A"] , fim1_sc_24 , what = 'coord' , label = 'Fimbrin' , col = color_Fim1 , x_scale = 100 , add_CI = False )
+myplot( axes["A"] , sla1_sc_24_aligned , what = 'coord' , label = 'Sla1' , col = color_Sla1 , x_scale = 100 , add_CI = False )
+myplot( axes["A"] , rvs167_sc_24_aligned , what = 'coord' , label = 'Rvs167' , col = color_Rvs , x_scale = 100 , add_CI = False )
+layout( axes[ "A"] , tlim_alignment , movlim["A"] , 'Endocytic dynamics' , legend = True , legend_title = "Protein:" , xaxis_label = False )
 
 # S. pombe
 myplot( axes["B"] , fim1_sp_24 , what = 'coord' , label = 'Fimbrin' , col = color_Fim1 , x_scale = 100 , add_CI = False )
 myplot( axes["B"] , sla1_sp_24_aligned , what = 'coord' , label = 'Sla1' , col = color_Sla1 , x_scale = 100 , add_CI = False )
 myplot( axes["B"] , rvs167_sp_24_aligned , what = 'coord' , label = 'Rvs167' , col = color_Rvs , x_scale = 100 , add_CI = False )
-# use layout range for pannel at 24 degree in figure 5
-layout( axes[ "B"] , tlim_alignement , movlim["A"] , 'Endocytic dynamics' , legend = True , legend_title = "Protein:" , xaxis_label = False )
+layout( axes[ "B"] , tlim_alignment , movlim["A"] , 'Endocytic dynamics' , legend = True , legend_title = "Protein:" , xaxis_label = False , yaxis_label = False )
 
+# 24 degree FI
+# S. cerevisiae
 myplot( axes["E"] , fim1_sp_24 , what = 'f' , label = 'Fimbrin' , col = color_Fim1 , add_CI = False )
 myplot( axes["E"] , sla1_sp_24_aligned , what = 'f' , label = 'Sla1' , col = color_Sla1 , add_CI = False )
 myplot( axes["E"] , rvs167_sp_24_aligned , what = 'f' , label = 'Rvs167' , col = color_Rvs , add_CI = False )
-layout( axes[ "E"] , tlim_alignement , flim , ylabel = 'Fluor. int. ($a.u.$)' , title = None )
+layout( axes[ "E"] , tlim_alignment , flim , ylabel = 'Fluor. int. ($a.u.$)' , title = None )
 
 fig.savefig( 'plot_aligned.pdf')
