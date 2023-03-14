@@ -3,7 +3,7 @@ from trajalign.average import load_directory
 from trajalign.average import average_trajectories
 
 trajectory_list = load_directory(
-		path = 'sac6_raw_trajectories' , 
+		path = 'fim1_raw_trajectories' , 
 		pattern = '.data' ,
 		comment_char = '%' , 
 		dt = 0.0937 , 
@@ -18,10 +18,10 @@ trajectory_list = load_directory(
 
 best_median , worst_median , aligned_trajectories_median =\
 		average_trajectories( trajectory_list , max_frame = 500 , 
-				output_file = 'sac6' , median = True , fimax = True ) 
+				output_file = 'fim1' , median = True , fimax = True ) 
 
 import numpy as np
 s = Traj()
-s.load( 'sac6.txt' )
+s.load( 'fim1.txt' )
 s.rotate( np.pi )
-s.save( 'sac6_rotated.txt' )
+s.save( 'fim1_sc_24deg.txt' )

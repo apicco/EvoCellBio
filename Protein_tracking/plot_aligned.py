@@ -28,19 +28,39 @@ axes = fig.subplot_mosaic(
 myplot( axes["A"] , fim1_sc_24 , what = 'coord' , label = 'Fimbrin' , col = color_Fim1 , x_scale = 100 , add_CI = False )
 myplot( axes["A"] , sla1_sc_24_aligned , what = 'coord' , label = 'Sla1' , col = color_Sla1 , x_scale = 100 , add_CI = False )
 myplot( axes["A"] , rvs167_sc_24_aligned , what = 'coord' , label = 'Rvs167' , col = color_Rvs , x_scale = 100 , add_CI = False )
-layout( axes[ "A"] , tlim_alignment , movlim["A"] , 'Endocytic dynamics' , legend = True , legend_title = "Protein:" , xaxis_label = False )
+layout( axes[ "A"] , tlim_alignment , movlim["A"] , '' , legend = True , legend_title = "Protein:" , xaxis_label = False )
 
 # S. pombe
 myplot( axes["B"] , fim1_sp_24 , what = 'coord' , label = 'Fimbrin' , col = color_Fim1 , x_scale = 100 , add_CI = False )
 myplot( axes["B"] , sla1_sp_24_aligned , what = 'coord' , label = 'Sla1' , col = color_Sla1 , x_scale = 100 , add_CI = False )
 myplot( axes["B"] , rvs167_sp_24_aligned , what = 'coord' , label = 'Rvs167' , col = color_Rvs , x_scale = 100 , add_CI = False )
-layout( axes[ "B"] , tlim_alignment , movlim["A"] , 'Endocytic dynamics' , legend = True , legend_title = "Protein:" , xaxis_label = False , yaxis_label = False )
+layout( axes[ "B"] , tlim_alignment , movlim["A"] , 'Endocytic dynamics' , legend = False , xaxis_label = False , yaxis_label = False )
+
+# U. maydis
+myplot( axes["C"] , fim1_um_24 , what = 'coord' , label = 'Fimbrin' , col = color_Fim1 , x_scale = 100 , add_CI = False )
+myplot( axes["C"] , sla1_um_24_aligned , what = 'coord' , label = 'Sla1' , col = color_Sla1 , x_scale = 100 , add_CI = False )
+#myplot( axes["C"] , rvs167_um_24_aligned , what = 'coord' , label = 'Rvs167' , col = color_Rvs , x_scale = 100 , add_CI = False )
+layout( axes[ "C"] , tlim_alignment , movlim["A"] , '' , legend = False , xaxis_label = False , yaxis_label = False )
 
 # 24 degree FI
 # S. cerevisiae
+myplot( axes["D"] , fim1_sc_24 , what = 'f' , label = 'Fimbrin' , col = color_Fim1 , add_CI = False )
+myplot( axes["D"] , sla1_sc_24_aligned , what = 'f' , label = 'Sla1' , col = color_Sla1 , add_CI = False )
+myplot( axes["D"] , rvs167_sc_24_aligned , what = 'f' , label = 'Rvs167' , col = color_Rvs , add_CI = False )
+layout( axes[ "D"] , tlim_alignment , flim , ylabel = 'Fluor. int. ($a.u.$)' , title = None )
+
+# S. pombe
 myplot( axes["E"] , fim1_sp_24 , what = 'f' , label = 'Fimbrin' , col = color_Fim1 , add_CI = False )
 myplot( axes["E"] , sla1_sp_24_aligned , what = 'f' , label = 'Sla1' , col = color_Sla1 , add_CI = False )
 myplot( axes["E"] , rvs167_sp_24_aligned , what = 'f' , label = 'Rvs167' , col = color_Rvs , add_CI = False )
-layout( axes[ "E"] , tlim_alignment , flim , ylabel = 'Fluor. int. ($a.u.$)' , title = None )
+layout( axes[ "E"] , tlim_alignment , flim , yaxis_label = False , title = None )
+
+# U. maydis
+myplot( axes["F"] , fim1_sp_24 , what = 'f' , label = 'Fimbrin' , col = color_Fim1 , add_CI = False )
+myplot( axes["F"] , sla1_sp_24_aligned , what = 'f' , label = 'Sla1' , col = color_Sla1 , add_CI = False )
+myplot( axes["F"] , rvs167_sp_24_aligned , what = 'f' , label = 'Rvs167' , col = color_Rvs , add_CI = False )
+layout( axes[ "F"] , tlim_alignment , flim , yaxis_label = False , title = None )
+
+
 
 fig.savefig( 'plot_aligned.pdf')

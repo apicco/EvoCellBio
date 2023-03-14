@@ -21,5 +21,5 @@ trajectory_list = load_directory(
 #compute the average of all the trajectories in the list
 best_median , worst_median , aligned_trajectories_median =\
 		average_trajectories( trajectory_list , max_frame = 500 , 
-				output_file = '210610_MKUM0005' , median = True , unify_start_end = False )
+				output_file = 'fim1_um_24deg' , median = True , unify_start_end = False )
 

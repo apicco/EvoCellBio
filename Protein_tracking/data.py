@@ -224,6 +224,35 @@ sla1_um_24.norm_f()
 sla1_um_24.tshift( t0_um_24deg )
 sla1_um_24.translate( [ x0_um_24deg , 0 ] ) 
 
+# aligned at 24 degree
+sla1_um_24_aligned = Traj()
+sla1_um_24_aligned.load( 'Data/Sla1/24_degree/Um/sla1_um_24deg_aligned.txt' )
+sla1_um_24_aligned.start( unified_start( sla1_um_24_aligned , add_CI = False ) )
+sla1_um_24_aligned.end( unified_end( sla1_um_24_aligned , add_CI = False ) )
+sla1_um_24_aligned.norm_f()
+# define t0
+t0_um_24deg_aligned = sla1_um_24_aligned.start() - sla1_um_24.start()
+sla1_um_24_aligned.tshift( -t0_um_24deg_aligned )
+# define x0
+x0_um_aligned = set_x0( sla1_um_24_aligned )
+sla1_um_24_aligned.translate( [ -x0_um_aligned , 0 ] ) 
+
+#rvs167_um_24_aligned = Traj()
+#rvs167_um_24_aligned.load( 'Data/Rvs167/24_degree/Um/rvs167_um_24deg_aligned.txt' )
+#rvs167_um_24_aligned.start( unified_start( rvs167_um_24_aligned , add_CI = False ) )
+#rvs167_um_24_aligned.end( unified_end( rvs167_um_24_aligned , add_CI = False ) )
+#rvs167_um_24_aligned.norm_f()
+#rvs167_um_24_aligned.tshift( -t0_um_24deg_aligned )
+#rvs167_um_24_aligned.translate( [ -x0_um_aligned , 0 ] ) 
+
+fim1_um_24 = Traj()
+fim1_um_24.load( 'Data/Fimbrin/24_degree/Um/fim1_um_24deg.txt' )
+fim1_um_24.start( unified_start( fim1_um_24 , add_CI = False ) )
+fim1_um_24.end( unified_end( fim1_um_24 , add_CI = False ) )
+fim1_um_24.norm_f()
+fim1_um_24.tshift( -t0_um_24deg_aligned )
+fim1_um_24.translate( [ -x0_um_aligned , 0 ] ) 
+
 # at 27 degree
 x0_um_27deg = 0.01
 t0_um_27deg = -2.89
