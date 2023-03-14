@@ -17,7 +17,8 @@ def layout( ax , tlim , movlim , title , xaxis_label = True , yaxis_label = True
         for legobj in leg.legendHandles:
             legobj.set_linewidth(5.0)
     ax.set_title( title , fontsize = 18 )
-	
+
+# layout for reaction norm plot
 def layout_rn( ax , title , ylabel , legend = False ) :
 
     ax.set_xlim( 16 , 32 )
@@ -48,6 +49,7 @@ def layout_lt( ax , title , labels , colors , xaxt = True ) :
     if xaxt : 
         ax.set_xlabel( 'Time (s)' , fontsize = 13 )
 
+# layout for the wasp sawp
 def layout_swap( ax , title , is_sc = True ) :
 
     ax.plot( ( 0 , 0 ) , ( -100 , 100 ) , 'k--' , lw = 0.5 )

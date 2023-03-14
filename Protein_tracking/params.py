@@ -12,6 +12,7 @@ tlim = {
     "D" : ( -12 , 13 ) , #25
     "E" : ( -14 , 14 ) #25
 }
+tlim_alignement = ( -10 , 15 )
 movlim = {
     "A" : ( -55 , 450 ) ,
     "B" : ( -55 , 450 ) ,
@@ -26,14 +27,4 @@ species_tlim = {
 }
 flim = ( -0.2 , 1.4 )
 
-# Colors
-# old
-#sla1_sp_color = '#000000'
-#sla1_sc_color = "#EC9937"
-#sla1_um_color = '#ff0000'
-sla1_sp_color = '#08A045'
-sla1_sc_color = "#30011E"
-sla1_um_color = '#00487C'
-#sla1_um_color = '#82A6B1'
 
-sla1_sp_color_24deg = '#CDCDCD'

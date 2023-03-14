@@ -20,5 +20,5 @@ trajectory_list = load_directory(
 #compute the average of all the trajectories in the list
 best_median , worst_median , aligned_trajectories_median =\
 		average_trajectories( trajectory_list , max_frame = 500 , 
-				output_file = 'hob1_180515-180824_all' , median = True , unify_start_end = False )
+				output_file = 'rvs167_sp_24deg' , median = True , unify_start_end = False )
 

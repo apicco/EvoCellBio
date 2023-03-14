@@ -2,6 +2,7 @@
 import sys
 sys.path.append( '../' )
 from Global.layouts import layout
+from Global.colors import *
 
 from data import *
 from params import *

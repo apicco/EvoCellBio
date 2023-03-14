@@ -2,6 +2,7 @@
 import sys
 sys.path.append( '../' )
 from Global.layouts import layout_lt
+from Global.colors import *
 
 import matplotlib
 from matplotlib import pyplot as plt
