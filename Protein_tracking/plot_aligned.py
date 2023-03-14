@@ -56,9 +56,9 @@ myplot( axes["E"] , rvs167_sp_24_aligned , what = 'f' , label = 'Rvs167' , col =
 layout( axes[ "E"] , tlim_alignment , flim , yaxis_label = False , title = None )
 
 # U. maydis
-myplot( axes["F"] , fim1_sp_24 , what = 'f' , label = 'Fimbrin' , col = color_Fim1 , add_CI = False )
-myplot( axes["F"] , sla1_sp_24_aligned , what = 'f' , label = 'Sla1' , col = color_Sla1 , add_CI = False )
-myplot( axes["F"] , rvs167_sp_24_aligned , what = 'f' , label = 'Rvs167' , col = color_Rvs , add_CI = False )
+myplot( axes["F"] , fim1_um_24 , what = 'f' , label = 'Fimbrin' , col = color_Fim1 , add_CI = False )
+myplot( axes["F"] , sla1_um_24_aligned , what = 'f' , label = 'Sla1' , col = color_Sla1 , add_CI = False )
+#myplot( axes["F"] , rvs167_um_24_aligned , what = 'f' , label = 'Rvs167' , col = color_Rvs , add_CI = False )
 layout( axes[ "F"] , tlim_alignment , flim , yaxis_label = False , title = None )
 
 
