@@ -18,5 +18,5 @@ trajectory_list = load_directory(
 
 best_median , worst_median , aligned_trajectories_median =\
 		average_trajectories( trajectory_list , max_frame = 500 , 
-				output_file = 'rvs167' , median = True )
+				output_file = 'rvs167_sc_24deg' , median = True )
 

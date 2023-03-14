@@ -33,4 +33,4 @@ sac6_trajectories = load_directory(
 		notes = 'the trajectory of the reference protein' ,
 		intensity_normalisation = 'Absolute')
 
-align( path_target = 'rvs167.txt' , path_reference = '../../../Fimbrin/24_degree/Sc/sac6_rotated.txt' , ch1 = rvs167_trajectories , ch2 = sac6_trajectories , fimax2 = True )
+align( path_target = 'rvs167_sc_24deg.txt' , path_reference = '../../../Fimbrin/24_degree/Sc/sac6_rotated.txt' , ch1 = rvs167_trajectories , ch2 = sac6_trajectories , fimax2 = True )
