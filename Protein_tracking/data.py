@@ -12,7 +12,6 @@ from numpy import nanmax
 # Saccaromyces cerevisiae (Sc)
 #--------------------------------
 # at 18 degree
-x0_sc_18deg = 0.00
 t0_sc_18deg = -29
 
 sla1_sc_18 = Traj()
@@ -24,7 +23,6 @@ sla1_sc_18.tshift( t0_sc_18deg )
 sla1_sc_18.translate( [ -set_x0( sla1_sc_18 ) , 0 ] ) 
 
 # at 21 degree
-x0_sc_21deg = 0.12
 t0_sc_21deg = -14.8# if 3 and 6 removed
 t0_sc_21deg = -40.5
 
@@ -37,7 +35,6 @@ sla1_sc_21.tshift( t0_sc_21deg )
 sla1_sc_21.translate( [ -set_x0( sla1_sc_21 ) , 0 ] ) 
 
 # at 24 degree
-x0_sc_24deg = 0.03
 t0_sc_24deg = -17.68
 
 sla1_sc_24 = Traj()
@@ -48,8 +45,36 @@ sla1_sc_24.norm_f()
 sla1_sc_24.tshift( t0_sc_24deg )
 sla1_sc_24.translate( [ -set_x0( sla1_sc_24 ) , 0 ] ) 
 
+# aligned at 24 degree
+sla1_sc_24_aligned = Traj()
+sla1_sc_24_aligned.load( 'Data/Sla1/24_degree/Sc/sla1_sc_24deg_aligned.txt' )
+sla1_sc_24_aligned.start( unified_start( sla1_sc_24_aligned , add_CI = False ) )
+sla1_sc_24_aligned.end( unified_end( sla1_sc_24_aligned , add_CI = False ) )
+sla1_sc_24_aligned.norm_f()
+# define t0
+t0_sc_24deg_aligned = sla1_sc_24_aligned.start() - sla1_sc_24.start()
+sla1_sc_24_aligned.tshift( -t0_sc_24deg_aligned )
+# define x0
+x0_sc_aligned = set_x0( sla1_sc_24_aligned )
+sla1_sc_24_aligned.translate( [ -x0_sc_aligned , 0 ] ) 
+
+rvs167_sc_24_aligned = Traj()
+rvs167_sc_24_aligned.load( 'Data/Rvs167/24_degree/Sc/rvs167_sc_24deg_aligned.txt' )
+rvs167_sc_24_aligned.start( unified_start( rvs167_sc_24_aligned , add_CI = False ) )
+rvs167_sc_24_aligned.end( unified_end( rvs167_sc_24_aligned , add_CI = False ) )
+rvs167_sc_24_aligned.norm_f()
+rvs167_sc_24_aligned.tshift( -t0_sc_24deg_aligned )
+rvs167_sc_24_aligned.translate( [ -x0_sc_aligned , 0 ] ) 
+
+fim1_sc_24 = Traj()
+fim1_sc_24.load( 'Data/Fimbrin/24_degree/Sc/fim1_sc_24deg.txt' )
+fim1_sc_24.start( unified_start( fim1_sc_24 , add_CI = False ) )
+fim1_sc_24.end( unified_end( fim1_sc_24 , add_CI = False ) )
+fim1_sc_24.norm_f()
+fim1_sc_24.tshift( -t0_sc_24deg_aligned )
+fim1_sc_24.translate( [ -x0_sc_aligned , 0 ] ) 
+
 # at 27 degree
-x0_sc_27deg = 0.06
 t0_sc_27deg = -19.2 
 
 sla1_sc_27 = Traj()
@@ -61,7 +86,6 @@ sla1_sc_27.tshift( t0_sc_27deg )
 sla1_sc_27.translate( [ -set_x0( sla1_sc_27 ) , 0 ] ) 
 
 # at 30 degree
-x0_sc_30deg = 0.04
 t0_sc_30deg = -12.9 
 
 sla1_sc_30 = Traj()
@@ -76,7 +100,6 @@ sla1_sc_30.translate( [ -set_x0( sla1_sc_30 ) , 0 ] )
 # Schizoaccaromyces pombe (Sp)
 #--------------------------------
 # at 18 degree
-x0_sp_18deg = 0.26
 t0_sp_18deg = -29.57
 
 sla1_sp_18 = Traj()
@@ -88,7 +111,6 @@ sla1_sp_18.tshift( t0_sp_18deg )
 sla1_sp_18.translate( [ -set_x0( sla1_sp_18 ) , 0 ] ) 
 
 # at 21 degree
-x0_sp_21deg = 0.26
 t0_sp_21deg = -31.23
 
 sla1_sp_21 = Traj()
@@ -100,7 +122,6 @@ sla1_sp_21.tshift( t0_sp_21deg )
 sla1_sp_21.translate( [ -set_x0( sla1_sp_21 ) , 0 ] ) 
 
 # at 24 degree
-x0_sp_24deg = 0.20
 t0_sp_24deg = -39.98
 
 sla1_sp_24 = Traj()
@@ -109,8 +130,7 @@ sla1_sp_24.start( unified_start( sla1_sp_24 , add_CI = False ) )
 sla1_sp_24.end( unified_end( sla1_sp_24 , add_CI = False ) )
 sla1_sp_24.norm_f()
 sla1_sp_24.tshift( t0_sp_24deg )
-x0_sp = set_x0( sla1_sp_24 )
-sla1_sp_24.translate( [ -x0_sp , 0 ] ) 
+sla1_sp_24.translate( [ -set_x0( sla1_sp_24 ) , 0 ] ) 
 
 # aligned at 24 degree
 sla1_sp_24_aligned = Traj()
@@ -118,6 +138,7 @@ sla1_sp_24_aligned.load( 'Data/Sla1/24_degree/Sp/sla1_sp_24deg_aligned.txt' )
 sla1_sp_24_aligned.start( unified_start( sla1_sp_24_aligned , add_CI = False ) )
 sla1_sp_24_aligned.end( unified_end( sla1_sp_24_aligned , add_CI = False ) )
 sla1_sp_24_aligned.norm_f()
+# define t0
 t0_sp_24deg_aligned = sla1_sp_24_aligned.start() - sla1_sp_24.start()
 sla1_sp_24_aligned.tshift( -t0_sp_24deg_aligned )
 # define x0
@@ -129,7 +150,6 @@ rvs167_sp_24_aligned.load( 'Data/Rvs167/24_degree/Sp/rvs167_sp_24deg_aligned.txt
 rvs167_sp_24_aligned.start( unified_start( rvs167_sp_24_aligned , add_CI = False ) )
 rvs167_sp_24_aligned.end( unified_end( rvs167_sp_24_aligned , add_CI = False ) )
 rvs167_sp_24_aligned.norm_f()
-# define t0
 rvs167_sp_24_aligned.tshift( -t0_sp_24deg_aligned )
 rvs167_sp_24_aligned.translate( [ -x0_sp_aligned , 0 ] ) 
 
