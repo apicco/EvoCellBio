@@ -28,19 +28,19 @@ axes = fig.subplot_mosaic(
 myplot( axes["A"] , fim1_sc_24 , what = 'coord' , label = 'Fimbrin' , col = color_Fim1 , x_scale = 100 , add_CI = False )
 myplot( axes["A"] , sla1_sc_24_aligned , what = 'coord' , label = 'Sla1' , col = color_Sla1 , x_scale = 100 , add_CI = False )
 myplot( axes["A"] , rvs167_sc_24_aligned , what = 'coord' , label = 'Rvs167' , col = color_Rvs , x_scale = 100 , add_CI = False )
-layout( axes[ "A"] , tlim_alignment , movlim["A"] , '' , legend = True , legend_title = "Protein:" , xaxis_label = False )
+layout( axes[ "A"] , tlim_alignment , movlim["A"] , '$S. cerevisiae$' , legend = True , legend_title = "Protein:" , xaxis_label = False )
 
 # S. pombe
 myplot( axes["B"] , fim1_sp_24 , what = 'coord' , label = 'Fimbrin' , col = color_Fim1 , x_scale = 100 , add_CI = False )
 myplot( axes["B"] , sla1_sp_24_aligned , what = 'coord' , label = 'Sla1' , col = color_Sla1 , x_scale = 100 , add_CI = False )
 myplot( axes["B"] , rvs167_sp_24_aligned , what = 'coord' , label = 'Rvs167' , col = color_Rvs , x_scale = 100 , add_CI = False )
-layout( axes[ "B"] , tlim_alignment , movlim["A"] , 'Endocytic dynamics' , legend = False , xaxis_label = False , yaxis_label = False )
+layout( axes[ "B"] , tlim_alignment , movlim["A"] , '$S. pombe$' , legend = False , xaxis_label = False , yaxis_label = False )
 
 # U. maydis
 myplot( axes["C"] , fim1_um_24 , what = 'coord' , label = 'Fimbrin' , col = color_Fim1 , x_scale = 100 , add_CI = False )
 myplot( axes["C"] , sla1_um_24_aligned , what = 'coord' , label = 'Sla1' , col = color_Sla1 , x_scale = 100 , add_CI = False )
 #myplot( axes["C"] , rvs167_um_24_aligned , what = 'coord' , label = 'Rvs167' , col = color_Rvs , x_scale = 100 , add_CI = False )
-layout( axes[ "C"] , tlim_alignment , movlim["A"] , '' , legend = False , xaxis_label = False , yaxis_label = False )
+layout( axes[ "C"] , tlim_alignment , movlim["A"] , '$U. maydis$' , legend = False , xaxis_label = False , yaxis_label = False )
 
 # 24 degree FI
 # S. cerevisiae
