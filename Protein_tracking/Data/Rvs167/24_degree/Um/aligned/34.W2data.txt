@@ -1,0 +1,24 @@
+#                frames                  t (s)                x (pxl)                y (pxl)                      f
+                   60.0      31.74359999999993   -0.31267662128971097    0.29351186110836736  0.0036416240523961035
+                   61.0     31.994399999999935                    nan                    nan                    nan
+                   62.0      32.24519999999993                    nan                    nan                    nan
+                   63.0      32.49599999999993   -0.14588964167208474     0.1865648833341993     0.7301682017324633
+                   64.0      32.74679999999993    0.13510228173156236      0.278647738562114                    1.0
+                   65.0     32.997599999999935     0.2859909278489141     0.4018463000710568     0.6695138364345355
+                   66.0      33.24839999999993                    nan                    nan                    nan
+                   67.0      33.49919999999993    0.42160074946342263     0.9013428244270187                    0.0
+#------------------------------------------------------------------------------------------------------------------
+# experiment: 230317_MKUM0019_DW
+# path: /Users/andreapicco/Google Drive/RESEARCH/EvoCellBio/Protein_tracking/Data/Rvs167/24_degree/Um/230317_MKUM0019_DW
+# file: 34.W2data.txt
+# protein: Rvs167-GFP
+# date: 17/03/23
+# notes: the trajectory of the target protein
+# t_unit: s
+# delta_t: 0.2508
+# coord_unit: pxl
+# intensity_normalisation: Absolute
+# aligned_to: ../../../Fimbrin/24_degree/Um/fim1_um_24deg.txt
+# alignment_angle: -0.8586200719798627 rad
+# alignment_translation: [-65.09580082  26.7195566 ] pxl
+# alignment_lag: 16.695599999999928 s

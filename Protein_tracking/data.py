@@ -1,6 +1,6 @@
 from funs import set_x0
 from trajalign.traj import Traj
-from trajalign.average import unified_start , unified_end
+from trajalign.average import unified_start , unified_end , load_directory
 
 from numpy import nanmax 
 
@@ -238,13 +238,20 @@ sla1_um_24_aligned.tshift( -t0_um_24deg_aligned )
 x0_um_aligned = set_x0( sla1_um_24_aligned )
 sla1_um_24_aligned.translate( [ -x0_um_aligned , 0 ] ) 
 
-rvs167_um_24_aligned = Traj()
-rvs167_um_24_aligned.load( 'Data/Rvs167/24_degree/Um/rvs167_um_24deg_aligned.txt' )
-rvs167_um_24_aligned.start( unified_start( rvs167_um_24_aligned , add_CI = False ) )
-rvs167_um_24_aligned.end( unified_end( rvs167_um_24_aligned , add_CI = False ) )
-rvs167_um_24_aligned.norm_f()
-rvs167_um_24_aligned.tshift( -t0_um_24deg_aligned )
-rvs167_um_24_aligned.translate( [ -x0_um_aligned , 0 ] ) 
+rvs167_um_24_aligned = load_directory( 
+                                      path = 'Data/Rvs167/24_degree/Um/aligned/' , 
+                                      pattern = '.W2data.txt' ,
+                                      frames = 0 ,
+                                      t = 1 ,
+                                      coord = (2 , 3) ,
+                                      f = 4 , 
+                                      t_unit = 's' ,
+                                      coord_unit = 'pxl'
+                                      )
+for t in rvs167_um_24_aligned :
+    t.norm_f()
+    t.tshift( -t0_um_24deg_aligned )
+    t.translate( [ -x0_um_aligned , 0 ] ) 
 
 fim1_um_24 = Traj()
 fim1_um_24.load( 'Data/Fimbrin/24_degree/Um/fim1_um_24deg.txt' )

@@ -1,5 +1,5 @@
 from trajalign.traj import Traj
-from trajalign.align import align
+from trajalign.align import align_raw
 from trajalign.average import load_directory
 
 path_raw_DW_trajectories = '230317_MKUM0019_DW'
@@ -35,4 +35,4 @@ fim1u_trajectories = load_directory(
 		intensity_normalisation = 'Absolute' )
 
 
-align( path_target = 'rvs167_um_24deg.txt' , path_reference = '../../../Fimbrin/24_degree/Um/fim1_um_24deg.txt' , ch1 = rvs167u_trajectories , ch2 = fim1u_trajectories , fimax2 = True )
+align_raw( path_reference = '../../../Fimbrin/24_degree/Um/fim1_um_24deg.txt' , ch1 = rvs167u_trajectories , ch2 = fim1u_trajectories , fimax2 = True )
