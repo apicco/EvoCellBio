@@ -42,7 +42,7 @@ myplot( axes["C"] , sla1_um_24_aligned , what = 'coord' , label = 'Sla1' , col =
 #myplot( axes["C"] , rvs167_um_24_aligned , what = 'coord' , label = 'Rvs167' , col = color_Rvs , x_scale = 100 , add_CI = False )
 #for t in rvs167_um_24_aligned :
 #    axes["C"].plot( t.t() , t.coord()[ 0 ] * 100 , color = color_Rvs , marker = 'o' , alpha = 0.05 )
-axes["C"].plot( rvs167_um_24_aligned_average.t() , rvs167_um_24_aligned_average.coord()[ 0 ] * 100 , color = color_Rvs , alpha = 1 )
+myplot( axes["C"] , rvs167_um_24_aligned_average , what = 'coord' , label = 'Rvs167' , col = color_Rvs , x_scale = 100 , add_CI = False )
 layout( axes[ "C"] , tlim_alignment , movlim["A"] , '$U. maydis$' , legend = False , xaxis_label = False , yaxis_label = False )
 
 # 24 degree FI
@@ -62,8 +62,9 @@ layout( axes[ "E"] , tlim_alignment , flim , yaxis_label = False , title = None 
 myplot( axes["F"] , fim1_um_24 , what = 'f' , label = 'Fimbrin' , col = color_Fim1 , add_CI = False )
 myplot( axes["F"] , sla1_um_24_aligned , what = 'f' , label = 'Sla1' , col = color_Sla1 , add_CI = False )
 #for t in rvs167_um_24_aligned :
+#    t.norm_f()
 #    axes["F"].plot( t.t() , t.f() , color = color_Rvs , marker = 'o' , alpha = 0.05 )
-axes["F"].plot( rvs167_um_24_aligned_average.t() , rvs167_um_24_aligned_average.f() , color = color_Rvs , alpha = 1 )
+myplot( axes["F"] , rvs167_um_24_aligned_average , what = 'f' , label = 'Rvs167' , col = color_Rvs , add_CI = False )
 layout( axes[ "F"] , tlim_alignment , flim , yaxis_label = False , title = None )
 
 fig.savefig( 'plot_aligned.pdf')

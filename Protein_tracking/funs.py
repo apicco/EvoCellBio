@@ -110,9 +110,9 @@ def average_dw( tj , bt ) :
             mf.append( np.nanmedian( ff ) )
             mx.append( np.nanmedian( xx ) )
             my.append( np.nanmedian( yy ) )
-            mf_err.append( nanMAD( ff ) )
-            mx_err.append( nanMAD( xx ) )
-            my_err.append( nanMAD( yy ) )
+            mf_err.append( nanMAD( ff ) / np.sqrt( len( ff ) ) )
+            mx_err.append( nanMAD( xx ) / np.sqrt( len( xx ) ) )
+            my_err.append( nanMAD( yy ) / np.sqrt( len( yy ) ) )
         
             ff = [ sf[ i ] ]
             xx = [ sx[ i ] ]
@@ -123,8 +123,8 @@ def average_dw( tj , bt ) :
     output.input_values( 't' , mt )
     output.input_values( 'coord' , [ mx , my ] )
     output.input_values( 'f' , mf )
-    output.input_values( 'coord_err' , [ mx , my ] )
-    output.input_values( 'f_err' , mf )
+    output.input_values( 'coord_err' , [ mx_err , my_err ] )
+    output.input_values( 'f_err' , mf_err )
     output.start( np.mean( s ) )
     output.end( np.mean( e ) )
     return output 
