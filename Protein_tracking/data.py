@@ -1,6 +1,6 @@
-from funs import set_x0
+from funs import set_x0 , average_dw
 from trajalign.traj import Traj
-from trajalign.average import unified_start , unified_end , load_directory
+from trajalign.average import unified_start , unified_end , load_directory , trajectory_average
 
 from numpy import nanmax 
 
@@ -246,12 +246,14 @@ rvs167_um_24_aligned = load_directory(
                                       coord = (2 , 3) ,
                                       f = 4 , 
                                       t_unit = 's' ,
-                                      coord_unit = 'pxl'
+                                      coord_unit = 'pxl' , 
+                                      intensity_normalisation = 'None' 
                                       )
 for t in rvs167_um_24_aligned :
-    t.norm_f()
     t.tshift( -t0_um_24deg_aligned )
     t.translate( [ -x0_um_aligned , 0 ] ) 
+rvs167_um_24_aligned_average = average_dw( rvs167_um_24_aligned , 0.3 )
+rvs167_um_24_aligned_average.norm_f()
 
 fim1_um_24 = Traj()
 fim1_um_24.load( 'Data/Fimbrin/24_degree/Um/fim1_um_24deg.txt' )
