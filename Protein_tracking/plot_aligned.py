@@ -59,12 +59,13 @@ myplot( axes["E"] , rvs167_sp_24_aligned , what = 'f' , label = 'Rvs167' , col =
 layout( axes[ "E"] , tlim_alignment , flim , yaxis_label = False , title = None )
 
 # U. maydis
-myplot( axes["F"] , fim1_um_24 , what = 'f' , label = 'Fimbrin' , col = color_Fim1 , add_CI = False )
+myplot( axes["F"] , fim1_um_24 , what = 'f' , label = 'Fimbrin' , col = "#CDCDCD" , add_CI = False )
 myplot( axes["F"] , sla1_um_24_aligned , what = 'f' , label = 'Sla1' , col = color_Sla1 , add_CI = False )
 #for t in rvs167_um_24_aligned :
 #    t.norm_f()
 #    axes["F"].plot( t.t() , t.f() , color = color_Rvs , marker = 'o' , alpha = 0.05 )
 myplot( axes["F"] , rvs167_um_24_aligned_average , what = 'f' , label = 'Rvs167' , col = color_Rvs , add_CI = False )
-layout( axes[ "F"] , tlim_alignment , flim , yaxis_label = False , title = None )
+myplot( axes["F"] , fim1_um_24_aligned_average , what = 'f' , label = 'Rvs167' , col = color_Fim1 , add_CI = False )
+layout( axes[ "F"] , ( 0 , 8 ) , flim , yaxis_label = False , title = None )
 
 fig.savefig( 'plot_aligned.pdf')

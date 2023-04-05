@@ -129,3 +129,22 @@ def average_dw( tj , bt ) :
     output.end( np.mean( e ) )
     return output 
 
+def nanrm( t ) :
+
+    n = len( t ) 
+    x = [ t.t()[ i ] for i in range( n ) if t.f()[ i ] == t.f()[ i ] ]
+    y = [ t.f()[ i ] for i in range( n ) if t.f()[ i ] == t.f()[ i ] ]
+    return x , y 
+
+def array_plot( g , r , filename ) :
+
+    if len( g ) != len( r ) :
+        raise AttributeError( 'green (g) and red (r) dataset have not the same length' )
+
+    fig , ax = plt.subplots( 7 , 7 , figsize = ( 20 , 20 ) )
+    for i in range( len( r ) ) :
+	    x , y = nanrm( g[ i ] )
+	    ax[ int( i / 7 ) , i - 7 * int( i / 7 ) ].plot( x , y , 'g-' )
+	    x , y = nanrm( r[ i ] )
+	    ax[ int( i / 7 ) , i - 7 * int( i / 7 ) ].plot( x , y , 'r-' )
+	plt.savefig( filename )
