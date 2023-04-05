@@ -1,4 +1,4 @@
-from trajalign.align import align
+from trajalign.align import align_raw
 from trajalign.average import load_directory
 
 path_raw_DW_trajectories = '181115_MKYP0023_DW_raw_trajectories'
@@ -32,4 +32,5 @@ fim1_trajectories = load_directory(
 		notes = 'the trajectory of the reference protein' ,
 		intensity_normalisation = 'Absolute' )
 
-align( path_target = 'rvs167_sp_24deg.txt' , path_reference = '../../../Fimbrin/24_degree/Sp/180620_MKYP0010_rotated.txt' , ch1 = hob1_trajectories , ch2 = fim1_trajectories , fimax2 = True )
+align_raw( path_reference = '../../../Fimbrin/24_degree/Sp/fim1_sp_24deg.txt' , ch1 = hob1_trajectories , ch2 = fim1_trajectories , fimax2 = True )
+#align( path_target = 'rvs167_sp_24deg.txt' , path_reference = '../../../Fimbrin/24_degree/Sp/180620_MKYP0010_rotated.txt' , ch1 = hob1_trajectories , ch2 = fim1_trajectories , fimax2 = True )

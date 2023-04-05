@@ -144,14 +144,46 @@ sla1_sp_24_aligned.tshift( -t0_sp_24deg_aligned )
 # define x0
 x0_sp_aligned = set_x0( sla1_sp_24_aligned )
 sla1_sp_24_aligned.translate( [ -x0_sp_aligned , 0 ] ) 
+# raw dw data
+rvs167_sp_24_aligned = load_directory( 
+    path = 'Data/Rvs167/24_degree/Sp/aligned/' , 
+    pattern = '.W2data.txt' ,
+    frames = 0 ,
+    t = 1 ,
+    coord = (2 , 3) ,
+    f = 4 , 
+    t_unit = 's' ,
+    coord_unit = 'pxl' , 
+    intensity_normalisation = 'Absolute')
+for t in rvs167_sp_24_aligned :
+    t.tshift( -t0_sp_24deg_aligned )
+    t.translate( [ -x0_sp_aligned , 0 ] ) 
+rvs167_sp_24_aligned_average = average_dw( rvs167_sp_24_aligned , 0.5 )
+rvs167_sp_24_aligned_average.norm_f()
 
-rvs167_sp_24_aligned = Traj()
-rvs167_sp_24_aligned.load( 'Data/Rvs167/24_degree/Sp/rvs167_sp_24deg_aligned.txt' )
-rvs167_sp_24_aligned.start( unified_start( rvs167_sp_24_aligned , add_CI = False ) )
-rvs167_sp_24_aligned.end( unified_end( rvs167_sp_24_aligned , add_CI = False ) )
-rvs167_sp_24_aligned.norm_f()
-rvs167_sp_24_aligned.tshift( -t0_sp_24deg_aligned )
-rvs167_sp_24_aligned.translate( [ -x0_sp_aligned , 0 ] ) 
+fim1_sp_24_aligned = load_directory( 
+    path = 'Data/Rvs167/24_degree/Sp/aligned/' , 
+    pattern = '.W1data.txt' ,
+    frames = 0 ,
+    t = 1 ,
+    coord = (2 , 3) ,
+    f = 4 , 
+    t_unit = 's' ,
+    coord_unit = 'pxl' , 
+    intensity_normalisation = 'Absolute')
+for t in fim1_sp_24_aligned :
+    t.tshift( -t0_sp_24deg_aligned )
+    t.translate( [ -x0_sp_aligned , 0 ] ) 
+fim1_sp_24_aligned_average = average_dw( fim1_sp_24_aligned , 0.5 )
+fim1_sp_24_aligned_average.norm_f()
+
+#rvs167_sp_24_aligned = Traj()
+#rvs167_sp_24_aligned.load( 'Data/Rvs167/24_degree/Sp/rvs167_sp_24deg_aligned.txt' )
+#rvs167_sp_24_aligned.start( unified_start( rvs167_sp_24_aligned , add_CI = False ) )
+#rvs167_sp_24_aligned.end( unified_end( rvs167_sp_24_aligned , add_CI = False ) )
+#rvs167_sp_24_aligned.norm_f()
+#rvs167_sp_24_aligned.tshift( -t0_sp_24deg_aligned )
+#rvs167_sp_24_aligned.translate( [ -x0_sp_aligned , 0 ] ) 
 
 fim1_sp_24 = Traj()
 fim1_sp_24.load( 'Data/Fimbrin/24_degree/Sp/fim1_sp_24deg.txt' )
@@ -237,42 +269,36 @@ sla1_um_24_aligned.tshift( -t0_um_24deg_aligned )
 # define x0
 x0_um_aligned = set_x0( sla1_um_24_aligned )
 sla1_um_24_aligned.translate( [ -x0_um_aligned , 0 ] ) 
-
+# raw dw data
 rvs167_um_24_aligned = load_directory( 
-                                      path = 'Data/Rvs167/24_degree/Um/aligned/' , 
-                                      pattern = '.W2data.txt' ,
-                                      frames = 0 ,
-                                      t = 1 ,
-                                      coord = (2 , 3) ,
-                                      f = 4 , 
-                                      t_unit = 's' ,
-                                      coord_unit = 'pxl' , 
-                                      intensity_normalisation = 'Absolute' 
-                                      )
+    path = 'Data/Rvs167/24_degree/Um/aligned/' , 
+    pattern = '.W2data.txt' ,
+    frames = 0 ,
+    t = 1 ,
+    coord = (2 , 3) ,
+    f = 4 , 
+    t_unit = 's' ,
+    coord_unit = 'pxl' , 
+    intensity_normalisation = 'Absolute')
 for t in rvs167_um_24_aligned :
     t.tshift( -t0_um_24deg_aligned )
     t.translate( [ -x0_um_aligned , 0 ] ) 
-
-fim1_um_24_aligned = load_directory( 
-                                      path = 'Data/Rvs167/24_degree/Um/aligned/' , 
-                                      pattern = '.W1data.txt' ,
-                                      frames = 0 ,
-                                      t = 1 ,
-                                      coord = (2 , 3) ,
-                                      f = 4 , 
-                                      t_unit = 's' ,
-                                      coord_unit = 'pxl' , 
-                                      intensity_normalisation = 'Absolute' 
-                                      )
-for t in fim1_um_24_aligned :
-    t.tshift( -t0_um_24deg_aligned )
-    t.translate( [ -x0_um_aligned , 0 ] ) 
-
-print( len( fim1_um_24_aligned ) )
-
 rvs167_um_24_aligned_average = average_dw( rvs167_um_24_aligned , 0.5 )
 rvs167_um_24_aligned_average.norm_f()
 
+fim1_um_24_aligned = load_directory( 
+    path = 'Data/Rvs167/24_degree/Um/aligned/' , 
+    pattern = '.W1data.txt' ,
+    frames = 0 ,
+    t = 1 ,
+    coord = (2 , 3) ,
+    f = 4 , 
+    t_unit = 's' ,
+    coord_unit = 'pxl' , 
+    intensity_normalisation = 'Absolute')
+for t in fim1_um_24_aligned :
+    t.tshift( -t0_um_24deg_aligned )
+    t.translate( [ -x0_um_aligned , 0 ] ) 
 fim1_um_24_aligned_average = average_dw( fim1_um_24_aligned , 0.5 )
 fim1_um_24_aligned_average.norm_f()
 

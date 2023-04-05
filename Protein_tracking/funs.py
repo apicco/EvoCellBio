@@ -143,8 +143,8 @@ def array_plot( g , r , filename ) :
 
     fig , ax = plt.subplots( 7 , 7 , figsize = ( 20 , 20 ) )
     for i in range( len( r ) ) :
-	    x , y = nanrm( g[ i ] )
-	    ax[ int( i / 7 ) , i - 7 * int( i / 7 ) ].plot( x , y , 'g-' )
-	    x , y = nanrm( r[ i ] )
-	    ax[ int( i / 7 ) , i - 7 * int( i / 7 ) ].plot( x , y , 'r-' )
-	plt.savefig( filename )
+        x , y = nanrm( g[ i ] )
+        ax[ int( i / 7 ) , i - 7 * int( i / 7 ) ].plot( x , y , 'g-' )
+        x , y = nanrm( r[ i ] )
+        ax[ int( i / 7 ) , i - 7 * int( i / 7 ) ].plot( x , y , 'r-' )
+    plt.savefig( filename )
