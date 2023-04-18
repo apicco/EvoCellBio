@@ -50,7 +50,7 @@ def velocity( t , range , scale , t0 = 0 ) :
 
     return [ p[ 0 ] * scale , e * scale ]
 
-def average_dw( tj , bt ) :
+def average_dw( tj , bt , mean_start = True , mean_end = True ) :
 
     """
     bt : binning interval
@@ -125,8 +125,21 @@ def average_dw( tj , bt ) :
     output.input_values( 'f' , mf )
     output.input_values( 'coord_err' , [ mx_err , my_err ] )
     output.input_values( 'f_err' , mf_err )
-    output.start( np.mean( s ) )
-    output.end( np.mean( e ) )
+
+    output.annotations()[ 't_unit' ] = tj[ 0 ].annotations()[ 't_unit' ]
+    output.annotations()[ 'coord_unit' ] = tj[ 0 ].annotations()[ 'coord_unit' ]
+    output.annotations()[ 'mean_starts' ] = str( np.mean( s ) )
+    output.annotations()[ 'mean_ends' ] = str( np.mean( e ) )
+    output.annotations()[ 'std_starts' ] = str( np.std( s ) )
+    output.annotations()[ 'std_ends' ] = str( np.std( e ) )
+    output.annotations()[ 'n_starts' ] = str( len( [ i for i in s if i == i ] ) )
+    output.annotations()[ 'n_ends' ] = str( len( [ i for i in e if i == i ] ) )
+
+    if mean_start :
+        output.start( float( output.annotations()[ 'mean_starts' ] ) )
+    if mean_end :
+        output.end( float( output.annotations()[ 'mean_ends' ] ) )
+    
     return output 
 
 def nanrm( t ) :

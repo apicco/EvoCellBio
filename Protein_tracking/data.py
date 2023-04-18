@@ -8,6 +8,7 @@ from numpy import nanmax
 #       Load data
 #-------------------------
 
+binning_dt = 0.5
 #--------------------------------
 # Saccaromyces cerevisiae (Sc)
 #--------------------------------
@@ -46,33 +47,56 @@ sla1_sc_24.tshift( t0_sc_24deg )
 sla1_sc_24.translate( [ -set_x0( sla1_sc_24 ) , 0 ] ) 
 
 # aligned at 24 degree
-sla1_sc_24_aligned = Traj()
-sla1_sc_24_aligned.load( 'Data/Sla1/24_degree/Sc/sla1_sc_24deg_aligned.txt' )
-sla1_sc_24_aligned.start( unified_start( sla1_sc_24_aligned , add_CI = False ) )
-sla1_sc_24_aligned.end( unified_end( sla1_sc_24_aligned , add_CI = False ) )
-sla1_sc_24_aligned.norm_f()
+fim1_sc_24_dw = load_directory( 
+    path = 'Data/Sla1/24_degree/Sc/aligned/' , 
+    pattern = '.W1data.txt' ,
+    frames = 0 ,
+    t = 1 ,
+    coord = (2 , 3) ,
+    f = 4 , 
+    t_unit = 's' ,
+    coord_unit = 'pxl' , 
+    intensity_normalisation = 'Absolute')
+fim1_sc_24_dw_average = average_dw( fim1_sc_24_dw , binning_dt )
+
+sla1_sc_24_dw = load_directory( 
+    path = 'Data/Sla1/24_degree/Sc/aligned/' , 
+    pattern = '.W2data.txt' ,
+    frames = 0 ,
+    t = 1 ,
+    coord = (2 , 3) ,
+    f = 4 , 
+    t_unit = 's' ,
+    coord_unit = 'pxl' , 
+    intensity_normalisation = 'Absolute')
+sla1_sc_24_dw_average = average_dw( sla1_sc_24_dw , binning_dt )
+
+rvs167_sc_24_dw = load_directory( 
+    path = 'Data/Rvs167/24_degree/Sc/aligned/' , 
+    pattern = '.W2data.txt' ,
+    frames = 0 ,
+    t = 1 ,
+    coord = (2 , 3) ,
+    f = 4 , 
+    t_unit = 's' ,
+    coord_unit = 'pxl' , 
+    intensity_normalisation = 'Absolute')
+rvs167_sc_24_dw_average = average_dw( rvs167_sc_24_dw , binning_dt )
+
 # define t0
-t0_sc_24deg_aligned = sla1_sc_24_aligned.start() - sla1_sc_24.start()
-sla1_sc_24_aligned.tshift( -t0_sc_24deg_aligned )
+t0_sc_24deg_aligned = float( fim1_sc_24_dw_average.annotations()[ 'mean_starts' ] )
+fim1_sc_24_dw_average.tshift( -t0_sc_24deg_aligned )
+sla1_sc_24_dw_average.tshift( -t0_sc_24deg_aligned )
+rvs167_sc_24_dw_average.tshift( -t0_sc_24deg_aligned )
 # define x0
-x0_sc_aligned = set_x0( sla1_sc_24_aligned )
-sla1_sc_24_aligned.translate( [ -x0_sc_aligned , 0 ] ) 
-
-rvs167_sc_24_aligned = Traj()
-rvs167_sc_24_aligned.load( 'Data/Rvs167/24_degree/Sc/rvs167_sc_24deg_aligned.txt' )
-rvs167_sc_24_aligned.start( unified_start( rvs167_sc_24_aligned , add_CI = False ) )
-rvs167_sc_24_aligned.end( unified_end( rvs167_sc_24_aligned , add_CI = False ) )
-rvs167_sc_24_aligned.norm_f()
-rvs167_sc_24_aligned.tshift( -t0_sc_24deg_aligned )
-rvs167_sc_24_aligned.translate( [ -x0_sc_aligned , 0 ] ) 
-
-fim1_sc_24 = Traj()
-fim1_sc_24.load( 'Data/Fimbrin/24_degree/Sc/fim1_sc_24deg.txt' )
-fim1_sc_24.start( unified_start( fim1_sc_24 , add_CI = False ) )
-fim1_sc_24.end( unified_end( fim1_sc_24 , add_CI = False ) )
-fim1_sc_24.norm_f()
-fim1_sc_24.tshift( -t0_sc_24deg_aligned )
-fim1_sc_24.translate( [ -x0_sc_aligned , 0 ] ) 
+x0_sc_aligned =  set_x0( sla1_sc_24_dw_average )
+fim1_sc_24_dw_average.translate( [ -x0_sc_aligned , 0 ] ) 
+sla1_sc_24_dw_average.translate( [ -x0_sc_aligned , 0 ] ) 
+rvs167_sc_24_dw_average.translate( [ -x0_sc_aligned , 0 ] ) 
+# norm
+fim1_sc_24_dw_average.norm_f()
+sla1_sc_24_dw_average.norm_f()
+rvs167_sc_24_dw_average.norm_f()
 
 # at 27 degree
 t0_sc_27deg = -19.2 
@@ -133,19 +157,31 @@ sla1_sp_24.tshift( t0_sp_24deg )
 sla1_sp_24.translate( [ -set_x0( sla1_sp_24 ) , 0 ] ) 
 
 # aligned at 24 degree
-sla1_sp_24_aligned = Traj()
-sla1_sp_24_aligned.load( 'Data/Sla1/24_degree/Sp/sla1_sp_24deg_aligned.txt' )
-sla1_sp_24_aligned.start( unified_start( sla1_sp_24_aligned , add_CI = False ) )
-sla1_sp_24_aligned.end( unified_end( sla1_sp_24_aligned , add_CI = False ) )
-sla1_sp_24_aligned.norm_f()
-# define t0
-t0_sp_24deg_aligned = sla1_sp_24_aligned.start() - sla1_sp_24.start()
-sla1_sp_24_aligned.tshift( -t0_sp_24deg_aligned )
-# define x0
-x0_sp_aligned = set_x0( sla1_sp_24_aligned )
-sla1_sp_24_aligned.translate( [ -x0_sp_aligned , 0 ] ) 
-# raw dw data
-rvs167_sp_24_aligned = load_directory( 
+fim1_sp_24_dw = load_directory( 
+    path = 'Data/Sla1/24_degree/Sp/aligned/' , 
+    pattern = '.W1data.txt' ,
+    frames = 0 ,
+    t = 1 ,
+    coord = (2 , 3) ,
+    f = 4 , 
+    t_unit = 's' ,
+    coord_unit = 'pxl' , 
+    intensity_normalisation = 'Absolute')
+fim1_sp_24_dw_average = average_dw( fim1_sp_24_dw , binning_dt )
+
+sla1_sp_24_dw = load_directory( 
+    path = 'Data/Sla1/24_degree/Sp/aligned/' , 
+    pattern = '.W2data.txt' ,
+    frames = 0 ,
+    t = 1 ,
+    coord = (2 , 3) ,
+    f = 4 , 
+    t_unit = 's' ,
+    coord_unit = 'pxl' , 
+    intensity_normalisation = 'Absolute')
+sla1_sp_24_dw_average = average_dw( sla1_sp_24_dw , binning_dt )
+
+rvs167_sp_24_dw = load_directory( 
     path = 'Data/Rvs167/24_degree/Sp/aligned/' , 
     pattern = '.W2data.txt' ,
     frames = 0 ,
@@ -155,43 +191,22 @@ rvs167_sp_24_aligned = load_directory(
     t_unit = 's' ,
     coord_unit = 'pxl' , 
     intensity_normalisation = 'Absolute')
-for t in rvs167_sp_24_aligned :
-    t.tshift( -t0_sp_24deg_aligned )
-    t.translate( [ -x0_sp_aligned , 0 ] ) 
-rvs167_sp_24_aligned_average = average_dw( rvs167_sp_24_aligned , 0.5 )
-rvs167_sp_24_aligned_average.norm_f()
+rvs167_sp_24_dw_average = average_dw( rvs167_sp_24_dw , binning_dt )
 
-fim1_sp_24_aligned = load_directory( 
-    path = 'Data/Rvs167/24_degree/Sp/aligned/' , 
-    pattern = '.W1data.txt' ,
-    frames = 0 ,
-    t = 1 ,
-    coord = (2 , 3) ,
-    f = 4 , 
-    t_unit = 's' ,
-    coord_unit = 'pxl' , 
-    intensity_normalisation = 'Absolute')
-for t in fim1_sp_24_aligned :
-    t.tshift( -t0_sp_24deg_aligned )
-    t.translate( [ -x0_sp_aligned , 0 ] ) 
-fim1_sp_24_aligned_average = average_dw( fim1_sp_24_aligned , 0.5 )
-fim1_sp_24_aligned_average.norm_f()
-
-#rvs167_sp_24_aligned = Traj()
-#rvs167_sp_24_aligned.load( 'Data/Rvs167/24_degree/Sp/rvs167_sp_24deg_aligned.txt' )
-#rvs167_sp_24_aligned.start( unified_start( rvs167_sp_24_aligned , add_CI = False ) )
-#rvs167_sp_24_aligned.end( unified_end( rvs167_sp_24_aligned , add_CI = False ) )
-#rvs167_sp_24_aligned.norm_f()
-#rvs167_sp_24_aligned.tshift( -t0_sp_24deg_aligned )
-#rvs167_sp_24_aligned.translate( [ -x0_sp_aligned , 0 ] ) 
-
-fim1_sp_24 = Traj()
-fim1_sp_24.load( 'Data/Fimbrin/24_degree/Sp/fim1_sp_24deg.txt' )
-fim1_sp_24.start( unified_start( fim1_sp_24 , add_CI = False ) )
-fim1_sp_24.end( unified_end( fim1_sp_24 , add_CI = False ) )
-fim1_sp_24.norm_f()
-fim1_sp_24.tshift( -t0_sp_24deg_aligned )
-fim1_sp_24.translate( [ -x0_sp_aligned , 0 ] ) 
+# define t0
+t0_sp_24deg_aligned = float( fim1_sp_24_dw_average.annotations()[ 'mean_starts' ] )
+fim1_sp_24_dw_average.tshift( -t0_sp_24deg_aligned )
+sla1_sp_24_dw_average.tshift( -t0_sp_24deg_aligned )
+rvs167_sp_24_dw_average.tshift( -t0_sp_24deg_aligned )
+# define x0
+x0_sp_aligned =  set_x0( sla1_sp_24_dw_average )
+fim1_sp_24_dw_average.translate( [ -x0_sp_aligned , 0 ] ) 
+sla1_sp_24_dw_average.translate( [ -x0_sp_aligned , 0 ] ) 
+rvs167_sp_24_dw_average.translate( [ -x0_sp_aligned , 0 ] ) 
+# norm
+fim1_sp_24_dw_average.norm_f()
+sla1_sp_24_dw_average.norm_f()
+rvs167_sp_24_dw_average.norm_f()
 
 # at 27 degree
 x0_sp_27deg = 0.26
@@ -258,19 +273,31 @@ sla1_um_24.tshift( t0_um_24deg )
 sla1_um_24.translate( [ x0_um_24deg , 0 ] ) 
 
 # aligned at 24 degree
-sla1_um_24_aligned = Traj()
-sla1_um_24_aligned.load( 'Data/Sla1/24_degree/Um/sla1_um_24deg_aligned.txt' )
-sla1_um_24_aligned.start( unified_start( sla1_um_24_aligned , add_CI = False ) )
-sla1_um_24_aligned.end( unified_end( sla1_um_24_aligned , add_CI = False ) )
-sla1_um_24_aligned.norm_f()
-# define t0
-t0_um_24deg_aligned = sla1_um_24_aligned.start() - sla1_um_24.start()
-sla1_um_24_aligned.tshift( -t0_um_24deg_aligned )
-# define x0
-x0_um_aligned = set_x0( sla1_um_24_aligned )
-sla1_um_24_aligned.translate( [ -x0_um_aligned , 0 ] ) 
 # raw dw data
-rvs167_um_24_aligned = load_directory( 
+fim1_um_24_dw = load_directory( 
+    path = 'Data/Sla1/24_degree/Um/aligned/' , 
+    pattern = '.W1data.txt' ,
+    frames = 0 ,
+    t = 1 ,
+    coord = (2 , 3) ,
+    f = 4 , 
+    t_unit = 's' ,
+    coord_unit = 'pxl' , 
+    intensity_normalisation = 'Absolute')
+fim1_um_24_dw_average = average_dw( fim1_um_24_dw , binning_dt )
+
+sla1_um_24_dw = load_directory( 
+    path = 'Data/Sla1/24_degree/Um/aligned/' , 
+    pattern = '.W2data.txt' ,
+    frames = 0 ,
+    t = 1 ,
+    coord = (2 , 3) ,
+    f = 4 , 
+    t_unit = 's' ,
+    coord_unit = 'pxl' , 
+    intensity_normalisation = 'Absolute')
+sla1_um_24_dw_average = average_dw( sla1_um_24_dw , binning_dt )
+rvs167_um_24_dw = load_directory( 
     path = 'Data/Rvs167/24_degree/Um/aligned/' , 
     pattern = '.W2data.txt' ,
     frames = 0 ,
@@ -280,35 +307,22 @@ rvs167_um_24_aligned = load_directory(
     t_unit = 's' ,
     coord_unit = 'pxl' , 
     intensity_normalisation = 'Absolute')
-for t in rvs167_um_24_aligned :
-    t.tshift( -t0_um_24deg_aligned )
-    t.translate( [ -x0_um_aligned , 0 ] ) 
-rvs167_um_24_aligned_average = average_dw( rvs167_um_24_aligned , 0.5 )
-rvs167_um_24_aligned_average.norm_f()
+rvs167_um_24_dw_average = average_dw( rvs167_um_24_dw , binning_dt )
 
-fim1_um_24_aligned = load_directory( 
-    path = 'Data/Rvs167/24_degree/Um/aligned/' , 
-    pattern = '.W1data.txt' ,
-    frames = 0 ,
-    t = 1 ,
-    coord = (2 , 3) ,
-    f = 4 , 
-    t_unit = 's' ,
-    coord_unit = 'pxl' , 
-    intensity_normalisation = 'Absolute')
-for t in fim1_um_24_aligned :
-    t.tshift( -t0_um_24deg_aligned )
-    t.translate( [ -x0_um_aligned , 0 ] ) 
-fim1_um_24_aligned_average = average_dw( fim1_um_24_aligned , 0.5 )
-fim1_um_24_aligned_average.norm_f()
-
-fim1_um_24 = Traj()
-fim1_um_24.load( 'Data/Fimbrin/24_degree/Um/fim1_um_24deg.txt' )
-fim1_um_24.start( unified_start( fim1_um_24 , add_CI = False ) )
-fim1_um_24.end( unified_end( fim1_um_24 , add_CI = False ) )
-fim1_um_24.norm_f()
-fim1_um_24.tshift( -t0_um_24deg_aligned )
-fim1_um_24.translate( [ -x0_um_aligned , 0 ] ) 
+# define t0
+t0_um_24deg_aligned = float( fim1_um_24_dw_average.annotations()[ 'mean_starts' ] )
+fim1_um_24_dw_average.tshift( -t0_um_24deg_aligned )
+sla1_um_24_dw_average.tshift( -t0_um_24deg_aligned )
+rvs167_um_24_dw_average.tshift( -t0_um_24deg_aligned )
+# define x0
+x0_um_aligned =  set_x0( sla1_um_24_dw_average )
+fim1_um_24_dw_average.translate( [ -x0_um_aligned , 0 ] ) 
+sla1_um_24_dw_average.translate( [ -x0_um_aligned , 0 ] ) 
+rvs167_um_24_dw_average.translate( [ -x0_um_aligned , 0 ] ) 
+## norm
+fim1_um_24_dw_average.norm_f()
+sla1_um_24_dw_average.norm_f()
+rvs167_um_24_dw_average.norm_f()
 
 # at 27 degree
 x0_um_27deg = 0.01
