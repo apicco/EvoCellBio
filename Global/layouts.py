@@ -75,10 +75,9 @@ def layout_barplot( ax , data , what ) :
     ax.errorbar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'Fim1 lifetime (s)' ] , yerr =  data.loc[ what ][ 'SD (s)' ] , color = 'black' , capsize = 5 , ls = '' )
     ax.set_ylabel( 's' , fontsize = 13 )
     ax.set_ylim( 0 , 16 )
+    #ax.ticklabel_format( axis = 'x', useOffset = True )
     ax.tick_params( labelrotation = 45 , axis = 'x', labelsize = 10 )
     
     for i in range( len( data.loc[ what ] ) ) :
         ax.text( data.loc[ what ][ 'Protein' ][ i ] , 0.5 , s = data.loc[ what ][ 'pval' ][ i ] , ha = 'center' )
-
-
-
+    
