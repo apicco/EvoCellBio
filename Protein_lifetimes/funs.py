@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd 
+from scipy.stats import norm as norm
 from matplotlib import patches
 
 def Is( ax , d , dt , col = 'black' , do_plot = False ) :
@@ -89,3 +90,46 @@ def slt( species , protein , d , dt , df = [] , shift = 0 , is_t0 = True ) :
     else :
 
         return data
+
+# Fim1 life time functions
+def ztest( x , y ) :
+
+    delta_mean = np.abs( x[ 0 ] - y[ 0 ] )
+    sigma = np.sqrt( x[ 1 ] ** 2 + y[ 1 ] ** 2 )
+
+    z = delta_mean / sigma
+
+    return  2 * ( 1 - norm.cdf( z ) )
+
+def flt( species , protein , d , dt , ref = None , RFP = True ) :
+    
+    # comute the lifetime from RFP or GFP data? 
+    if RFP :
+        l = ( d.RFP_end - d.RFP_start + 1 ) * dt
+    else :
+        l = ( d.GFP_end - d.GFP_start + 1 ) * dt
+   
+    # averages
+    ml = [ avg( l ) , err( l ) ]
+
+    # ztest on the reference
+    if ref == None : 
+        z = np.nan
+    else :
+        z = ztest( ml , ref )
+
+    pval = z
+
+    d = pd.DataFrame( [[ protein , np.round( ml[0] , 2 ) , np.round( ml[1] , 2 ) , pval ]] , columns = [ 'Protein' , 'Fim1 lifetime (s)' , 'SD (s)' , 'pval' ] , index = [ species ] )
+
+    return d 
+
+def avg( x ) :
+    return np.mean( x )
+    #return np.median( x )
+
+def err( x , k = 1.4826 ) :
+    return np.std( x ) / np.sqrt( len( x ) )
+    #return k * np.median( np.abs( x - np.median( x ) ) )
+
+

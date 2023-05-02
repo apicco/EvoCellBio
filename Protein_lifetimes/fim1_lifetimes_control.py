@@ -5,59 +5,10 @@ from Global.layouts import layout_barplot
 
 from matplotlib import pyplot as plt
 from matplotlib import patches
-from scipy.stats import norm as norm
 import numpy as np
 import copy as cp
 from data import *
-
-def ztest( x , y ) :
-
-    delta_mean = np.abs( x[ 0 ] - y[ 0 ] )
-    sigma = np.sqrt( x[ 1 ] ** 2 + y[ 1 ] ** 2 )
-
-    z = delta_mean / sigma
-
-    return  2 * ( 1 - norm.cdf( z ) )
-
-def flt( species , protein , d , dt , ref = None , RFP = True ) :
-    
-    # comute the lifetime from RFP or GFP data? 
-    if RFP :
-        l = ( d.RFP_end - d.RFP_start + 1 ) * dt
-    else :
-        l = ( d.GFP_end - d.GFP_start + 1 ) * dt
-   
-    # averages
-    ml = [ avg( l ) , err( l ) ]
-
-    # ztest on the reference
-    if ref == None : 
-        z = np.nan
-    else :
-        z = ztest( ml , ref )
-
-    if z >= 0.05 :
-        pval = ''
-    elif z != z :
-        pval = ''
-    elif 0.01 <= z < 0.05 :
-        pval = '*'
-    elif 0.001 <= z < 0.01 :
-        pval = '**'
-    else :
-        pval = '***'
-
-    d = pd.DataFrame( [[ protein , np.round( ml[0] , 2 ) , np.round( ml[1] , 2 ) , pval ]] , columns = [ 'Protein' , 'Fim1 lifetime (s)' , 'SD (s)' , 'pval' ] , index = [ species ] )
-
-    return d 
-
-def avg( x ) :
-    return np.mean( x )
-    #return np.median( x )
-
-def err( x , k = 1.4826 ) :
-    return np.std( x ) / np.sqrt( len( x ) )
-    #return k * np.median( np.abs( x - np.median( x ) ) )
+from funs import *
 
 # lifetimes
 species = 'S. cerevisiae'

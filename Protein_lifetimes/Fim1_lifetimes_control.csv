@@ -1,27 +1,27 @@
 ,Protein,Fim1 lifetime (s),SD (s),pval
 S. cerevisiae,Fim1,10.02,0.28,
-S. cerevisiae,Eps15,11.46,0.37,**
-S. cerevisiae,Intersectin,10.54,0.3,
-S. cerevisiae,Sla1,9.41,0.34,
-S. cerevisiae,Wasp,11.01,0.37,*
-S. cerevisiae,Myo3,10.56,0.3,
-S. cerevisiae,Myo5,10.8,0.31,
-S. cerevisiae,Rvs167,9.33,0.26,
-S. cerevisiae,Arc18,12.34,0.34,***
+S. cerevisiae,Eps15,11.46,0.37,0.0019041434246160893
+S. cerevisiae,Intersectin,10.54,0.3,0.20572141584637382
+S. cerevisiae,Sla1,9.41,0.34,0.16904878643179044
+S. cerevisiae,Wasp,11.01,0.37,0.032752734617146784
+S. cerevisiae,Myo3,10.56,0.3,0.18631404487914294
+S. cerevisiae,Myo5,10.8,0.31,0.061347511917180686
+S. cerevisiae,Rvs167,9.33,0.26,0.07082925925411221
+S. cerevisiae,Arc18,12.34,0.34,1.6618203746432414e-07
 S. pombe,Fim1,8.78,0.4,
-S. pombe,Ucp8,10.08,0.35,*
-S. pombe,Eps15,9.69,0.43,
-S. pombe,Intersectin,9.81,0.49,
-S. pombe,Sla1,8.45,0.49,
-S. pombe,Wasp,10.52,0.39,**
-S. pombe,Myosin I,7.62,0.32,*
-S. pombe,Rvs167,10.05,0.33,*
-S. pombe,Arc18,15.09,0.54,***
+S. pombe,Ucp8,10.08,0.35,0.014999400495649295
+S. pombe,Eps15,9.69,0.43,0.12287404311872807
+S. pombe,Intersectin,9.81,0.49,0.10323565315531225
+S. pombe,Sla1,8.45,0.49,0.6049911560890033
+S. pombe,Wasp,10.52,0.39,0.0018941868586925814
+S. pombe,Myosin I,7.62,0.32,0.02338067905515251
+S. pombe,Rvs167,10.05,0.33,0.01405723089394173
+S. pombe,Arc18,15.09,0.54,0.0
 U. maydis,Fim1,6.64,0.19,
-U. maydis,Eps15,7.68,0.27,**
-U. maydis,Intersectin,6.47,0.25,
-U. maydis,Sla1,6.73,0.22,
-U. maydis,Wasp,6.91,0.19,
-U. maydis,Myosin I,7.08,0.19,
-U. maydis,Rvs167,7.53,0.29,*
-U. maydis,Arc18,10.95,0.39,***
+U. maydis,Eps15,7.68,0.27,0.0015326181710137998
+U. maydis,Intersectin,6.47,0.25,0.5950894053857294
+U. maydis,Sla1,6.73,0.22,0.766484581908939
+U. maydis,Wasp,6.91,0.19,0.3196931639515759
+U. maydis,Myosin I,7.08,0.19,0.10469141100309542
+U. maydis,Rvs167,7.53,0.29,0.010407533315596407
+U. maydis,Arc18,10.95,0.39,0.0

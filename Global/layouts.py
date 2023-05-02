@@ -66,7 +66,7 @@ def layout_swap( ax , title , is_sc = True ) :
     ax.set_ylabel( title , fontsize = 18 )
     ax.grid( axis = 'x' )
 
-def layout_barplot( ax , data , what ) :
+def layout_barplot( ax , data , what , bonferroni = True ) :
     
     ax.set_title( '$' + what + '$' , fontsize = 18 )
     ax.grid( axis = 'y' )
@@ -77,7 +77,27 @@ def layout_barplot( ax , data , what ) :
     ax.set_ylim( 0 , 16 )
     #ax.ticklabel_format( axis = 'x', useOffset = True )
     ax.tick_params( labelrotation = 45 , axis = 'x', labelsize = 10 )
-    
-    for i in range( len( data.loc[ what ] ) ) :
-        ax.text( data.loc[ what ][ 'Protein' ][ i ] , 0.5 , s = data.loc[ what ][ 'pval' ][ i ] , ha = 'center' )
+   
+    l = len( data.loc[ what ] ) 
+
+    if bonferroni : 
+        m = l
+    else :
+        m = 1
+
+    for i in range( l ) :
+        pval = data.loc[ what ][ 'pval' ][ i ]
+
+        if pval >= 0.05/m :
+            stars = ''
+        elif pval != pval :
+            stars = ''
+        elif 0.01/m <= pval < 0.05/m :
+            stars = '*'
+        elif 0.001/m <= pval < 0.01/m :
+            stars = '**'
+        else :
+            stars = '***'
+
+        ax.text( data.loc[ what ][ 'Protein' ][ i ] , 0.5 , s = stars , ha = 'center' )
     
