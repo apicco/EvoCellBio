@@ -37,11 +37,11 @@ def layout_lt( ax , title , labels , colors , xaxt = True ) :
     ax.set_ylim( -22 , 3 )
     ax.set_xlim( -175 , 15 )
 
-    ax.tick_params(axis='y', which='major', labelsize=13)
+    ax.tick_params(axis='y', which='major', labelsize=12)
     ax.tick_params(axis='x', which='major', labelsize=10)
     ax.yaxis.tick_right()
     ax.set_yticks( [ 1 , -2 , -5 , -8 , -11 , -14 , -17 , -20 ] )
-    ax.set_yticklabels( labels , fontdict = { 'fontweight': 'bold' } )
+    ax.set_yticklabels( labels , fontdict = { 'fontweight': 'regular' } )
     [ t.set_color(i) for (i,t) in zip( colors , ax.get_yticklabels() ) ]
     ax.set_ylabel( title , fontsize = 18 , style = 'italic' )
     ax.grid( axis = 'x' )
