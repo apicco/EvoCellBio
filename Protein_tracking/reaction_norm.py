@@ -1,6 +1,12 @@
+# append parent directory for global plot properties
+import sys
+sys.path.append( '../' )
+from Global.layouts import layout_rn
+from Global.colors import *
+
 from data import *
 from params import *
-from funs import velocity , coat_movement, layout_rn
+from funs import velocity , coat_movement
 from trajplot.plotfuns import myplot , plot_raw
 
 import matplotlib as mpl
