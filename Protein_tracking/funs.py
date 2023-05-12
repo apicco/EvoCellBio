@@ -22,18 +22,19 @@ def coat_movement( t , scale , n = 10 ) :
     h_err = np.sqrt( np.sum( t.coord_err()[ 0 ][ l - n : l ] ** 2 ) ) * scale / n
     return [ h , h_err ]
 
-def velocity( t , range , scale , t0 = 0 ) :
+def velocity( t , val_range , scale , t0 = 0 ) :
 
     tt = cp.deepcopy( t )
     tt.start( t0 )
 
     x = tt.coord()[ 0 ] * scale
-    ds = [ abs( i - range[ 0 ] * scale ) for i in x ]
-    de = [ abs( i - range[ 1 ] * scale ) for i in x ]
-   
-    s = ds.index( min(ds) )
-    e = de.index( min(de) )
-   
+    ds = [ i - val_range[ 0 ] * scale for i in x ]
+    ps = [ i for i in range( len(ds) ) if ds[i] < 0 ] #possible starts
+    s = ps[-1]
+    de = [ i - val_range[ 1 ] * scale for i in x ]
+    pe = [ i for i in range( len(de) ) if de[i] < 0 ] #possible ends
+    e = pe[-1]
+  
     t_start = tt.t()[ s ]
     t_end = tt.t()[ e ]
     tt.start( t_start )
