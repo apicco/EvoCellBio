@@ -129,7 +129,7 @@ def avg( x ) :
     #return np.median( x )
 
 def err( x , k = 1.4826 ) :
-    return np.std( x ) / np.sqrt( len( x ) )
+    return np.std( x ) #/ np.sqrt( len( x ) )
     #return k * np.median( np.abs( x - np.median( x ) ) )
 
 
