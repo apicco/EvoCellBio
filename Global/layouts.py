@@ -22,6 +22,7 @@ def layout( ax , tlim , movlim , title , xaxis_label = True , yaxis_label = True
 def layout_rn( ax , title , ylabel , legend = False ) :
 
     ax.set_xlim( 16 , 32 )
+    ax.set_ylim( 0  , 50 )
     ax.set_xticks( [ 18,21,24,27,30] )
     ax.tick_params( labelsize = 10 )
     ax.set_xlabel( "T ($^{o}C$)" , fontsize = 13 )
