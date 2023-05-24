@@ -108,7 +108,7 @@ data.to_csv( 'Fim1_lifetimes_control.csv' )
 
 print( data )
 
-fig , ax = plt.subplots( 3 , 1 , figsize = ( 3.5 , 7 ) ) #, sharex = 'all' )
+fig , ax = plt.subplots( 3 , 1 , figsize = ( 3 , 6 ) , layout = 'constrained' ) #, sharex = 'all' )
 
 sc = ax[ 0 ]
 sp = ax[ 1 ]
@@ -117,6 +117,6 @@ um = ax[ 2 ]
 layout_barplot( sc , data , 'S. cerevisiae' )
 layout_barplot( sp , data , 'S. pombe' )
 layout_barplot( um , data , 'U. maydis' )
-plt.tight_layout()
+
 plt.savefig( 'Fim1_lifetimes_control.pdf' )
 plt.close()
