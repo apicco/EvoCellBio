@@ -75,9 +75,12 @@ def layout_barplot( ax , data , what , bonferroni = True ) :
     ax.bar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'Fim1 lifetime (s)' ] )
     ax.errorbar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'Fim1 lifetime (s)' ] , yerr =  data.loc[ what ][ 'SD (s)' ] , color = 'black' , capsize = 5 , ls = '' )
     ax.set_ylabel( 's' , fontsize = 13 )
-    ax.set_ylim( 0 , 16 )
+    ax.set_ylim( 0 , 17 )
     #ax.ticklabel_format( axis = 'x', useOffset = True )
     ax.tick_params( labelrotation = 45 , axis = 'x', labelsize = 10 )
+    
+    for ticklabel in ax.xaxis.get_majorticklabels() :
+        ticklabel.set_horizontalalignment("right") 
    
     l = len( data.loc[ what ] ) 
 

@@ -108,7 +108,7 @@ data.to_csv( 'Fim1_lifetimes_control.csv' )
 
 print( data )
 
-fig , ax = plt.subplots( 3 , 1 , figsize = ( 4.5 , 7 ) ) #, sharex = 'all' )
+fig , ax = plt.subplots( 3 , 1 , figsize = ( 3.5 , 7 ) ) #, sharex = 'all' )
 
 sc = ax[ 0 ]
 sp = ax[ 1 ]

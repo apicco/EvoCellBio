@@ -110,7 +110,7 @@ def flt( species , protein , d , dt , ref = None , RFP = True ) :
         l = ( d.GFP_end - d.GFP_start + 1 ) * dt
    
     # averages
-    ml = [ avg( l ) , err( l ) ]
+    ml = [ avg( l ) , err( l , se = True ) ]
 
     # ztest on the reference
     if ref == None : 
@@ -126,10 +126,13 @@ def flt( species , protein , d , dt , ref = None , RFP = True ) :
 
 def avg( x ) :
     return np.mean( x )
-    #return np.median( x )
+    #np.median( x )
 
-def err( x , k = 1.4826 ) :
-    return np.std( x ) #/ np.sqrt( len( x ) )
+def err( x , k = 1.4826 , se = False ) : # se: standard error
+    if se : 
+            return np.std( x ) / np.sqrt( len( x ) )
+    else : 
+            return np.std( x ) 
     #return k * np.median( np.abs( x - np.median( x ) ) )
 
 
