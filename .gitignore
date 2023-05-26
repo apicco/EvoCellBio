@@ -4,4 +4,4 @@
 tmp*
 pwd
 __pycache__
-
+.*
