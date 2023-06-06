@@ -20,6 +20,8 @@ best_median , worst_median , aligned_trajectories_median =\
 		average_trajectories( trajectory_list , max_frame = 500 , 
 				output_file = 'fim1' , median = True , fimax = True ) 
 
+import numpy as np
 s = Traj()
 s.load( 'fim1.txt' )
+s.rotate( np.pi )
 s.save( 'fim1_sc_24deg.txt' )
