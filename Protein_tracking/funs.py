@@ -84,7 +84,7 @@ def average_dw( tj , bt , mean_start = True , mean_end = True ) :
     sy = [ y[ i ] for i in ids ]
 
     # compute the average
-    # define the contained for the t, f, x ,and y averages
+    # define the container for the t, f, x ,and y averages
     mt = []
     mf = []
     mx = []
