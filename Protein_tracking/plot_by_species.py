@@ -16,7 +16,7 @@ fig = plt.figure( constrained_layout = True , figsize = ( 8 , 3.5 ) )
 
 axes = fig.subplot_mosaic( 
     """
-    AAAAAAABBBBBBCCCC
+    AAAAAABBBBBBCCCC
     """ , 
     sharey = True )
 # S. cerevisiae

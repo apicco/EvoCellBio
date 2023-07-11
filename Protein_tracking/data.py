@@ -13,7 +13,7 @@ binning_dt = 0.5
 # Saccaromyces cerevisiae (Sc)
 #--------------------------------
 # at 18 degree
-t0_sc_18deg = -29
+t0_sc_18deg = -30
 
 sla1_sc_18 = Traj()
 sla1_sc_18.load( 'Data/Sla1/18_degree/Sc/sla1_sc_18deg.txt' )
@@ -24,8 +24,8 @@ sla1_sc_18.tshift( t0_sc_18deg )
 sla1_sc_18.translate( [ -set_x0( sla1_sc_18 ) , 0 ] ) 
 
 # at 21 degree
-t0_sc_21deg = -14.8# if 3 and 6 removed
-t0_sc_21deg = -40.5
+#t0_sc_21deg = -14.8# if 3 and 6 removed
+t0_sc_21deg = -41.0
 
 sla1_sc_21 = Traj()
 sla1_sc_21.load( 'Data/Sla1/21_degree/Sc/sla1_sc_21deg.txt' )
@@ -36,7 +36,7 @@ sla1_sc_21.tshift( t0_sc_21deg )
 sla1_sc_21.translate( [ -set_x0( sla1_sc_21 ) , 0 ] ) 
 
 # at 24 degree
-t0_sc_24deg = -44.68
+t0_sc_24deg = -44.25
 
 sla1_sc_24 = Traj()
 sla1_sc_24.load( 'Data/Sla1/24_degree/Sc/sla1_sc_24deg.txt' )
@@ -263,7 +263,7 @@ sla1_um_21.translate( [ -set_x0( sla1_um_21 ) , 0 ] )
 
 # at 24 degree
 x0_um_24deg = 0.01
-t0_um_24deg = -38.76
+t0_um_24deg = -38.26
 
 sla1_um_24 = Traj()
 sla1_um_24.load( 'Data/Sla1/24_degree/Um/sla1_um_24deg.txt' )
