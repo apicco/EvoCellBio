@@ -16,7 +16,8 @@ from matplotlib import pyplot as plt
 # compute velocitis
 # range
 #x_fit = [ 0.3 , 0.9 ]
-x_fit = [ 0.15 , 0.6]
+#x_fit = [ 0.15 , 0.6]
+x_fit = [ 0.10 , 0.52]
 # S. cerevisiae
 vsla1_sc_18 = velocity( sla1_sc_18 , x_fit , scale = 100 ) 
 vsla1_sc_21 = velocity( sla1_sc_21 , x_fit , scale = 100 ) 

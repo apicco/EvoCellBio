@@ -36,7 +36,7 @@ sla1_sc_21.tshift( t0_sc_21deg )
 sla1_sc_21.translate( [ -set_x0( sla1_sc_21 ) , 0 ] ) 
 
 # at 24 degree
-t0_sc_24deg = -17.68
+t0_sc_24deg = -44.68
 
 sla1_sc_24 = Traj()
 sla1_sc_24.load( 'Data/Sla1/24_degree/Sc/sla1_sc_24deg.txt' )
@@ -146,7 +146,8 @@ sla1_sp_21.tshift( t0_sp_21deg )
 sla1_sp_21.translate( [ -set_x0( sla1_sp_21 ) , 0 ] ) 
 
 # at 24 degree
-t0_sp_24deg = -39.98
+#t0_sp_24deg = -39.98
+t0_sp_24deg = -44.98
 
 sla1_sp_24 = Traj()
 sla1_sp_24.load( 'Data/Sla1/24_degree/Sp/sla1_sp_24deg.txt' )
@@ -262,7 +263,7 @@ sla1_um_21.translate( [ -set_x0( sla1_um_21 ) , 0 ] )
 
 # at 24 degree
 x0_um_24deg = 0.01
-t0_um_24deg = -22.76
+t0_um_24deg = -38.76
 
 sla1_um_24 = Traj()
 sla1_um_24.load( 'Data/Sla1/24_degree/Um/sla1_um_24deg.txt' )
