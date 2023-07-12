@@ -12,7 +12,7 @@ from funs import *
 
 # locally redefine color_Wasp (consider if redefine globally)
 color_Wasp = '#29A300'
-fig , ax = plt.subplots( 2 , 1 , figsize = ( 8 , 3.8 ) , sharex = 'all' , gridspec_kw = { 'height_ratios' : [3.5, 1] } )
+fig , ax = plt.subplots( 2 , 1 , figsize = ( 8 , 3 ) , sharex = 'all' , gridspec_kw = { 'height_ratios' : [3.5, 1] } )
 
 sc = ax[ 0 ]
 sp = ax[ 1 ]

@@ -64,7 +64,8 @@ def layout_swap( ax , title , is_sc = True ) :
     
     ax.set_xlim( -125 , 55 )
     ax.yaxis.tick_right()
-    ax.set_ylabel( title , fontsize = 18 )
+    #ax.set_ylabel( title , fontsize = 18 )
+    ax.text( -117, 0 , title , fontsize = 18 )
     ax.grid( axis = 'x' )
 
 def layout_barplot( ax , data , what , bonferroni = True ) :
