@@ -22,6 +22,15 @@ def coat_movement( t , scale , n = 10 ) :
     h_err = np.sqrt( np.sum( t.coord_err()[ 0 ][ l - n : l ] ** 2 ) ) * scale / n
     return [ h , h_err ]
 
+def lifetime( t ) : 
+
+    ss = float( t.annotations()[ 'std_starts' ] ) / np.sqrt( float( t.annotations()[ 'n_starts' ] ) )
+    se = float( t.annotations()[ 'std_ends' ] ) / np.sqrt( float( t.annotations()[ 'n_ends' ] ) )
+    lt = t.end() - t.start()
+    elt = np.sqrt( se ** 2 + ss ** 2 )
+
+    return [ lt , elt ]
+
 def velocity( t , val_range , scale , t0 = 0 ) :
 
     tt = cp.deepcopy( t )

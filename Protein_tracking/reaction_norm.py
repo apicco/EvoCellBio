@@ -6,12 +6,35 @@ from Global.colors import *
 
 from data import *
 from params import *
-from funs import velocity , coat_movement
+from funs import velocity , coat_movement , lifetime
 from trajplot.plotfuns import myplot , plot_raw
 
 import matplotlib as mpl
 mpl.use('Agg')
 from matplotlib import pyplot as plt
+
+# compute sla1 lifetimes
+# S. cerevisiae
+lt_sc_18 = lifetime( sla1_sc_18 )
+lt_sc_21 = lifetime( sla1_sc_21 )
+lt_sc_24 = lifetime( sla1_sc_24 )
+lt_sc_27 = lifetime( sla1_sc_27 )
+lt_sc_30 = lifetime( sla1_sc_30 )
+
+# S. pombe
+lt_sp_18 = lifetime( sla1_sp_18 )
+lt_sp_21 = lifetime( sla1_sp_21 )
+lt_sp_24 = lifetime( sla1_sp_24 )
+lt_sp_27 = lifetime( sla1_sp_27 )
+lt_sp_30 = lifetime( sla1_sp_30 )
+
+# U. maydis
+lt_um_18 = lifetime( sla1_um_18 )
+lt_um_21 = lifetime( sla1_um_21 )
+lt_um_24 = lifetime( sla1_um_24 )
+lt_um_27 = lifetime( sla1_um_27 )
+lt_um_30 = lifetime( sla1_um_30 )
+
 
 # compute velocitis
 # range
@@ -24,7 +47,7 @@ vsla1_sc_21 = velocity( sla1_sc_21 , x_fit , scale = 100 )
 vsla1_sc_24 = velocity( sla1_sc_24 , x_fit , scale = 100 ) 
 vsla1_sc_27 = velocity( sla1_sc_27 , x_fit , scale = 100 ) 
 vsla1_sc_30 = velocity( sla1_sc_30 , x_fit , scale = 100 ) 
-
+2
 # S. pombe
 vsla1_sp_18 = velocity( sla1_sp_18 , x_fit , scale = 100 ) 
 vsla1_sp_21 = velocity( sla1_sp_21 , x_fit , scale = 100 ) 
@@ -33,17 +56,11 @@ vsla1_sp_27 = velocity( sla1_sp_27 , x_fit , scale = 100 )
 vsla1_sp_30 = velocity( sla1_sp_30 , x_fit , scale = 100 ) 
 
 # U. maydis
-# U. maydis has a shorter invagination, the range where
-# to compute the fit ought to be adapted case by case
-#x_fit = [ 0.3 , 0.9 ]
+# U. maydis has a shorter invagination
 vsla1_um_18 = velocity( sla1_um_18 , x_fit , scale = 100 ) 
-#x_fit = [ 0.2 , 0.6 ]
 vsla1_um_21 = velocity( sla1_um_21 , x_fit , scale = 100 ) 
-#x_fit = [ 0.2 , 0.8 ]
 vsla1_um_24 = velocity( sla1_um_24 , x_fit , scale = 100 ) 
-#x_fit = [ 0.2 , 0.6 ]
 vsla1_um_27 = velocity( sla1_um_27 , x_fit , scale = 100 ) 
-#x_fit = [ 0.1 , 0.4 ]
 vsla1_um_30 = velocity( sla1_um_30 , x_fit , scale = 100 ) 
 
 # compute coat movement heights
@@ -68,10 +85,11 @@ hsla1_um_24 = coat_movement( sla1_um_24 , scale = 100 )
 hsla1_um_27 = coat_movement( sla1_um_27 , scale = 100 )
 hsla1_um_30 = coat_movement( sla1_um_30 , scale = 100 )
 
-fig = plt.figure( constrained_layout = True , figsize = ( 8 , 3 ) )
+fig = plt.figure( constrained_layout = True , figsize = ( 8 , 6 ) )
 axes = fig.subplot_mosaic( 
     """
     AB
+    C.
     """ , 
     sharey = False )
 
@@ -126,6 +144,32 @@ axes["B"].errorbar( 27 , hsla1_um_27[ 0 ] , hsla1_um_27[ 1 ] , color = sla1_um_c
 axes["B"].errorbar( 30 , hsla1_um_30[ 0 ] , hsla1_um_30[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["B"].plot( [ 18,21,24,27,30 ] , [ hsla1_um_18[0] , hsla1_um_21[0] , hsla1_um_24[0] , hsla1_um_27[0] , hsla1_um_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
 layout_rn( axes["B"] , "coat displacement" , "$nm$" , legend = False , ylim = ( 0 , 400 ) )
+
+# Sla1 lifetime reaction norm
+# S. cerevisiae
+axes["C"].errorbar( 18 , lt_sc_18[ 0 ] , lt_sc_18[ 1 ] , label = '$S. cerevisiae$' , color = sla1_sc_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 21 , lt_sc_21[ 0 ] , lt_sc_21[ 1 ] , color = sla1_sc_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 24 , lt_sc_24[ 0 ] , lt_sc_24[ 1 ] , color = sla1_sc_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 27 , lt_sc_27[ 0 ] , lt_sc_27[ 1 ] , color = sla1_sc_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 30 , lt_sc_30[ 0 ] , lt_sc_30[ 1 ] , color = sla1_sc_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].plot( [ 18,21,24,27,30 ] , [ lt_sc_18[0] , lt_sc_21[0] , lt_sc_24[0] , lt_sc_27[0] , lt_sc_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
+
+# S. pombe
+axes["C"].errorbar( 18 , lt_sp_18[ 0 ] , lt_sp_18[ 1 ] , label = '$S. pombe$' , color = sla1_sp_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 21 , lt_sp_21[ 0 ] , lt_sp_21[ 1 ] , color = sla1_sp_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 24 , lt_sp_24[ 0 ] , lt_sp_24[ 1 ] , color = sla1_sp_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 27 , lt_sp_27[ 0 ] , lt_sp_27[ 1 ] , color = sla1_sp_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 30 , lt_sp_30[ 0 ] , lt_sp_30[ 1 ] , color = sla1_sp_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].plot( [ 18,21,24,27,30 ] , [ lt_sp_18[0] , lt_sp_21[0] , lt_sp_24[0] , lt_sp_27[0] , lt_sp_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
+
+# U. maydis
+axes["C"].errorbar( 18 , lt_um_18[ 0 ] , lt_um_18[ 1 ] , label = '$U.maydis$' , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 21 , lt_um_21[ 0 ] , lt_um_21[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 24 , lt_um_24[ 0 ] , lt_um_24[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 27 , lt_um_27[ 0 ] , lt_um_27[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].errorbar( 30 , lt_um_30[ 0 ] , lt_um_30[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
+axes["C"].plot( [ 18,21,24,27,30 ] , [ lt_um_18[0] , lt_um_21[0] , lt_um_24[0] , lt_um_27[0] , lt_um_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
+layout_rn( axes["C"] , "Sla1 lifetime" , "$s$" , legend = True , loc = 'upper right' )
 
 fig.savefig( "reaction_norm.pdf" )
 

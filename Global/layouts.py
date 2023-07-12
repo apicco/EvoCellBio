@@ -19,7 +19,7 @@ def layout( ax , tlim , movlim , title , xaxis_label = True , yaxis_label = True
     ax.set_title( title , fontsize = 18 )
 
 # layout for reaction norm plot
-def layout_rn( ax , title , ylabel , legend = False , ylim = ( 0 , 50 ) ) :
+def layout_rn( ax , title , ylabel , legend = False , ylim = ( 0 , 50 ) , loc = 'upper left' ) :
 
     ax.set_xlim( 16 , 32 )
     ax.set_ylim( ylim[ 0 ]  , ylim[ 1 ] )
@@ -28,7 +28,7 @@ def layout_rn( ax , title , ylabel , legend = False , ylim = ( 0 , 50 ) ) :
     ax.set_xlabel( "T ($^{o}C$)" , fontsize = 13 )
     if ylabel : ax.set_ylabel( ylabel , fontsize = 13 )
     ax.grid()
-    if legend : ax.legend( loc = 'upper left' , fontsize = 10 )
+    if legend : ax.legend( loc = loc , fontsize = 10 )
     ax.set_title( title , fontsize = 18 )
 
 # layout for the lifetime bar plot
