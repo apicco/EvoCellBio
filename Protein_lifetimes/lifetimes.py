@@ -30,7 +30,7 @@ lt( sc , Myo5_sc , -15 , 2 , dt = 1.2 , shift = shift_sc , col = color_Myo5 )
 lt( sc , Fim1_GFP_sc , -18 , 2 , dt = 1.19 , shift = shift_sc , col = color_Fim1 , is_t0 = False )
 lt( sc , Rvs_sc , -21 , 2 , dt = 1.19 , shift = shift_sc , col = color_Rvs )
 
-labels = [ 'Eps15' , 'Intersectin' , 'Sla1' , 'Wasp', 'Myosin1\n(Myo3)' , 'Myosin1\n(Myo5)' , 'Fimbrin' , 'Rvs167' ]
+labels = [ 'Eps15' , 'intersectin' , 'Sla1' , 'WASP', 'myosin 1\n(Myo3)' , 'myosin 1\n(Myo5)' , 'fimbrin' , 'Rvs167' ]
 #colors = [ color_Pan1 , color_Pan1 , color_Sla1 , color_Wasp , color_Myo3 , color_Myo5 , color_Fim1 , color_Rvs ] 
 colors = [ '#000000' ] * 8 
 layout_lt( sc , 'S. cerevisiae' , labels , colors , xaxt = False )
@@ -48,7 +48,7 @@ lt( sp , Myo1_sp , -15 , 2 , dt = 1.2 , shift = shift_sp , col = color_Myo1 )
 lt( sp , Fim1_GFP_sp , -18 , 2 , dt = 1.19 , shift = shift_sp , col = color_Fim1 , is_t0 = False )
 lt( sp , Rvs_sp , -21 , 2 , dt = 1.19 , shift = shift_sp , col = color_Rvs )
 
-labels = [ 'Eps15\n(Ucp8)' , 'Eps15\n(Ede1)' , 'Intersectin' , 'Sla1' , 'Wasp', 'Myosin1' , 'Fimbrin' , 'Rvs167' ]
+labels = [ 'Eps15\n(Ucp8)' , 'Eps15\n(Ede1)' , 'intersectin' , 'Sla1' , 'WASP', 'myosin 1' , 'fimbrin' , 'Rvs167' ]
 #colors = [ color_Pan1 , color_Pan1 , color_Pan1 , color_Sla1 , color_Wasp , color_Myo1 , color_Fim1 , color_Rvs ] 
 colors = [ '#000000' ] * 8 
 layout_lt( sp , 'S. pombe' , labels , colors , xaxt = False )
@@ -65,7 +65,7 @@ lt( um , Myo1_um , -12 , 2 , dt = 1.2 , shift = shift_um , col = color_Myo1 )
 lt( um , Fim1_GFP_um , -15 , 2 , dt = 1.19 , shift = shift_um , col = color_Fim1 , is_t0 = False )
 lt( um , Rvs_um , -18 , 2 , dt = 1.19 , shift = shift_um , col = color_Rvs )
 
-labels = [ 'Eps15' , 'Intersectin' , 'Sla1' , 'Wasp', 'Myosin1' , 'Fimbrin' , 'Rvs167' , '' ]
+labels = [ 'Eps15' , 'intersectin' , 'Sla1' , 'WASP', 'myosin 1' , 'fimbrin' , 'Rvs167' , '' ]
 #colors = [ color_Pan1 ,  color_Pan1 , color_Sla1 , color_Wasp , color_Myo1 , color_Fim1 , color_Rvs ] 
 colors = [ '#000000' ] * 7 
 layout_lt( um , 'U. maydis' , labels , colors , xaxt = True )
