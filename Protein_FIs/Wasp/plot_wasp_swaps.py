@@ -18,11 +18,11 @@ axes = fig1.subplot_mosaic([
     ], sharey = True )
 
 # WT
-plot_all( axes['A'] , g_0024 , r_0024 , g_label = 'Wasp' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'A' ] )
+plot_all( axes['A'] , g_0024 , r_0024 , g_label = 'Wasp' , r_label = 'fimbrin' , alpha = 0.1 , xlim = tlim[ 'A' ] )
 layout( axes[ 'A' ] , tlim[ 'A' ] , flim , '$U.maydis$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , xtick_interval = 25 )
-plot_all( axes['B'] , g_4021 , r_4021 , g_label = 'Wasp' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'B' ] )
+plot_all( axes['B'] , g_4021 , r_4021 , g_label = 'Wasp' , r_label = 'fimbrin' , alpha = 0.1 , xlim = tlim[ 'B' ] )
 layout( axes[ 'B' ] , tlim[ 'B' ] , flim , '$S.cerevisiae$' , legend = True , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
-plot_all( axes['C'] , g_0026 , r_0026 , g_label = 'Wasp' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'C' ] )
+plot_all( axes['C'] , g_0026 , r_0026 , g_label = 'Wasp' , r_label = 'fimbrin' , alpha = 0.1 , xlim = tlim[ 'C' ] )
 layout( axes[ 'C' ] , tlim[ 'C' ] , flim , '$S.pombe$' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
 
 plt.savefig( 'WT_Wasp.pdf' )
@@ -34,11 +34,11 @@ axes = fig2.subplot_mosaic([
     ], sharey = True )
 
 # mutations
-plot_all( axes['D'] , g_4390 , r_4390 , g_label = 'WASP' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'D' ] )
+plot_all( axes['D'] , g_4390 , r_4390 , g_label = 'WASP' , r_label = 'fimbrin' , alpha = 0.1 , xlim = tlim[ 'D' ] )
 layout( axes[ 'D' ] , tlim[ 'D' ] , flim , '[Sp]WASP' , legend = False , ylabel = "Fluor. int .($a.u.$)" , xtick_interval = 25 )
-plot_all( axes['E'] , g_4801 , r_4801 , g_label = 'WASP' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'E' ] )
+plot_all( axes['E'] , g_4801 , r_4801 , g_label = 'WASP' , r_label = 'fimbrin' , alpha = 0.1 , xlim = tlim[ 'E' ] )
 layout( axes[ 'E' ] , tlim[ 'E' ] , flim , '[Sc]WASP, $sla1\Delta$' , legend = True , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 50 )
-plot_all( axes['F'] , g_4794 , r_4794 , g_label = 'WASP' , r_label = 'Fim1' , alpha = 0.1 , xlim = tlim[ 'F' ] )
+plot_all( axes['F'] , g_4794 , r_4794 , g_label = 'WASP' , r_label = 'fimbrin' , alpha = 0.1 , xlim = tlim[ 'F' ] )
 layout( axes[ 'F' ] , tlim[ 'F' ] , flim , '[Sp]WASP, $sla1\Delta$ ' , legend = False , ylabel = "Fluor. int .($a.u.$)" , yaxis_label = False , xtick_interval = 25 )
 
 plt.savefig( 'Swap_Wasp.pdf' )
