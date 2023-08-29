@@ -2,7 +2,7 @@
 
 Repository with all the data and the code used to generate the figures of 
 
-Picco, A. , Toret, C., Rivier, A.S, and Kaksonen, M.
+Picco, A. , Toret, C., Rivier, A.S, and Kaksonen, M. , _title_
 
 # Repository architecture
 
