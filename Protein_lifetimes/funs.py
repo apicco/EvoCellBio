@@ -19,9 +19,9 @@ def avg( x ) :
     return np.mean( x )
     #return np.median( x )
 
-def err( x , k = 1.4826 ) :
-    return np.std( x )
-    #return k * np.median( np.abs( x - np.median( x ) ) )
+#def err( x , k = 1.4826 ) :
+#    return np.std( x )
+#    #return k * np.median( np.abs( x - np.median( x ) ) )
 
 # core algorithm to compute protein lifetimes 
 def lifetime( d , dt , shift , is_t0 ) :
