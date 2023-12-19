@@ -59,6 +59,7 @@ My = plt.yticks()[ 0 ]
 my = [ My[ 0 ] - 0.5 ] + [ i+0.5 for i in My ]
 plt.yticks( my , minor = True )
 plt.grid( which = 'minor' , axis = 'y' )
+plt.grid( which = 'both' , axis = 'x' , alpha = 0.2 )
 #plt.xlim( [ 1 , 500 ] )
 plt.xscale( 'log' )
 plt.ylabel( '' )
