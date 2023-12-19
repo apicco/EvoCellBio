@@ -50,7 +50,7 @@ print( df[ 'Species'  ] )
 
 order = [ 'Eps15 (Ede1)' , 'Eps15 (Ucp8)' , 'intersectin' , 'Sla1' , 'WASP' , 'myosin 1 (Myo5)' , 'myosin 1 (Myo3)' , 'fimbrin'  , 'Rvs167']
 
-fig = plt.figure( figsize = ( 5 , 4 ) , tight_layout = True )
+fig = plt.figure( figsize = ( 10 , 5 ) , tight_layout = True )
 
 sns.stripplot( data=df , x = "Lifetime (s)" , y = "Protein" , hue = "Species" , dodge = True , order = order , size = 7 , alpha = .3 , jitter=0.38 , marker = 'o' )#, palette = [ '#9DD9D2' , '#CA2E55' , '#F9A03F' ] )
 #plt.grid( ydata = [ 2:5 ] )# axis = 'x' )
@@ -61,6 +61,6 @@ plt.yticks( my , minor = True )
 plt.grid( which = 'minor' , axis = 'y' )
 plt.grid( which = 'both' , axis = 'x' , alpha = 0.2 )
 #plt.xlim( [ 1 , 500 ] )
-plt.xscale( 'log' )
+#plt.xscale( 'log' )
 plt.ylabel( '' )
 plt.savefig( 'swarmplot.pdf' )
