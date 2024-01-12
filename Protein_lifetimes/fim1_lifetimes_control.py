@@ -15,35 +15,23 @@ species = 'S. cerevisiae'
 
 Fim1_RFP_sc_l = flt( species , 'fimbrin' , Fim1_RFP_sc , dt = 1.2 )
 
-ref = [ Fim1_RFP_sc_l.at[ species , 'Fim1 lifetime (s)' ] ,  Fim1_RFP_sc_l.at[ species , 'SD (s)' ] ]
+ref = [ Fim1_RFP_sc_l.at[ species , 'fimbrin lifetime (s)' ] ,  Fim1_RFP_sc_l.at[ species , 'SD (s)' ] ]
 
-#Fim1_RFP_sc_220630_l = flt( species , 'Fim1-RFP\n220630' , Fim1_RFP_sc_220630 , dt = 1.2 , ref = ref )
-#data = pd.concat( [ Fim1_RFP_sc_l , Fim1_RFP_sc_220630_l ] )
-#Fim1_GFP_sc_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sc , dt = 1.2 , RFP = False , ref = ref )
-#data = pd.concat( [ data , Fim1_GFP_sc_l ] )
-#Fim1_GFP_sc_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_sc_220630 , dt = 1.2 , RFP = False , ref = ref )
-#data = pd.concat( [ data , Fim1_GFP_sc_220630_l ] )
-Ede1_sc_l = flt( species , 'Eps15' , Ede1_sc , dt = 1.2 , ref = ref  )
+Ede1_sc_l = flt( species , 'Eps15-GFP' , Ede1_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ Fim1_RFP_sc_l , Ede1_sc_l ] )
-Pan1_sc_l = flt( species , 'intersectin' , Pan1_sc , dt = 1.2 , ref = ref  )
+Pan1_sc_l = flt( species , 'intersectin-GFP' , Pan1_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Pan1_sc_l ] )
-Sla1_sc_l = flt( species , 'Sla1' , Sla1_sc , dt = 1.2 , ref = ref  )
+Sla1_sc_l = flt( species , 'Sla1-GFP' , Sla1_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Sla1_sc_l ] )
-Wasp_sc_l = flt( species , 'WASP' , Wasp_sc , dt = 1.2 , ref = ref  )
+Wasp_sc_l = flt( species , 'WASP-GFP' , Wasp_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Wasp_sc_l ] )
-#las17del_spWasp_sc_l = flt( species , 'las17$\Delta$\nSpWasp' , las17del_spWasp_sc , dt = 1.2 , ref = ref  )
-#data = pd.concat( [ data , las17del_spWasp_sc_l ] )
-#sla1del_Shd1_Las17_sc_l = flt( species , 'sla1$\Delta$::Shd1,\nWasp' , sla1del_Shd1_Las17_sc , dt = 1.2 , ref = ref  )
-#data = pd.concat( [ data , sla1del_Shd1_Las17_sc_l ] )
-#sla1del_Shd1_las17del_spWasp_sc_l = flt( species , 'sla1$\Delta$::Shd1,\nwasp$\Delta$::spWasp' , sla1del_Shd1_las17del_spWasp_sc , dt = 1.2 , ref = ref  )
-#data = pd.concat( [ data , sla1del_Shd1_las17del_spWasp_sc_l ] )
-Myo3_sc_l = flt( species , 'Myo3' , Myo3_sc , dt = 1.2 , ref = ref  )
+Myo3_sc_l = flt( species , 'Myo3-GFP' , Myo3_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Myo3_sc_l ] )
-Myo5_sc_l = flt( species , 'Myo5' , Myo5_sc , dt = 1.2 , ref = ref  )
+Myo5_sc_l = flt( species , 'Myo5-GFP' , Myo5_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Myo5_sc_l ] )
-Rvs_sc_l = flt( species , 'Rvs167' , Rvs_sc , dt = 1.2 , ref = ref  )
+Rvs_sc_l = flt( species , 'Rvs167-GFP' , Rvs_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Rvs_sc_l ] )
-Arc18_sc_l = flt( species , 'Arpc3' , Arc18_sc , dt = 1.2 , ref = ref  )
+Arc18_sc_l = flt( species , 'Arpc3-GFP' , Arc18_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Arc18_sc_l ] )
 
 species = 'S. pombe'
@@ -51,29 +39,23 @@ species = 'S. pombe'
 Fim1_RFP_sp_l = flt( species , 'fimbrin' , Fim1_RFP_sp , dt = 1.2 )
 data = pd.concat( [ data , Fim1_RFP_sp_l ] )
 
-ref = [ Fim1_RFP_sp_l.at[ species , 'Fim1 lifetime (s)' ] ,  Fim1_RFP_sp_l.at[ species , 'SD (s)' ] ]
+ref = [ Fim1_RFP_sp_l.at[ species , 'fimbrin lifetime (s)' ] ,  Fim1_RFP_sp_l.at[ species , 'SD (s)' ] ]
 
-#Fim1_RFP_sp_220630_l = flt( species , 'Fim1-RFP\n220630' , Fim1_RFP_sp_220630 , dt = 1.2 , ref = ref )
-#data = pd.concat( [ data , Fim1_RFP_sp_220630_l ] )
-#Fim1_GFP_sp_l = flt( species , 'Fim1-GFP' , Fim1_GFP_sp , dt = 1.2 , RFP = False , ref = ref )
-#data = pd.concat( [ data , Fim1_GFP_sp_l ] )
-#Fim1_GFP_sp_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_sp_220630 , dt = 1.2 , RFP = False , ref = ref )
-#data = pd.concat( [ data , Fim1_GFP_sp_220630_l ] )
-Ede1_sp_Ucp8_l = flt( species , 'Ucp8' , Ede1_sp_Ucp8 , dt = 1.2 , ref = ref  )
+Ede1_sp_Ucp8_l = flt( species , 'Ucp8-GFP' , Ede1_sp_Ucp8 , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Ede1_sp_Ucp8_l ] )
-Ede1_sp_l = flt( species , 'Eps15' , Ede1_sp , dt = 1.2 , ref = ref  )
+Ede1_sp_l = flt( species , 'Eps15-GFP' , Ede1_sp , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Ede1_sp_l ] )
-Pan1_sp_l = flt( species , 'intersectin' , Pan1_sp , dt = 1.2 , ref = ref  )
+Pan1_sp_l = flt( species , 'intersectin-GFP' , Pan1_sp , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Pan1_sp_l ] )
-Sla1_sp_l = flt( species , 'Sla1' , Sla1_sp , dt = 1.2 , ref = ref  )
+Sla1_sp_l = flt( species , 'Sla1-GFP' , Sla1_sp , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Sla1_sp_l ] )
-Wasp_sp_l = flt( species , 'WASP' , Wasp_sp , dt = 1.2 , ref = ref  )
+Wasp_sp_l = flt( species , 'WASP-GFP' , Wasp_sp , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Wasp_sp_l ] )
-Myo1_sp_l = flt( species , 'myosin I' , Myo1_sp , dt = 1.2 , ref = ref  )
+Myo1_sp_l = flt( species , 'myosin I-GFP' , Myo1_sp , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Myo1_sp_l ] )
-Rvs_sp_l = flt( species , 'Rvs167' , Rvs_sp , dt = 1.2 , ref = ref  )
+Rvs_sp_l = flt( species , 'Rvs167-GFP' , Rvs_sp , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Rvs_sp_l ] )
-Arc18_sp_l = flt( species , 'Arpc3' , Arc18_sp , dt = 1.2 , ref = ref  )
+Arc18_sp_l = flt( species , 'Arpc3-GFP' , Arc18_sp , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Arc18_sp_l ] )
 
 species = 'U. maydis'
@@ -81,27 +63,21 @@ species = 'U. maydis'
 Fim1_RFP_um_l = flt( species , 'fimbrin' , Fim1_RFP_um , dt = 1.2 )
 data = pd.concat( [ data , Fim1_RFP_um_l ] )
 
-ref = [ Fim1_RFP_um_l.at[ species , 'Fim1 lifetime (s)' ] ,  Fim1_RFP_um_l.at[ species , 'SD (s)' ] ]
+ref = [ Fim1_RFP_um_l.at[ species , 'fimbrin lifetime (s)' ] ,  Fim1_RFP_um_l.at[ species , 'SD (s)' ] ]
 
-#Fim1_RFP_um_220630_l = flt( species , 'Fim1-RFP\n220630' , Fim1_RFP_um_220630 , dt = 1.2 , ref = ref )
-#data = pd.concat( [ data , Fim1_RFP_um_220630_l ] )
-#Fim1_GFP_um_l = flt( species , 'Fim1-GFP' , Fim1_GFP_um , dt = 1.2 , RFP = False , ref = ref )
-#data = pd.concat( [ data , Fim1_GFP_um_l ] )
-#Fim1_GFP_um_220630_l = flt( species , 'Fim1-GFP\n220630' , Fim1_GFP_um_220630 , dt = 1.2 , RFP = False , ref = ref )
-#data = pd.concat( [ data , Fim1_GFP_um_220630_l ] )
-Ede1_um_l = flt( species , 'Eps15' , Ede1_um , dt = 1.2 , ref = ref  )
+Ede1_um_l = flt( species , 'Eps15-GFP' , Ede1_um , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Ede1_um_l ] )
-Pan1_um_l = flt( species , 'intersectin' , Pan1_um , dt = 1.2 , ref = ref  )
+Pan1_um_l = flt( species , 'intersectin-GFP' , Pan1_um , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Pan1_um_l ] )
-Sla1_um_l = flt( species , 'Sla1' , Sla1_um , dt = 1.2 , ref = ref  )
+Sla1_um_l = flt( species , 'Sla1-GFP' , Sla1_um , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Sla1_um_l ] )
-Wasp_um_l = flt( species , 'WASP' , Wasp_um , dt = 1.2 , ref = ref  )
+Wasp_um_l = flt( species , 'WASP-GFP' , Wasp_um , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Wasp_um_l ] )
-Myo1_um_l = flt( species , 'myosin I' , Myo1_um , dt = 1.2 , ref = ref  )
+Myo1_um_l = flt( species , 'myosin I-GFP' , Myo1_um , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Myo1_um_l ] )
-Rvs_um_l = flt( species , 'Rvs167' , Rvs_um , dt = 1.2 , ref = ref  )
+Rvs_um_l = flt( species , 'Rvs167-GFP' , Rvs_um , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Rvs_um_l ] )
-Arc18_um_l = flt( species , 'Arpc3' , Arc18_um , dt = 1.2 , ref = ref  )
+Arc18_um_l = flt( species , 'Arpc3-GFP' , Arc18_um , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Arc18_um_l ] )
 
 data.to_csv( 'Fim1_lifetimes_control.csv' )
@@ -114,9 +90,9 @@ sc = ax[ 0 ]
 sp = ax[ 1 ]
 um = ax[ 2 ]
 
-layout_barplot( sc , data , 'S. cerevisiae' )
-layout_barplot( sp , data , 'S. pombe' )
-layout_barplot( um , data , 'U. maydis' )
+layout_barplot( sc , data , 'S. cerevisiae' , y_label = '' )
+layout_barplot( sp , data , 'S. pombe' , y_label = 'fimbrin lifetime (s)' )
+layout_barplot( um , data , 'U. maydis' , y_label = '' )
 
 plt.savefig( 'Fim1_lifetimes_control.pdf' )
 plt.close()

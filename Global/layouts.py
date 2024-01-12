@@ -68,14 +68,14 @@ def layout_swap( ax , title , is_sc = True ) :
     ax.text( -117, 0 , title , fontsize = 18 )
     ax.grid( axis = 'x' )
 
-def layout_barplot( ax , data , what , bonferroni = True ) :
+def layout_barplot( ax , data , what , bonferroni = True , y_label = 's' ) :
     
     ax.set_title( '$' + what + '$' , fontsize = 18 )
     ax.grid( axis = 'y' )
-    #data.loc[ what ].plot.bar( x = 'Protein' , y = 'Fim1 lifetime (s)' )
-    ax.bar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'Fim1 lifetime (s)' ] )
-    ax.errorbar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'Fim1 lifetime (s)' ] , yerr =  data.loc[ what ][ 'SD (s)' ] , color = 'black' , capsize = 5 , ls = '' )
-    ax.set_ylabel( 's' , fontsize = 13 )
+    #data.loc[ what ].plot.bar( x = 'Protein' , y = 'fimbrin lifetime (s)' )
+    ax.bar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'fimbrin lifetime (s)' ] )
+    ax.errorbar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'fimbrin lifetime (s)' ] , yerr =  data.loc[ what ][ 'SD (s)' ] , color = 'black' , capsize = 5 , ls = '' )
+    ax.set_ylabel( y_label , fontsize = 13 )
     ax.set_ylim( 0 , 17 )
     #ax.ticklabel_format( axis = 'x', useOffset = True )
     ax.tick_params( labelrotation = 45 , axis = 'x', labelsize = 10 )
