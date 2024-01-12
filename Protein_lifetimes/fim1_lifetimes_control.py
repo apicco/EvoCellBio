@@ -91,7 +91,7 @@ sp = ax[ 1 ]
 um = ax[ 2 ]
 
 layout_barplot( sc , data , 'S. cerevisiae' , y_label = '' )
-layout_barplot( sp , data , 'S. pombe' , y_label = 'fimbrin lifetime (s)' )
+layout_barplot( sp , data , 'S. pombe' , y_label = 'fimbrin-mCherry lifetime (s)' )
 layout_barplot( um , data , 'U. maydis' , y_label = '' )
 
 plt.savefig( 'Fim1_lifetimes_control.pdf' )
