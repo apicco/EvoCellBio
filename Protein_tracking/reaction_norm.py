@@ -117,7 +117,7 @@ axes["A"].errorbar( 24 , vsla1_um_24[ 0 ] , vsla1_um_24[ 1 ] , color = sla1_um_c
 axes["A"].errorbar( 27 , vsla1_um_27[ 0 ] , vsla1_um_27[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["A"].errorbar( 30 , vsla1_um_30[ 0 ] , vsla1_um_30[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["A"].plot( [ 18,21,24,27,30 ] , [ vsla1_um_18[0] , vsla1_um_21[0] , vsla1_um_24[0] , vsla1_um_27[0] , vsla1_um_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
-layout_rn( axes["A"] , "Sla1 internalization velocity" , "$nm/s$" , legend = True )
+layout_rn( axes["A"] , "Sla1 internalization velocity" , "velocity / $(nm\cdot s^{-1} )$" , legend = True )
 
 # Coat dynamics reaction norm
 # S. cerevisiae
@@ -143,7 +143,7 @@ axes["B"].errorbar( 24 , hsla1_um_24[ 0 ] , hsla1_um_24[ 1 ] , color = sla1_um_c
 axes["B"].errorbar( 27 , hsla1_um_27[ 0 ] , hsla1_um_27[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["B"].errorbar( 30 , hsla1_um_30[ 0 ] , hsla1_um_30[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["B"].plot( [ 18,21,24,27,30 ] , [ hsla1_um_18[0] , hsla1_um_21[0] , hsla1_um_24[0] , hsla1_um_27[0] , hsla1_um_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
-layout_rn( axes["B"] , "Sla1 displacement" , "$nm$" , legend = False , ylim = ( 0 , 400 ) )
+layout_rn( axes["B"] , "Sla1 displacement" , "displacement / $nm$" , legend = False , ylim = ( 0 , 400 ) )
 
 # Sla1 lifetime reaction norm
 # S. cerevisiae
@@ -169,7 +169,7 @@ axes["C"].errorbar( 24 , lt_um_24[ 0 ] , lt_um_24[ 1 ] , color = sla1_um_color ,
 axes["C"].errorbar( 27 , lt_um_27[ 0 ] , lt_um_27[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["C"].errorbar( 30 , lt_um_30[ 0 ] , lt_um_30[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["C"].plot( [ 18,21,24,27,30 ] , [ lt_um_18[0] , lt_um_21[0] , lt_um_24[0] , lt_um_27[0] , lt_um_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
-layout_rn( axes["C"] , "Sla1 lifetime" , "$s$" , legend = True , loc = 'upper right' )
+layout_rn( axes["C"] , "Sla1 lifetime" , "lifetime / $s$" , legend = True , loc = 'upper right' )
 
 fig.savefig( "reaction_norm.pdf" )
 

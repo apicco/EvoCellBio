@@ -33,7 +33,7 @@ sc.set_yticklabels( [
     "[Sp]WASP" ,
     "$sla1\Delta$ [Sc]WASP" ,
     "$sla1\Delta$ [Sp]WASP"
-] , fontsize = 13 )
+] , fontsize = 13 , style = 'italic' )
 
 # invagination start
 is_sp = Is( sp , I_sp , dt = 0.71 , do_plot = False )
@@ -44,9 +44,9 @@ lt( sp , Wasp_sp , -0 , 2 , dt = 1.2 , shift = shift_sp , col = color_Wasp )
 layout_swap( sp , '$S. pombe$' , is_sc = False )
 sp.set_yticklabels( [ 
                      "[Sp]WASP"
-                     ] , fontsize = 13 )
+                     ] , fontsize = 13 , style = 'italic' )
 
-plt.xlabel( 'Time (s)' , fontsize = 13 )
+plt.xlabel( 'Time / s' , fontsize = 13 , style = 'italic' )
 plt.tight_layout()
 plt.savefig( "Protein_swap_lifetimes.pdf" )
 

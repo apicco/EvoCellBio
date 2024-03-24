@@ -48,7 +48,7 @@ layout( axes[ "C"] , tlim_alignment , movlim_dw["A"] , '$U. maydis$' , legend = 
 myplot( axes["D"] , fim1_sc_24_dw_average , what = 'f' , label = 'fimbrin' , col = color_Fim1 , add_CI = False )
 myplot( axes["D"] , sla1_sc_24_dw_average , what = 'f' , label = 'Sla1' , col = color_Sla1 , add_CI = False )
 myplot( axes["D"] , rvs167_sc_24_dw_average , what = 'f' , label = 'Rvs167' , col = color_Rvs , add_CI = False )
-layout( axes[ "D"] , tlim_alignment , flim , ylabel = 'Fluor. int. ($a.u.$)' , title = None )
+layout( axes[ "D"] , tlim_alignment , flim , ylabel = 'Fluor. int. / a.u.' , title = None )
 
 # S. pombe
 myplot( axes["E"] , fim1_sp_24_dw_average , what = 'f' , label = 'fimbrin' , col = color_Fim1 , add_CI = False )

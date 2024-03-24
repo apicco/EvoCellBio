@@ -1,5 +1,5 @@
 # LAYOUTS
-def layout( ax , tlim , movlim , title , xaxis_label = True , yaxis_label = True , ylabel = 'Inward movement ($nm$)' , legend = False , legend_title = None , xtick_interval = 5 ) :
+def layout( ax , tlim , movlim , title , xaxis_label = True , yaxis_label = True , ylabel = 'Inward movement / nm' , legend = False , legend_title = None , xtick_interval = 5 ) :
    
     xl = [ i for i in range( 0 , int( tlim[ 0 ] ) , -xtick_interval ) ]
     xr = [ i for i in range( 0 , int( tlim[ 1 ] ) , xtick_interval ) ]
@@ -8,8 +8,8 @@ def layout( ax , tlim , movlim , title , xaxis_label = True , yaxis_label = True
     ax.set_ylim( movlim )
     ax.set_xlim( tlim )
     ax.tick_params( labelsize = 10 )
-    if xaxis_label : ax.set_xlabel( 'Time (s)' , fontsize = 13 )
-    if yaxis_label : ax.set_ylabel( ylabel , fontsize = 13 )
+    if xaxis_label : ax.set_xlabel( 'Time / s' , fontsize = 13 , style = 'italic' )
+    if yaxis_label : ax.set_ylabel( ylabel , fontsize = 13 , style = 'italic' )
     ax.grid()
     if legend : 
         leg = ax.legend( loc = 'upper left' , fontsize = 10 , title = legend_title )
@@ -25,8 +25,8 @@ def layout_rn( ax , title , ylabel , legend = False , ylim = ( 0 , 50 ) , loc = 
     ax.set_ylim( ylim[ 0 ]  , ylim[ 1 ] )
     ax.set_xticks( [ 18,21,24,27,30] )
     ax.tick_params( labelsize = 10 )
-    ax.set_xlabel( "T ($^{o}C$)" , fontsize = 13 )
-    if ylabel : ax.set_ylabel( ylabel , fontsize = 13 )
+    ax.set_xlabel( "T / $^{o}C$" , fontsize = 13 , style = 'italic' )
+    if ylabel : ax.set_ylabel( ylabel , fontsize = 13 , style = 'italic' )
     ax.grid()
     if legend : ax.legend( loc = loc , fontsize = 10 )
     ax.set_title( title , fontsize = 18 )
@@ -75,7 +75,7 @@ def layout_barplot( ax , data , what , bonferroni = True , y_label = 's' ) :
     #data.loc[ what ].plot.bar( x = 'Protein' , y = 'fimbrin lifetime (s)' )
     ax.bar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'fimbrin lifetime (s)' ] )
     ax.errorbar( data.loc[ what ][ 'Protein' ] , data.loc[ what ][ 'fimbrin lifetime (s)' ] , yerr =  data.loc[ what ][ 'SD (s)' ] , color = 'black' , capsize = 5 , ls = '' )
-    ax.set_ylabel( y_label , fontsize = 13 )
+    ax.set_ylabel( y_label , fontsize = 13 , style = 'italic' )
     ax.set_ylim( 0 , 17 )
     #ax.ticklabel_format( axis = 'x', useOffset = True )
     ax.tick_params( labelrotation = 45 , axis = 'x', labelsize = 10 )
