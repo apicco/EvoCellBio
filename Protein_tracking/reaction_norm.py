@@ -88,8 +88,8 @@ hsla1_um_30 = coat_movement( sla1_um_30 , scale = 100 )
 fig = plt.figure( constrained_layout = True , figsize = ( 8 , 6 ) )
 axes = fig.subplot_mosaic( 
     """
-    CB
-    A.
+    CA
+    B.
     """ , 
     sharey = False )
 
