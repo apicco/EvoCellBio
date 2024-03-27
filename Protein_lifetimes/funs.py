@@ -19,10 +19,6 @@ def avg( x ) :
     return np.mean( x )
     #return np.median( x )
 
-#def err( x , k = 1.4826 ) :
-#    return np.std( x )
-#    #return k * np.median( np.abs( x - np.median( x ) ) )
-
 # core algorithm to compute protein lifetimes 
 def lifetime( d , dt , shift , is_t0 ) :
     
@@ -63,7 +59,7 @@ def nlt( species , protein , d , dt , shift = 0 , is_t0 = True ) :
         np.round( ms[0] , 2 ) , np.round( ms[1] , 2) , 
         np.round( me[0] , 2 ) , np.round( me[1] , 2) , 
         np.round( me[0] - ms[0] , 2 ) , np.round( np.sqrt( ms[1]**2 + me[1]**2 ) , 2 ) 
-        ]] , columns = [ 'Protein' , 'Start (s)' , 'Start_SD (s)' , 'End (s)' , 'End_SD (s)' , 'Lifetime (s)' , 'SE (s)' ] , index = [ species ] )
+        ]] , columns = [ 'Protein' , 'Start (s)' , 'Start_SD (s)' , 'End (s)' , 'End_SD (s)' , 'Lifetime (s)' , 'SD (s)' ] , index = [ species ] )
 
     return data 
 
