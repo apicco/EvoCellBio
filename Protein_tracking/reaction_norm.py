@@ -143,7 +143,7 @@ axes["B"].errorbar( 24 , hsla1_um_24[ 0 ] , hsla1_um_24[ 1 ] , color = sla1_um_c
 axes["B"].errorbar( 27 , hsla1_um_27[ 0 ] , hsla1_um_27[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["B"].errorbar( 30 , hsla1_um_30[ 0 ] , hsla1_um_30[ 1 ] , color = sla1_um_color , marker = 'o' , markersize = 7 , elinewidth = 2.0 , capsize = 8 , capthick = 2.0 )
 axes["B"].plot( [ 18,21,24,27,30 ] , [ hsla1_um_18[0] , hsla1_um_21[0] , hsla1_um_24[0] , hsla1_um_27[0] , hsla1_um_30[0] ] , color = "#CDCDCD" , linestyle = '--' , linewidth = 2 ) 
-layout_rn( axes["B"] , "Sla1 displacement" , "displacement / $nm$" , legend = False , ylim = ( 0 , 400 ) )
+layout_rn( axes["B"] , "Sla1 displacement" , "displacement / $nm$" , legend = True , loc = 'upper right' , ylim = ( 0 , 500 ) )
 
 # Sla1 lifetime reaction norm
 # S. cerevisiae
