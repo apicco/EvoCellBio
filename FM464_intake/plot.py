@@ -20,26 +20,28 @@ def normalisation( df ) :
     x = x - min( x )
     s = 2 / ( x[ len( x ) - 1 ] + x[ len( x ) - 2 ] ) # scaling
     x = s * x
-    e = df.sem()
+    e = 1.96 * df.sem()
     e = s * e
 
 
     return t , x , e
 
-def plot( d ) :
+def plot( d , label  ) :
     plt.errorbar( d[ 0 ] , d[ 1 ] , d[ 2 ] , marker = 'o' , capsize = 4 , linestyle = '' , alpha = 0.5 )
-    plt.scatter( d[ 0 ] , d[ 1 ] )
+    plt.scatter( d[ 0 ] , d[ 1 ] , label = label )
 
 f = plt.figure()
 
 fs = 13
 sty = 'italic'
 
-plot( normalisation( sc ) )
-plot( normalisation( sp ) )
-plot( normalisation( um ) )
+plot( normalisation( um ) , 'U. maydis' )
+plot( normalisation( sp ) , 'S. pombe' )
+plot( normalisation( sc ) , 'S. cerevisiae' )
 
 plt.xlabel( 'Time / min' , fontsize = fs , style = sty )
-plt.ylabel( 'Fluorescence intensity' )
+plt.ylabel( 'Fluorescence intensity / a. u.' , fontsize = fs , style = sty )
+plt.legend() 
+
 plt.grid( axis = 'y' )
 f.savefig( 'FM464_intake.pdf' )
