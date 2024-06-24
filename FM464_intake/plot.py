@@ -32,8 +32,14 @@ def plot( d ) :
 
 f = plt.figure()
 
+fs = 13
+sty = 'italic'
+
 plot( normalisation( sc ) )
 plot( normalisation( sp ) )
 plot( normalisation( um ) )
 
+plt.xlabel( 'Time / min' , fontsize = fs , style = sty )
+plt.ylabel( 'Fluorescence intensity' )
+plt.grid( axis = 'y' )
 f.savefig( 'FM464_intake.pdf' )
