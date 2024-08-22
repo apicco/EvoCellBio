@@ -1,11 +1,12 @@
 # append parent directory for global plot properties
 import sys
 sys.path.append( '../' )
-#from Global.layouts import layout_rn
-#from Global.colors import *
+
 import numpy as np
 import pandas as pd
 import matplotlib as mpl
+import statsmodels.api as sm
+
 mpl.use('Agg')
 from matplotlib import pyplot as plt
 from sklearn.linear_model import LinearRegression
@@ -32,34 +33,65 @@ def plot( d , label  , color ) :
     plt.errorbar( c , x , e , marker = 'o' , capsize = 4 , linestyle = '' , alpha = 0.5 , color = color )
     plt.scatter( c , x , label = label , color = color )
 
+def pressure( x , x_se , coef , coef_se , T ) :
+
+    # concentration
+    print( coef )
+    c = coef[1] / ( x - coef[0] )
+    # error
+    e = np.sqrt( 
+        ( coef_se[1] / ( x - coef[0] ) ) ** 2 +
+        ( coef[1] * x_se / ( x - coef[0] ) ** 2 ) ** 2 +
+        ( coef[1] * coef_se[0] / ( x - coef[0] ) ** 2 ) ** 2 
+    )
+    
+    RT = 8.314 * T 
+
+    return c , e , c * RT / 1000 , e * RT / 1000
+ 
+# volumes in sorbitol
 um_d = xtract( 1/0.25 , um_0p25M )
 um_d = pd.concat( [ um_d , xtract( 1/0.5 , um_0p50M ) ] )
 um_d = pd.concat( [ um_d , xtract( 1/0.75 , um_0p75M ) ] )
 um_d = pd.concat( [ um_d , xtract( 1/1 , um_1M ) ] )
 
-model = LinearRegression()
-concentration = LinearRegression()
+# volume of WT cells at 24C
+um_v = xtract( 0 , um_vol )
+
+# Linear regressions
+
 X = um_d.index.values[1:4].reshape(-1,1)
 Y = um_d.values[1:4,0].reshape(-1,1)
 
+model = LinearRegression()
 model.fit( X , Y )
-concentration.fit( Y , X )
-um_v = xtract( 0 , um_vol )
-# Concentration 
-print( concentration.intercept_ )
-print( concentration.coef_ )
-c = 1/concentration.predict( np.array( um_v[ 'Volume' ] ).reshape( 1,-1 ) )[0]
 
-RT = 8.314 * 297.15
+# Compute concentration with statsmodel
+X = sm.add_constant( X )
+result = sm.OLS( Y , X ).fit() 
 
-P = c * RT
+print( result.summary() )
+coef = result.params
+print( coef )
+coef_se = result.bse
+print( np.array( um_v[ 'Volume' ] ).reshape( 1,-1 ) )
+print( np.array( um_v[ 'Volume' ] ) )
+c = 1/result.predict( np.append( 1 ,  um_v[ 'Volume' ] ) )
 
-print( P ) 
+P = pressure( 
+    np.array( um_v[ 'Volume' ] ) , 
+    np.array( um_v[ 'Sem' ] ) , 
+    coef , 
+    coef_se ,
+    T = 297.15 )
+
 f = plt.figure()
 fs = 13
 sty = 'italic'
 xlim = [ 0 , 5 ]
-plot( um_d  , 'U. maydis' , color = 'red' )
+
+stri =  "%.2f MPa $\pm$ %.2f MPa" %  ( P[2] , P[3] )
+plot( um_d  , 'U. maydis\n' + stri , color = 'red' )
 
 plt.plot( xlim , [ um_v[ 'Volume' ] ] * 2 , '-' , color = 'pink' )
 plt.plot( xlim , [ um_v[ 'Volume' ] - um_v[ 'Sem' ] ] * 2 , '--' , color = 'pink' )
