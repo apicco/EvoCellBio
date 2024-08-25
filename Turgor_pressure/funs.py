@@ -50,5 +50,6 @@ def fit( df ) :
     # Compute concentration with statsmodel
     X = sm.add_constant( X )
     result = sm.OLS( Y , X ).fit() 
+    print( result.summary() )
 
     return model , result
