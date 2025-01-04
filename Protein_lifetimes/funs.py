@@ -15,10 +15,6 @@ def Is( ax , d , dt , col = 'black' , do_plot = False ) :
 
     return mi
  
-def avg( x ) :
-    return np.mean( x )
-    #return np.median( x )
-
 # core algorithm to compute protein lifetimes 
 def lifetime( d , dt , shift , is_t0 ) :
     
@@ -49,8 +45,6 @@ def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' , is_t0 = True )
 
     rect = patches.Rectangle( ( ms[ 0 ] , y0 ) , me[ 0 ] - ms[ 0 ] , tickness , linewidth = 1 , edgecolor = 'black' , facecolor = col )
     ax.add_patch( rect )
-
-    return ms , me
 
 # numeric lifetime representation
 def nlt( species , protein , d , dt , shift = 0 , is_t0 = True ) :
@@ -118,13 +112,34 @@ def flt( species , protein , d , dt , ref = None , RFP = True ) :
 
     pval = z
 
-    d = pd.DataFrame( [[ protein , np.round( ml[0] , 2 ) , np.round( ml[1] , 2 ) , pval ]] , columns = [ 'Protein' , 'fimbrin lifetime (s)' , 'SD (s)' , 'pval' ] , index = [ species ] )
+    data = pd.DataFrame( [[ protein , np.round( ml[0] , 2 ) , np.round( ml[1] , 2 ) , pval ]] , columns = [ 'Protein' , 'fimbrin lifetime (s)' , 'SD (s)' , 'pval' ] , index = [ species ] )
 
     return d 
 
+# Rvs lifetime for control
+def rlt( species , protein , d , dt , ref = None ) :
+    
+    l = ( d.GFP_end - d.GFP_start + 1 ) * dt
+   
+    # averages
+    ml = [ avg( l ) , err( l , se = True ) ]
+
+    # ztest on the reference
+    if ref == None : 
+        z = np.nan
+    else :
+        z = ztest( ml , ref )
+
+    pval = z
+
+    d = pd.DataFrame( [[ protein , np.round( ml[0] , 2 ) , np.round( ml[1] , 2 ) , pval ]] , columns = [ 'Protein' , 'Rvs lifetime (s)' , 'SE (s)' , 'pval' ] , index = [ species ] )
+
+    return ml , d 
+
+
 def avg( x ) :
     return np.mean( x )
-    #np.median( x )
+    #return np.median( x )
 
 def err( x , k = 1.4826 , se = False ) : # se: standard error
     if se : 
