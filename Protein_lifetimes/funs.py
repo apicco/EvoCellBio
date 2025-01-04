@@ -50,6 +50,8 @@ def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' , is_t0 = True )
     rect = patches.Rectangle( ( ms[ 0 ] , y0 ) , me[ 0 ] - ms[ 0 ] , tickness , linewidth = 1 , edgecolor = 'black' , facecolor = col )
     ax.add_patch( rect )
 
+    return ms , me
+
 # numeric lifetime representation
 def nlt( species , protein , d , dt , shift = 0 , is_t0 = True ) :
 
