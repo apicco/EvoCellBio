@@ -15,7 +15,7 @@ species = 'S. cerevisiae'
 
 Fim1_RFP_sc_l = flt( species , 'no GFP' , Fim1_RFP_sc , dt = 1.2 )
 
-ref = [ Fim1_RFP_sc_l.at[ species , 'fimbrin lifetime (s)' ] ,  Fim1_RFP_sc_l.at[ species , 'SD (s)' ] ]
+ref = [ Fim1_RFP_sc_l.at[ species , 'fimbrin lifetime (s)' ] ,  Fim1_RFP_sc_l.at[ species , 'SE (s)' ] ]
 
 Ede1_sc_l = flt( species , 'Eps15-GFP' , Ede1_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ Fim1_RFP_sc_l , Ede1_sc_l ] )
@@ -39,7 +39,7 @@ species = 'S. pombe'
 Fim1_RFP_sp_l = flt( species , 'no GFP' , Fim1_RFP_sp , dt = 1.2 )
 data = pd.concat( [ data , Fim1_RFP_sp_l ] )
 
-ref = [ Fim1_RFP_sp_l.at[ species , 'fimbrin lifetime (s)' ] ,  Fim1_RFP_sp_l.at[ species , 'SD (s)' ] ]
+ref = [ Fim1_RFP_sp_l.at[ species , 'fimbrin lifetime (s)' ] ,  Fim1_RFP_sp_l.at[ species , 'SE (s)' ] ]
 
 Ede1_sp_Ucp8_l = flt( species , 'Ucp8-GFP' , Ede1_sp_Ucp8 , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Ede1_sp_Ucp8_l ] )
@@ -63,7 +63,7 @@ species = 'U. maydis'
 Fim1_RFP_um_l = flt( species , 'no GFP' , Fim1_RFP_um , dt = 1.2 )
 data = pd.concat( [ data , Fim1_RFP_um_l ] )
 
-ref = [ Fim1_RFP_um_l.at[ species , 'fimbrin lifetime (s)' ] ,  Fim1_RFP_um_l.at[ species , 'SD (s)' ] ]
+ref = [ Fim1_RFP_um_l.at[ species , 'fimbrin lifetime (s)' ] ,  Fim1_RFP_um_l.at[ species , 'SE (s)' ] ]
 
 Ede1_um_l = flt( species , 'Eps15-GFP' , Ede1_um , dt = 1.2 , ref = ref  )
 data = pd.concat( [ data , Ede1_um_l ] )

@@ -112,7 +112,7 @@ def flt( species , protein , d , dt , ref = None , RFP = True ) :
 
     pval = z
 
-    data = pd.DataFrame( [[ protein , np.round( ml[0] , 2 ) , np.round( ml[1] , 2 ) , pval ]] , columns = [ 'Protein' , 'fimbrin lifetime (s)' , 'SD (s)' , 'pval' ] , index = [ species ] )
+    data = pd.DataFrame( [[ protein , np.round( ml[0] , 2 ) , np.round( ml[1] , 2 ) , pval ]] , columns = [ 'Protein' , 'fimbrin lifetime (s)' , 'SE (s)' , 'pval' ] , index = [ species ] )
 
     return d 
 
