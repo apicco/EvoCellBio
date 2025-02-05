@@ -15,8 +15,8 @@ Rvs_no_Fim1_um = pd.read_csv( 'rvs_only_in_Um.csv' )
 #Rvs167
 
 Rvs_um = pd.read_csv( "../Lifetime_measurements/Rvs167_lifetimes_Um.csv" )
-#Rvs_sc = pd.read_csv( "../Lifetime_measurements/Rvs167_lifetimes_Sc.csv" )
-Rvs_sc = pd.read_csv( "rvs_with_Fim1_in_Sc.csv" )
+Rvs_sc = pd.read_csv( "../Lifetime_measurements/Rvs167_lifetimes_Sc.csv" )
+#Rvs_sc = pd.read_csv( "rvs_with_Fim1_in_Sc.csv" )
 Rvs_sp = pd.read_csv( "../Lifetime_measurements/Rvs167_lifetimes_Sp.csv" )
 
 species = 'S. cerevisiae'
