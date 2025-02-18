@@ -46,6 +46,16 @@ sla1_sc_24.norm_f()
 sla1_sc_24.tshift( t0_sc_24deg )
 sla1_sc_24.translate( [ -set_x0( sla1_sc_24 ) , 0 ] ) 
 
+t0_sc_SCTrp_24deg = -35.85
+
+sla1_sc_SCTrp_24 = Traj()
+sla1_sc_SCTrp_24.load( 'Data/Sla1/24_degree/Sc/sla1_SC-Trp.txt' )
+sla1_sc_SCTrp_24.start( unified_start( sla1_sc_SCTrp_24 , add_CI = False ) )
+sla1_sc_SCTrp_24.end( unified_end( sla1_sc_SCTrp_24 , add_CI = False ) )
+sla1_sc_SCTrp_24.norm_f()
+sla1_sc_SCTrp_24.tshift( t0_sc_SCTrp_24deg )
+sla1_sc_SCTrp_24.translate( [ -set_x0( sla1_sc_SCTrp_24 ) , 0 ] ) 
+
 # aligned at 24 degree
 fim1_sc_24_dw = load_directory( 
     path = 'Data/Sla1/24_degree/Sc/aligned/' , 
