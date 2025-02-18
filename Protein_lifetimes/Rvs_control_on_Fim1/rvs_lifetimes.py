@@ -37,15 +37,15 @@ data = pd.concat( [ data , tmp ] )
 
 print( data )
 
-fig , ax = plt.subplots( 3 , 1 , figsize = ( 2 , 6 ) , layout = 'constrained' ) #, sharex = 'all' )
+fig , ax = plt.subplots( 3 , 1 , figsize = ( 1 , 6 ) , layout = 'constrained' ) #, sharex = 'all' )
 
 sc = ax[ 0 ]
 sp = ax[ 1 ]
 um = ax[ 2 ]
 
-layout_barplot( sc , data , 'S. cerevisiae' , y_label = '' , y = 'Rvs lifetime (s)' , ylim = ( 0 , 6 ) )
-layout_barplot( sp , data , 'S. pombe' , y_label = 'Rvs lifetime / s'  , y = 'Rvs lifetime (s)' , ylim = ( 0 , 6 ) )
-layout_barplot( um , data , 'U. maydis' , y_label = '' , y = 'Rvs lifetime (s)' , ylim = ( 0 , 6 ) )
+layout_barplot( sc , data , 'S. cerevisiae' , y_label = '' , y = 'Rvs lifetime (s)' , ylim = ( 0 , 6 ) , title = False )
+layout_barplot( sp , data , 'S. pombe' , y_label = 'Rvs lifetime / s'  , y = 'Rvs lifetime (s)' , ylim = ( 0 , 6 ) , title = False )
+layout_barplot( um , data , 'U. maydis' , y_label = '' , y = 'Rvs lifetime (s)' , ylim = ( 0 , 6 ) , title = False )
 
 plt.savefig( 'Rvs_lifetimes_control.pdf' )
 plt.close()

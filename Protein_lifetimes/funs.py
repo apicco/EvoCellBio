@@ -114,7 +114,7 @@ def flt( species , protein , d , dt , ref = None , RFP = True ) :
 
     data = pd.DataFrame( [[ protein , np.round( ml[0] , 2 ) , np.round( ml[1] , 2 ) , pval ]] , columns = [ 'Protein' , 'fimbrin lifetime (s)' , 'SE (s)' , 'pval' ] , index = [ species ] )
 
-    return d 
+    return data
 
 # Rvs lifetime for control
 def rlt( species , protein , d , dt , ref = None ) :

@@ -1,4 +1,4 @@
-,Protein,fimbrin lifetime (s),SD (s),pval
+,Protein,fimbrin lifetime (s),SE (s),pval
 S. cerevisiae,no GFP,10.02,0.28,
 S. cerevisiae,Eps15-GFP,11.46,0.37,0.0019041434246160893
 S. cerevisiae,intersectin-GFP,10.54,0.3,0.20572141584637382

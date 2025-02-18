@@ -68,9 +68,12 @@ def layout_swap( ax , title , is_sc = True ) :
     ax.text( -117, 0 , title , fontsize = 18 )
     ax.grid( axis = 'x' )
 
-def layout_barplot( ax , data , what , bonferroni = True , y_label = 's' , x = 'Protein' , y = 'fimbrin lifetime (s)' , yerr = 'SE (s)' , ylim = ( 0 , 17 ) ) :
+def layout_barplot( ax , data , what , bonferroni = True , y_label = 's' , x = 'Protein' , y = 'fimbrin lifetime (s)' , yerr = 'SE (s)' , ylim = ( 0 , 17 ) , title = True ) :
     
-    ax.set_title( '$' + what + '$' , fontsize = 18 )
+    if title :
+        ax.set_title( '$' + what + '$' , fontsize = 18 )
+    else : 
+        ax.set_title( " " , fontsize = 18 )
     ax.grid( axis = 'y' )
     #data.loc[ what ].plot.bar( x = x , y = y )
     ax.bar( data.loc[ what ][ x ] , data.loc[ what ][ y ] )

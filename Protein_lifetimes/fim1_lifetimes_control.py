@@ -15,8 +15,13 @@ species = 'S. cerevisiae'
 
 Fim1_RFP_sc_l = flt( species , 'no GFP' , Fim1_RFP_sc , dt = 1.2 )
 
+print( 'here' )
+
+print( Fim1_RFP_sc )
+print( Fim1_RFP_sc_l )
 ref = [ Fim1_RFP_sc_l.at[ species , 'fimbrin lifetime (s)' ] ,  Fim1_RFP_sc_l.at[ species , 'SE (s)' ] ]
 
+print( 'there' )
 Ede1_sc_l = flt( species , 'Eps15-GFP' , Ede1_sc , dt = 1.2 , ref = ref  )
 data = pd.concat( [ Fim1_RFP_sc_l , Ede1_sc_l ] )
 Pan1_sc_l = flt( species , 'intersectin-GFP' , Pan1_sc , dt = 1.2 , ref = ref  )
