@@ -9,6 +9,8 @@ from params import *
 from funs import velocity , coat_movement , lifetime
 from trajplot.plotfuns import myplot , plot_raw
 
+from scipy.stats import kendalltau
+
 import matplotlib as mpl
 mpl.use('Agg')
 from matplotlib import pyplot as plt
@@ -84,6 +86,36 @@ hsla1_um_21 = coat_movement( sla1_um_21 , scale = 100 )
 hsla1_um_24 = coat_movement( sla1_um_24 , scale = 100 )
 hsla1_um_27 = coat_movement( sla1_um_27 , scale = 100 )
 hsla1_um_30 = coat_movement( sla1_um_30 , scale = 100 )
+
+# Kendall tau
+tau_sc , pval_sc = kendalltau( 
+    [ 18 , 21 , 24 , 27 , 30 ] , 
+    [ hsla1_sc_18[0] , hsla1_sc_21[0] , hsla1_sc_24[0] , hsla1_sc_27[0] , hsla1_sc_30[0] ] 
+)
+
+print( "Kendall tau_sc : " , tau_sc )
+print( "Kendall pval_sc : " , pval_sc )
+ 
+# Kendall tau
+tau_sp , pval_sp = kendalltau( 
+    [ 18 , 21 , 24 , 27 , 30 ] , 
+    [ hsla1_sp_18[0] , hsla1_sp_21[0] , hsla1_sp_24[0] , hsla1_sp_27[0] , hsla1_sp_30[0] ] 
+)
+
+print( "Kendall tau_sp : " , tau_sp )
+print( "Kendall pval_sp : " , pval_sp )
+ 
+# Kendall tau
+tau_um , pval_um = kendalltau( 
+    [ 18 , 21 , 24 , 27 , 30 ] , 
+    [ hsla1_um_18[0] , hsla1_um_21[0] , hsla1_um_24[0] , hsla1_um_27[0] , hsla1_um_30[0] ] 
+)
+
+print( "Kendall tau_um : " , tau_um )
+print( "Kendall pval_um : " , pval_um )
+ 
+
+
 
 fig = plt.figure( constrained_layout = True , figsize = ( 8 , 6 ) )
 axes = fig.subplot_mosaic( 
