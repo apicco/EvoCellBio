@@ -152,4 +152,45 @@ def err( x , k = 1.4826 , se = False ) : # se: standard error
             return np.std( x ) 
     #return k * np.median( np.abs( x - np.median( x ) ) )
 
+def ztest(mean1, se1, mean2, se2, alternative='two-sided', hypothesized_diff=0.0):
+    """
+    Performs a two-sample z-test for the difference between two means,
+    given their means and standard errors.
 
+    Args:
+        mean1 (float): The mean of the first sample.
+        se1 (float): The standard error of the mean for the first sample.
+        mean2 (float): The mean of the second sample.
+        se2 (float): The standard error of the mean for the second sample.
+        alternative (str): The alternative hypothesis. Options are 'two-sided' (default),
+                           'larger' (mean1 > mean2), or 'smaller' (mean1 < mean2).
+        hypothesized_diff (float): The hypothesized difference between population means
+                                   under the null hypothesis (default is 0).
+
+    Returns:
+        tuple: A tuple containing the Z-statistic and the p-value.
+    """
+    # Input validation
+    if not all(isinstance(val, (int, float)) for val in [mean1, se1, mean2, se2, hypothesized_diff]):
+        raise TypeError("Means, standard errors, and hypothesized_diff must be numbers.")
+    if se1 <= 0 or se2 <= 0:
+        raise ValueError("Standard errors must be positive numbers.")
+    if alternative not in ['two-sided', 'larger', 'smaller']:
+        raise ValueError("alternative must be 'two-sided', 'larger', or 'smaller'.")
+
+    # Calculate the standard error of the difference between means
+    # This is the core modification for using standard errors directly
+    standard_error_diff = np.sqrt(se1**2 + se2**2)
+
+    # Calculate the Z-statistic
+    z_statistic = ((mean1 - mean2) - hypothesized_diff) / standard_error_diff
+
+    # Calculate the p-value based on the alternative hypothesis
+    if alternative == 'two-sided':
+        p_value = 2 * norm.sf(abs(z_statistic)) # sf is survival function (1 - cdf)
+    elif alternative == 'larger': # H1: mean1 > mean2 (z_stat > 0)
+        p_value = norm.sf(z_statistic)
+    elif alternative == 'smaller': # H1: mean1 < mean2 (z_stat < 0)
+        p_value = norm.cdf(z_statistic)
+
+    return p_value , z_statistic 

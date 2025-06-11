@@ -68,5 +68,34 @@ data = pd.concat( [ data , Rvs_um_l ] )
 Fim1_um_l = nlt( um , 'Fim1' , Fim1_GFP_um , dt = 1.2 , shift = shift_um , is_t0 = False )
 data = pd.concat( [ data , Fim1_um_l ] )
 
+def values( d , what ) :
+    df = d[d['Protein']==what]
+    m = df.iat[0,1]
+    sd = df.iat[0,2]
+    n = df.iat[0,7]
+    return m , sd/np.sqrt(n)
+
+def analysis( d , species ) :
+    df = d.loc[ species ]
+    u_pan1, e_pan1 = values( df , "Pan1" )
+    u_sla1, e_sla1 = values( df , "Sla1" )
+    u_las17, e_las17 = values( df , "Sla1" )
+  
+    p_pan1_g_sla1 , _ = ztest( u_pan1 , e_pan1 , u_sla1 , e_sla1 , alternative = "larger" )
+    p_pan1_g_las17 , _ = ztest( u_pan1 , e_pan1 , u_sla1 , e_pan1 , alternative="larger" ) 
+
+    print( "Pan1 does not appear later than Sla1, pvalue = " + str( p_pan1_g_sla1 ) )
+    print( "Pan1 does not appear later than Las17, pvalue = " + str( p_pan1_g_las17 ) )
+
+print( "--------------" )
+print( "Pan1 Analysis" )
+print( "--------------" )
+print( "S. cerevisiae" )
+analysis( data , "S. cerevisiae" )
+print( "S. pombe" )
+analysis( data , "S. pombe" )
+print( "U. maydis" )
+analysis( data , "U. maydis" )
+
 print( data )
 data.to_csv( 'numeric_lifetimes.csv' )
