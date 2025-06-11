@@ -31,9 +31,12 @@ def lifetime( d , dt , shift , is_t0 ) :
     # averages
     ms = [ avg( s ) + shift , err( s ) ]
     me = [ avg( e ) + shift , err( e ) ]
-    l = e + 1 - s
+    if len( s ) == len( e ) :
+        n = len( s )
+    else :
+        raise ValueError("number of datapoints is not consistent")
 
-    return ms , me  , l
+    return ms , me  , n
 
 # bar plot lifetime representation
 def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' , is_t0 = True ) :
@@ -49,13 +52,14 @@ def lt( ax , d , y0 , tickness , dt , shift = 0 , col = 'black' , is_t0 = True )
 # numeric lifetime representation
 def nlt( species , protein , d , dt , shift = 0 , is_t0 = True ) :
 
-    ms , me , _ = lifetime( d , dt , shift , is_t0 )
+    ms , me , n = lifetime( d , dt , shift , is_t0 )
     
     data = pd.DataFrame( [[ protein , 
         np.round( ms[0] , 2 ) , np.round( ms[1] , 2) , 
         np.round( me[0] , 2 ) , np.round( me[1] , 2) , 
-        np.round( me[0] - ms[0] , 2 ) , np.round( np.sqrt( ms[1]**2 + me[1]**2 ) , 2 ) 
-        ]] , columns = [ 'Protein' , 'Start (s)' , 'Start_SD (s)' , 'End (s)' , 'End_SD (s)' , 'Lifetime (s)' , 'SD (s)' ] , index = [ species ] )
+        np.round( me[0] - ms[0] , 2 ) , np.round( np.sqrt( ms[1]**2 + me[1]**2 ) , 2 ) , 
+        n
+        ]] , columns = [ 'Protein' , 'Start (s)' , 'Start_SD (s)' , 'End (s)' , 'End_SD (s)' , 'Lifetime (s)' , 'SD (s)' , 'n' ] , index = [ species ] )
 
     return data 
 
